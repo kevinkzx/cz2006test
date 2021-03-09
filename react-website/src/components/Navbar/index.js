@@ -8,23 +8,23 @@ const Navbar = ({toggle}) => {
             <Nav>
                 <NavbarContainer>
                     <NavLogo to="/">
-                        dolla
+                        Home
                     </NavLogo>
                     <MobileIcon onClick={toggle}>
                         <FaBars />   
                     </MobileIcon>
                     <NavMenu>
                         <NavItem>
-                           <NavLinks to="about">About</NavLinks> 
+                           <NavLinks to="packages">Packages</NavLinks>
                         </NavItem>
                         <NavItem>
-                           <NavLinks to="discover">Discover</NavLinks> 
+                           <NavLinks to="parlours">Parlours</NavLinks>
                         </NavItem>
                         <NavItem>
-                           <NavLinks to="services">Services</NavLinks> 
+                           <NavLinks to="location">Location</NavLinks>
                         </NavItem>
                         <NavItem>
-                           <NavLinks to="signup">Sign Up</NavLinks> 
+                           <NavLinks to="information">Information</NavLinks>
                         </NavItem>
                     </NavMenu>
                     <NavBtn>

@@ -17,17 +17,17 @@ const Sidebar = ({isOpen, toggle}) => {
 			</Icon>
 			<SidebarWrapper>
 				<SidebarMenu>
-					<SidebarLink to="about" onClick={toggle}>
-						About
+					<SidebarLink to="packages" onClick={toggle}>
+						Packages
 					</SidebarLink>
-					<SidebarLink to = "discover" onClick={toggle}>
-						Discover
+					<SidebarLink to = "parlours" onClick={toggle}>
+						Parlours
 					</SidebarLink>
-					<SidebarLink to = "services" onClick={toggle}>
-						Services
+					<SidebarLink to = "location" onClick={toggle}>
+						Location
 					</SidebarLink>
-					<SidebarLink to = "signup" onClick={toggle}>
-						Sign up
+					<SidebarLink to = "information" onClick={toggle}>
+						Information
 					</SidebarLink>
 				</SidebarMenu>
 				<SideBtnWrap>

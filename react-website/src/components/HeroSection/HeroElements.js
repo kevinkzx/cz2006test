@@ -32,7 +32,7 @@ export const HeroBg = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hiddden;
+    overflow: hidden;
 `;
 
 export const VideoBg = styled.video`
