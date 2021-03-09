@@ -3,7 +3,7 @@ import img1 from "../../images/svg-1.svg"
 // false = black, true = white
 
 export const homeObjOne = {
-	id: 'about',
+	id: 'packages',
 	lightBg: false,
 	lightText: true,
 	lightTextDesc: true,
@@ -21,7 +21,7 @@ export const homeObjOne = {
 };
 
 export const homeObjTwo = {
-	id: 'about',
+	id: 'parlours',
 	lightBg: true,
 	lightText: false,
 	lightTextDesc: false,
