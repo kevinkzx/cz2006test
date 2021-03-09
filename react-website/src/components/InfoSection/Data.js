@@ -1,5 +1,7 @@
 import img1 from "../../images/svg-1.svg"
 
+// false = black, true = white
+
 export const homeObjOne = {
 	id: 'about',
 	lightBg: false,
