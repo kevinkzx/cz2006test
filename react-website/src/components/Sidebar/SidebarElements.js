@@ -87,5 +87,3 @@ export const SidebarRoute = styled(LinkR)`
     color: #010606;
   }
 `;
-
-
