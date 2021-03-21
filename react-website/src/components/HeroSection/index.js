@@ -3,7 +3,7 @@ import Video from '../../videos/video.mp4';
 import { HeroContainer, HeroBg, VideoBg, HeroContent, HeroH1, HeroP, HeroBtnWrapper, ArrowForward, ArrowRight } from './HeroElements';
 import {Button} from '../ButtonElements';
 
-const HeroSection = () => {
+const HeroSection = ({HeroHeader, HeroPara}) => {
     const [hover, setHover] = useState(false);
 
     const onHover = () => {
@@ -17,9 +17,9 @@ const HeroSection = () => {
                 <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
             </HeroBg>
             <HeroContent>
-                <HeroH1>Get your funeral services here today.</HeroH1>
+                <HeroH1>{HeroHeader}</HeroH1>
                 <HeroP>
-                    Book ur services here right now.
+                    {HeroPara}
                 </HeroP>
                 <HeroBtnWrapper>
                     <Button to ="signup" onMouseEnter={onHover} onMouseLeave={onHover}

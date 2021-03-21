@@ -22,7 +22,7 @@ const Home = () => {
 		<>
 			<Sidebar isOpen={isOpen} toggle={toggle}/>
 			<Navbar toggle={toggle}/>
-			<HeroSection/>
+			<HeroSection HeroHeader="Get your funeral services here today." HeroPara="Book our packages right now."/>
 			<InfoSection {...homeObjOne}/>
 			<InfoSection {...homeObjTwo}/>
 			<Services {...MapObj}/>

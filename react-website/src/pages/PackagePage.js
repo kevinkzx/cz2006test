@@ -1,10 +1,13 @@
 import React from 'react';
+import PackageContainer from "../components/Package/PackageContainer";
+import Navbar from "../components/Navbar";
 
 const PackagePage = () => {
 	return (
-		<div>
-			<h1>Package Page</h1>
-		</div>
+		<>
+			<Navbar/>
+			<PackageContainer/>
+		</>
 	);
 };
 
