@@ -26,7 +26,7 @@ const HeroSection = () => {
                     primary="true"
                     dark="true"
                     >
-                        Get started {hover ? <ArrowForward /> : <ArrowRight />}S
+                        Get started {hover ? <ArrowForward /> : <ArrowRight />}
                     </Button>
                 </HeroBtnWrapper>
             </HeroContent>
