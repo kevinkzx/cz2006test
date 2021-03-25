@@ -1,13 +1,19 @@
 import React from 'react';
+import {ImgContainer, PackageInfo, PackageLink, PriceTop, SinglePackage} from "./PackageElements";
 
 const PackageCard = ({item}) => {
 	return (
-		<div>
-			<h3>{item.fields.name}</h3>
-			<p>{item.fields.price}</p>
-			<p>{item.fields.religion}</p>
-			<p>Transportation {item.fields.transportation ? "Available" : "Not Available"}</p>
-		</div>
+		<SinglePackage>
+			<ImgContainer>
+				<img src={item.fields.img}
+				     alt="package image"/>
+				<PriceTop>
+					<h6>${item.fields.price}</h6>
+				</PriceTop>
+				<PackageLink to={`/packages/${item.fields.slug}`}>features</PackageLink>
+				<PackageInfo>{item.fields.name}</PackageInfo>
+			</ImgContainer>
+		</SinglePackage>
 	);
 };
 
