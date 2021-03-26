@@ -15,14 +15,18 @@ export const InformationObj = {
 	box1Text:"Click here to view procedure on the funeral process",
 	box1Img:Icon1,
 	box1Alt:"icon1",
+	box1Path:"/funeral_process",
 	box2Header:"Void Deck Booking",
 	box2Text:"Click here to view procedure on booking a void deck ",
 	box2Img:Icon2,
 	box2Alt:"icon2",
+	box2Path:"/void_deck_booking",
 	box3Header:"Cremation or Burial",
 	box3Text:"Click here to view information on cremation or burial",
 	box3Img:Icon3,
 	box3Alt:"icon3",
+	box3Path:"/cremation_burial"
+
 }
 
 export const MapObj = {
@@ -37,12 +41,16 @@ export const MapObj = {
 	box1Text:"Click here to view locations of parlours",
 	box1Img:Icon1,
 	box1Alt:"icon1",
+	box1Path:"/map_parlours",
 	box2Header:"Burial and Cremation Sites",
-	box2Text:"Click here to view locations of burial and Cremation sites",
+	box2Text:"Click here to view locations of burial and cremation sites",
 	box2Img:Icon2,
 	box2Alt:"icon2",
+	box2Path:"/map_burial_cremation",
 	box3Header:"Ash Scattering Locations",
 	box3Text:"Click here to view locations of ash scattering locations",
 	box3Img:Icon3,
 	box3Alt:"icon3",
+	box3Path:"/map_ash_scattering",
+
 }

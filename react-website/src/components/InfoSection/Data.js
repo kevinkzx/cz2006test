@@ -17,7 +17,8 @@ export const homeObjOne = {
 	alt: 'Car',
 	dark: true,
 	primary: true,
-	darkText: false
+	darkText: false,
+	button: '/packages'
 };
 
 export const homeObjTwo = {
