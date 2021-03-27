@@ -1,10 +1,16 @@
 import React from 'react';
+import Navbar from "../components/Navbar";
+import HeroSection from "../components/HeroSection";
+import SinglePackage from "../components/Package/SinglePackage";
 
 const SinglePackagePage = () => {
 	return (
-		<div>
-			Hello from Single Package Page
-		</div>
+		<>
+			<Navbar/>
+			<HeroSection HeroHeader="Hello"
+			             HeroPara="Book with us right now."/>
+			<SinglePackage/>
+		</>
 	);
 };
 

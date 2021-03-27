@@ -36,7 +36,7 @@ export const PackageListCenter = styled.div`
 
 // PackageCard CSS
 
-export const SinglePackage = styled.article`
+export const Package_Card = styled.article`
   box-shadow: 2px 5px 3px 0 rgba(0, 0, 0, 0.5);
   transition: all 0.3s linear;
 
@@ -108,4 +108,54 @@ export const PackageInfo = styled.p`
   text-align: center;
   font-weight: 700;
   letter-spacing: 3px;
+`;
+
+// Single Package css
+
+export const SinglePackageContainer = styled.section`
+  padding: 5rem 0 0 0;
+`;
+
+export const SinglePackageImage = styled.div`
+  width: 80vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 50px;
+  
+  img {
+    width: 100%;
+    display: block;
+  }
+`;
+
+export const SinglePackageInfo = styled.div`
+  width: 80vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 2rem auto;
+`;
+
+export const SinglePackageDesc = styled.article`
+  margin: 1rem 0;
+  h3 {
+    text-transform: capitalize;
+    letter-spacing: 3px;
+  }
+  p {
+    line-height: 1.5;
+  }
+`;
+
+export const PackageInfor = styled.article`
+  margin: 1rem 0;
+  h3 h6 {
+    text-transform: capitalize;
+    letter-spacing: 3px;
+  }
+  
+  h6 {
+    font-weight: 300;
+  }
 `;

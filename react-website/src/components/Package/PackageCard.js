@@ -1,9 +1,9 @@
 import React from 'react';
-import {ImgContainer, PackageInfo, PackageLink, PriceTop, SinglePackage} from "./PackageElements";
+import {ImgContainer, PackageInfo, PackageLink, PriceTop, Package_Card} from "./PackageElements";
 import {Button} from "../ButtonElements";
 const PackageCard = ({item}) => {
 	return (
-		<SinglePackage>
+		<Package_Card>
 			<ImgContainer>
 				<img src={item.fields.img}
 				     alt="package image"/>
@@ -16,7 +16,7 @@ const PackageCard = ({item}) => {
 				</PackageLink>
 				<PackageInfo>{item.fields.name}</PackageInfo>
 			</ImgContainer>
-		</SinglePackage>
+		</Package_Card>
 	);
 };
 

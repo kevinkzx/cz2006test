@@ -4,7 +4,7 @@ import PackageCard from "./PackageCard";
 import {EmptySearch, Package_List, PackageListCenter} from "./PackageElements";
 
 const PackageList = () => {
-	const packages = useContext(PackageContext);
+	const {packages} = useContext(PackageContext);
 	if (packages.length === 0) {
 		return (
 			<EmptySearch>
