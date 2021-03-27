@@ -6,6 +6,9 @@ import SigninPage from './pages/signin';
 import PackagePage from "./pages/PackagePage";
 import PackageContext, {PackageProvider} from "./components/Context/PackageContext";
 import SinglePackagePage from "./pages/SinglePackagePage";
+import funeral_processPage from './pages/funeral_process';
+import void_deck_bookingPage from './pages/void_deck_booking';
+import cremation_burialPage from './pages/cremation_burial';
 
 // import Navbar from "./components/Navbar";
 
@@ -28,6 +31,9 @@ function App() {
 						<Route exact
 						       path="/packages/:slug"
 						       component={SinglePackagePage}/>
+						<Route path="/funeral_process" component={funeral_processPage } exact/>
+						<Route path="/void_deck_booking" component={void_deck_bookingPage} exact />
+						<Route path="/cremation_burial" component={cremation_burialPage} exact />
 					</Switch>
 				</Router>
 			</PackageProvider>
