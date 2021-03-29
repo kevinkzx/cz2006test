@@ -44,7 +44,8 @@ export const SingleParlour = styled.article`
   //}
 `;
 
-export const ParlourLink = styled(Link).attrs(props => ({
+export const ParlourLink = styled(Link)
+.attrs(props => ({
 	className: 'btn-primary'
 }))`
   position: absolute;

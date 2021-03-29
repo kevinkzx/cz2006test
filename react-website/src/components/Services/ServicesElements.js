@@ -41,7 +41,7 @@ export const ServicesWrapper = styled.div`
 // export const ServicesCard = styled.div`
 export const ServicesCard = styled(LinkR)`
   //background: white;
-   background: ${({boxColor}) => (boxColor ? "#f9f9f9" : "#010606")};
+  background: ${({boxColor}) => (boxColor ? "#f9f9f9" : "#010606")};
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

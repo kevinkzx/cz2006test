@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import defaultImg from '../../images/trinitycasket.JPG';
 
 const StyledHero = styled.header`
     min-height: 60vh;

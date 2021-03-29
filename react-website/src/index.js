@@ -6,12 +6,12 @@ import {ParlourProvider} from './components/Parlour/context';
 import {BrowserRouter as Router} from "react-router-dom";
 
 ReactDOM.render(
-    <ParlourProvider>
-      <Router>
-        <App />
-      </Router>
-    </ParlourProvider>,
-  document.getElementById('root')
+	<ParlourProvider>
+		<Router>
+			<App/>
+		</Router>
+	</ParlourProvider>,
+	document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

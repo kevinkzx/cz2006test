@@ -1,15 +1,12 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from "./pages";
 import SigninPage from './pages/signin';
 import PackagePage from "./pages/PackagePage";
-import PackageContext, {PackageProvider} from "./components/Context/PackageContext";
-import ParlourPage from "./pages/ParlourPage";
+import {PackageProvider} from "./components/Context/PackageContext";
 import SingleParlour from "./pages/SingleParlour";
 import Parlourmainpage from "./pages/Parlourmainpage";
-//import Parlour from './components/Parlour/Parlour';
-import {PackageProvider} from "./components/Context/PackageContext";
 import SinglePackagePage from "./pages/SinglePackagePage";
 import funeral_processPage from './pages/funeral_process';
 import void_deck_bookingPage from './pages/void_deck_booking';
@@ -17,15 +14,14 @@ import cremation_burialPage from './pages/cremation_burial';
 import parlourPage from './pages/parlours';
 import facilitiesPage from './pages/burialAndCremation';
 import ashScatteringPage from './pages/ashScattering';
+import ParlourPage from "./pages/ParlourPage";
 
-// import Navbar from "./components/Navbar";
 
 function App() {
 	return (
 		<>
 			<PackageProvider>
 				<Router>
-					{/*<Navbar/>*/}
 					<Switch>
 						<Route path="/"
 						       component={Home}
@@ -39,15 +35,18 @@ function App() {
 						<Route exact
 						       path="/packages/:slug"
 						       component={SinglePackagePage}/>
-						<Route exact
-						       path="/parlours"
-						       component={parlourPage}/>
 						<Route path="/parlourpage/"
 						       component={Parlourmainpage}
+						       exact/>
+						<Route path="/parlour/"
+						       component={ParlourPage}
 						       exact/>
 						<Route path="/parlour/:slug"
 						       component={SingleParlour}
 						       exact/>
+						<Route exact
+						       path="/parlours"
+						       component={parlourPage}/>
 						<Route exact
 						       path="/burialAndCremation"
 						       component={facilitiesPage}/>
