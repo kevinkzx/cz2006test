@@ -1,0 +1,38 @@
+# Metadata for Funeral Parlours
+---
+Identifier: '82fb7524-d623-453b-a3f1-00c19db370c2'
+Name: 'funeral-parlours'
+Title: 'Funeral Parlours'
+Description: 'Location of Licensed funeral parlours with embalming facilities'
+Topics:
+  - 'Environment'
+Keywords:
+  - 'embalming'
+  - 'funeral'
+  - 'onemap'
+  - 'parlour'
+  - 'themes'
+Publisher:
+  Name: 'National Environment Agency'
+  Admin 1:
+    Name: 'Kaylene Lee'
+    Department: 'NATIONAL ENVIRONMENT AGENCY'
+    Email: 'kaylene_lee@nea.gov.sg'
+Sources:
+  - 'National Environment Agency'
+License: 'https://data.gov.sg/open-data-licence'
+Frequency: 'Ad-hoc'
+Last Updated: '2020-07-13T00:02:33.603474'
+Resources:
+  -
+    Identifier: 'a758677a-9b38-4c62-bf17-2fcfd43a52ff'
+    Title: 'Funeral Parlours (KML)'
+    Url: 'https://geo.data.gov.sg/funeralparlours/2020/04/17/kml/funeralparlours.kml'
+    Format: 'KML'
+    Last Updated: '2020-04-16T16:00:00'
+  -
+    Identifier: 'f07ec2dd-e3ad-46cc-b0c3-c13c40d388e1'
+    Title: 'Funeral Parlours (GEOJSON)'
+    Url: 'https://geo.data.gov.sg/funeralparlours/2020/04/17/geojson/funeralparlours.geojson'
+    Format: 'GeoJSON'
+    Last Updated: '2020-04-16T16:00:00'

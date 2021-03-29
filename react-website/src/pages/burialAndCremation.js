@@ -11,7 +11,6 @@ import * as burialAndCremationData from "./data/burialAndCremationData.json";
 function BurialAndCremation() {
     const [selectedFacility, setSelectedFacility] = useState(null);
 
-
     return (
         <GoogleMap
             defaultZoom={12}
