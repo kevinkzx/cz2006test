@@ -18,7 +18,7 @@ const PackagePage = () => {
 			             HeroPara="Book with us right now."
 			             getStartedButton="searchFilter"
 			             scroll={true}/>
-			<PackageContainer id="searchFilter"/>
+			<PackageContainer/>
 		</>
 	);
 };

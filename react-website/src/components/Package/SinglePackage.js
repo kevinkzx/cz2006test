@@ -14,7 +14,7 @@ const SinglePackage = () => {
 	let {slug} = useParams();
 	const item = getPackage(slug);
 	return (
-		<>
+		<div id="packageInfo">
 			<SinglePackageContainer>
 				<SinglePackageImage>
 					<img src={item.fields.img}
@@ -26,7 +26,7 @@ const SinglePackage = () => {
 						<p>{item.fields.religion}</p>
 					</SinglePackageDesc>
 					<PackageInfor>
-						<h3>info</h3>
+						<h3>Info</h3>
 						<h6>price : ${item.fields.price}</h6>
 						<h6>Location: {item.fields.location}</h6>
 						<h6>Number of days: {item.fields.days}</h6>
@@ -34,11 +34,9 @@ const SinglePackage = () => {
 						<h6>Casket Type: {item.fields.casket}</h6>
 						<h6>Eco-Friendly? {item.fields.eco ? "Yes" : "No"}</h6>
 					</PackageInfor>
-
 				</SinglePackageInfo>
-
 			</SinglePackageContainer>
-		</>
+		</div>
 	);
 };
 

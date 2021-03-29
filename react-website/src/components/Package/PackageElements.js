@@ -117,7 +117,7 @@ export const SinglePackageContainer = styled.section`
 `;
 
 export const SinglePackageImage = styled.div`
-  width: 80vw;
+  width: 50vw;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -132,8 +132,9 @@ export const SinglePackageImage = styled.div`
 
 export const SinglePackageInfo = styled.div`
   width: 80vw;
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  //grid-template-columns: 8ch auto;
+  justify-content: space-evenly;
   margin: 2rem auto;
 `;
 
@@ -142,9 +143,11 @@ export const SinglePackageDesc = styled.article`
   h3 {
     text-transform: capitalize;
     letter-spacing: 3px;
+    font-size: x-large;
   }
   p {
     line-height: 1.5;
+    font-size: medium;
   }
 `;
 
@@ -154,8 +157,80 @@ export const PackageInfor = styled.article`
     text-transform: capitalize;
     letter-spacing: 3px;
   }
-  
+  h3 {
+    font-size: x-large;
+  }
   h6 {
     font-weight: 300;
+    font-size: medium;
+    line-height: 1.5;
   }
+`;
+
+// Package Filter
+
+export const PackageFilterWrapper = styled.section`
+  padding: 5rem 0;
+`;
+
+export const PackageFilterForm = styled.form`
+  width: 60vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(202px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 40px;
+
+  @media screen and (min-width: 776px) {
+    width: 70vw;
+  }
+
+  @media screen and (min-width: 992px) {
+    width: 95vw;
+    max-width: 1170px;
+  }
+
+`;
+
+export const PackageFilterFormGroup = styled.div`
+  text-transform: capitalize;
+  
+  label {
+    display: block;
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+  }
+`;
+
+export const PackageFilterFormControl = styled.select`
+  width: 100%;
+  background: transparent;
+  font-size: 1rem;
+`;
+
+export const PackageFilterFormInput = styled(PackageFilterFormControl).attrs(props =>({
+	as: "input",
+	type: props.type
+}))``;
+
+export const PackageFilterFormSizeInputWrapper = styled.div`
+  display: flex;
+`;
+
+export const PackageFilterFormSizeInput = styled.input.attrs({
+	type: "number"
+})`
+  width: 40%;
+  padding: 0.2rem;
+  border: 1px solid black;
+  border-radius: 0.3rem;
+  margin-right: 0.3rem;
+`;
+
+export const PackageFilterFormExtra = styled.div`
+label {
+  display: inline-block;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
 `;
