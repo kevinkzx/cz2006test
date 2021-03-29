@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {FaBars} from 'react-icons/fa';
 import {IconContext} from "react-icons/lib";
 import {animateScroll as scroll} from 'react-scroll';
@@ -35,10 +35,11 @@ const Navbar = ({toggle}) => {
 
 	return (
 		<>
-			<IconContext.Provider value={{color:'#fff'}}>
+			<IconContext.Provider value={{color: '#fff'}}>
 				<Nav scrollNav={scrollNav}>
 					<NavbarContainer>
-						<NavLogo to="/" onClick={toggleHome}>
+						<NavLogo to="/"
+						         onClick={toggleHome}>
 							Home
 						</NavLogo>
 						<MobileIcon onClick={toggle}>
@@ -46,16 +47,36 @@ const Navbar = ({toggle}) => {
 						</MobileIcon>
 						<NavMenu>
 							<NavItem>
-								<NavLinks to="packages" smooth={true} duration={500} spy={true} exact={'true'} offset={-80}>Packages</NavLinks>
+								<NavLinks to="packages"
+								          smooth={true}
+								          duration={500}
+								          spy={true}
+								          exact={'true'}
+								          offset={-80}>Packages</NavLinks>
 							</NavItem>
 							<NavItem>
-								<NavLinks to="parlours" smooth={true} duration={500} spy={true} exact={'true'} offset={-80}>Parlours</NavLinks>
+								<NavLinks to="parlours"
+								          smooth={true}
+								          duration={500}
+								          spy={true}
+								          exact={'true'}
+								          offset={-80}>Parlours</NavLinks>
 							</NavItem>
 							<NavItem>
-								<NavLinks to="location" smooth={true} duration={500} spy={true} exact={'true'} offset={-80}>Location</NavLinks>
+								<NavLinks to="location"
+								          smooth={true}
+								          duration={500}
+								          spy={true}
+								          exact={'true'}
+								          offset={-80}>Location</NavLinks>
 							</NavItem>
 							<NavItem>
-								<NavLinks to="information" smooth={true} duration={500} spy={true} exact={'true'} offset={-80}>Information</NavLinks>
+								<NavLinks to="information"
+								          smooth={true}
+								          duration={500}
+								          spy={true}
+								          exact={'true'}
+								          offset={-80}>Information</NavLinks>
 							</NavItem>
 						</NavMenu>
 						<NavBtn>
@@ -64,10 +85,9 @@ const Navbar = ({toggle}) => {
 					</NavbarContainer>
 				</Nav>
 			</IconContext.Provider>
-			</>
-			);
-			};
-
+		</>
+	);
+};
 
 
 export default Navbar

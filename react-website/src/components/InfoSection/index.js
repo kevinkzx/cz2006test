@@ -2,8 +2,11 @@ import React from 'react';
 import {Button} from "../ButtonElements";
 import {
 	BtnWrap,
-	Column1, Column2,
-	Heading, Img, ImgWrap,
+	Column1,
+	Column2,
+	Heading,
+	Img,
+	ImgWrap,
 	InfoContainer,
 	InfoRow,
 	InfoWrapper,
