@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {Link} from 'react-router-dom';
 import {Button} from "../ButtonElements";
 // --primaryColor: #af9a7d;
 // --mainWhite: #fff;
@@ -75,19 +74,19 @@ export const PriceTop = styled.div`
 
 export const ImgContainer = styled.div`
   position: relative;
-  
+
   & img {
     width: 100%;
     display: block;
     transition: all 0.3s linear;
   }
-  
+
   &:hover {
     background: rgba(0, 0, 0, 0.8);
   }
 
   &:hover img {
-   opacity: 0.3;
+    opacity: 0.3;
   }
 
   &:hover ${PriceTop} {
@@ -97,7 +96,7 @@ export const ImgContainer = styled.div`
   &:hover ${PackageLink} {
     transform: translate(-50%, -50%) scale(1);
   }
-  
+
 `;
 
 export const PackageInfo = styled.p`
@@ -123,7 +122,7 @@ export const SinglePackageImage = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-row-gap: 2rem;
   grid-column-gap: 50px;
-  
+
   img {
     width: 100%;
     display: block;
@@ -140,11 +139,13 @@ export const SinglePackageInfo = styled.div`
 
 export const SinglePackageDesc = styled.article`
   margin: 1rem 0;
+
   h3 {
     text-transform: capitalize;
     letter-spacing: 3px;
     font-size: x-large;
   }
+
   p {
     line-height: 1.5;
     font-size: medium;
@@ -153,13 +154,16 @@ export const SinglePackageDesc = styled.article`
 
 export const PackageInfor = styled.article`
   margin: 1rem 0;
+
   h3 h6 {
     text-transform: capitalize;
     letter-spacing: 3px;
   }
+
   h3 {
     font-size: x-large;
   }
+
   h6 {
     font-weight: 300;
     font-size: medium;
@@ -194,7 +198,7 @@ export const PackageFilterForm = styled.form`
 
 export const PackageFilterFormGroup = styled.div`
   text-transform: capitalize;
-  
+
   label {
     display: block;
     letter-spacing: 3px;
@@ -208,7 +212,8 @@ export const PackageFilterFormControl = styled.select`
   font-size: 1rem;
 `;
 
-export const PackageFilterFormInput = styled(PackageFilterFormControl).attrs(props =>({
+export const PackageFilterFormInput = styled(PackageFilterFormControl)
+.attrs(props => ({
 	as: "input",
 	type: props.type
 }))``;
@@ -228,9 +233,9 @@ export const PackageFilterFormSizeInput = styled.input.attrs({
 `;
 
 export const PackageFilterFormExtra = styled.div`
-label {
-  display: inline-block;
-  font-size: 0.8rem;
-  margin-left: 0.5rem;
-}
+  label {
+    display: inline-block;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+  }
 `;

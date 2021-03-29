@@ -2,8 +2,12 @@ import React, {useContext} from 'react';
 import PackageContext from "../Context/PackageContext";
 import {
 	PackageFilterForm,
-	PackageFilterFormControl, PackageFilterFormExtra,
-	PackageFilterFormGroup, PackageFilterFormInput, PackageFilterFormSizeInput, PackageFilterFormSizeInputWrapper,
+	PackageFilterFormControl,
+	PackageFilterFormExtra,
+	PackageFilterFormGroup,
+	PackageFilterFormInput,
+	PackageFilterFormSizeInput,
+	PackageFilterFormSizeInputWrapper,
 	PackageFilterWrapper
 } from "./PackageElements";
 

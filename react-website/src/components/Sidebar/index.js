@@ -3,7 +3,8 @@ import {
 	CloseIcon,
 	Icon,
 	SidebarContainer,
-	SidebarLink, SidebarMenu,
+	SidebarLink,
+	SidebarMenu,
 	SidebarRoute,
 	SidebarWrapper,
 	SideBtnWrap
@@ -11,22 +12,27 @@ import {
 
 const Sidebar = ({isOpen, toggle}) => {
 	return (
-		<SidebarContainer isOpen={isOpen} onClick={toggle}>
+		<SidebarContainer isOpen={isOpen}
+		                  onClick={toggle}>
 			<Icon onClick={toggle}>
 				<CloseIcon/>
 			</Icon>
 			<SidebarWrapper>
 				<SidebarMenu>
-					<SidebarLink to="packages" onClick={toggle}>
+					<SidebarLink to="packages"
+					             onClick={toggle}>
 						Packages
 					</SidebarLink>
-					<SidebarLink to = "parlours" onClick={toggle}>
+					<SidebarLink to="parlours"
+					             onClick={toggle}>
 						Parlours
 					</SidebarLink>
-					<SidebarLink to = "location" onClick={toggle}>
+					<SidebarLink to="location"
+					             onClick={toggle}>
 						Location
 					</SidebarLink>
-					<SidebarLink to = "information" onClick={toggle}>
+					<SidebarLink to="information"
+					             onClick={toggle}>
 						Information
 					</SidebarLink>
 				</SidebarMenu>

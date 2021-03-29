@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Link as LinkR } from 'react-router-dom';
+import {Link as LinkR} from 'react-router-dom';
 
 export const ServicesContainer = styled.div`
   height: 800px;
@@ -38,9 +38,8 @@ export const ServicesWrapper = styled.div`
 `;
 
 
-
 // export const ServicesCard = styled.div`
-export const ServicesCard =  styled(LinkR)`
+export const ServicesCard = styled(LinkR)`
   //background: white;
    background: ${({boxColor}) => (boxColor ? "#f9f9f9" : "#010606")};
   display: flex;
