@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "IAS",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "Garden of Peace [Under Construction]", "description": "[IAS]Garden of Peace, located at Choa Chu Kang Cemetery Complex, is under construction and will be ready by 2020. It will be the first ash scattering garden in Singapore offering people of all faiths an additional option for managing cremated human ashes.", "LANDXADDRESSPOINT": "12103.571100000001", "LANDYADDRESSPOINT": "39335.2217", "NAME2": null, "ADDRESSBLOCKHOUSENUMBER": null, "ADDRESSSTREETNAME": "Old Choa Chu Kang Road", "ADDRESSFLOORNUMBER": null, "ADDRESSUNITNUMBER": null, "ADDRESSPOSTALCODE": null, "ADDRESSBUILDINGNAME": null, "DESCRIPTION2": null, "INC_CRC": "1F2052EA213BFFEF", "FMEL_UPD_D": "20200803152721" }, "geometry": { "type": "Point", "coordinates": [ 103.690478000005001, 1.37200399999502 ] } },
+{ "type": "Feature", "properties": { "Name": "Garden of Serenity [Ready by 2021]", "description": "[IAS] Garden of Serenity, located at the new Mandai Crematorium Complex, will be ready by 2021.", "LANDXADDRESSPOINT": "25345.43594", "LANDYADDRESSPOINT": "44081.41094", "NAME2": null, "ADDRESSBLOCKHOUSENUMBER": null, "ADDRESSSTREETNAME": "Mandai Road", "ADDRESSFLOORNUMBER": null, "ADDRESSUNITNUMBER": null, "ADDRESSPOSTALCODE": null, "ADDRESSBUILDINGNAME": null, "DESCRIPTION2": null, "INC_CRC": "1C0C231A354FFEEB", "FMEL_UPD_D": "20200803152721" }, "geometry": { "type": "Point", "coordinates": [ 103.809464999631999, 1.41493099962356 ] } }
+]
+}
