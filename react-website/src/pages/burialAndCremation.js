@@ -6,15 +6,15 @@ import {
     Marker,
     InfoWindow
 } from "react-google-maps";
-import * as burialAndCremationData from "./data/burialandcremation.json";
+import * as burialAndCremationData from "./data/burialAndCremationData.json";
 
-function burialAndCremation() {
+function BurialAndCremation() {
+    const [selectedFacility, setSelectedFacility] = useState(null);
 
     return (
         <GoogleMap
             defaultZoom={12}
             defaultCenter={{ lat: 1.352083, lng: 103.819839 }}
-
         >
             {burialAndCremationData.features.map((facilities) => (
                 <Marker
@@ -23,13 +23,37 @@ function burialAndCremation() {
                         lat: facilities.geometry.coordinates[1],
                         lng: facilities.geometry.coordinates[0]
                     }}
+                    onClick={() => {
+                        setSelectedFacility(facilities);
+                    }}
                 />
             ))}
+
+            {selectedFacility && (
+                <InfoWindow
+                    position={{
+                        lat: selectedFacility.geometry.coordinates[1],
+                        lng: selectedFacility.geometry.coordinates[0]
+                    }}
+                    onCloseClick={() => {
+                        setSelectedFacility(null);
+                    }}
+                >
+                    <div>
+                        <h2>{selectedFacility.properties.Name}</h2>
+                        <p>{selectedFacility.properties.description}</p>
+                        <p>
+                            {selectedFacility.properties.ADDRESSBLOCKHOUSENUMBER}
+                            {" " + selectedFacility.properties.ADDRESSSTREETNAME}
+                        </p>
+                    </div>
+                </InfoWindow>
+            )}
         </GoogleMap>
     );
 }
 
-const MapWrapped = withScriptjs(withGoogleMap(burialAndCremation));
+const MapWrapped = withScriptjs(withGoogleMap(BurialAndCremation));
 
 export default function App() {
     let googleKey = {REACT_APP_GOOGLE_KEY:`AIzaSyDQqDdByz7RV0721d5rYNfU7HWo98LiTr0`}

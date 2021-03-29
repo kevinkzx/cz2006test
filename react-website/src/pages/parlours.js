@@ -6,15 +6,15 @@ import {
     Marker,
     InfoWindow
 } from "react-google-maps";
-import * as parloursData from "./data/funeral-parlours.json";
+import * as parloursData from "./data/funeralParlourData.json";
 
 function Parlours() {
+    const [selectedParlour, setSelectedParlour] = useState(null);
 
     return (
         <GoogleMap
             defaultZoom={12}
             defaultCenter={{ lat: 1.352083, lng: 103.819839 }}
-
         >
             {parloursData.features.map((parlour) => (
                 <Marker
@@ -23,8 +23,33 @@ function Parlours() {
                         lat: parlour.geometry.coordinates[1],
                         lng: parlour.geometry.coordinates[0]
                     }}
+                    onClick={() => {
+                        setSelectedParlour(parlour);
+                    }}
                 />
             ))}
+
+            {selectedParlour && (
+                <InfoWindow
+                    position={{
+                        lat: selectedParlour.geometry.coordinates[1],
+                        lng: selectedParlour.geometry.coordinates[0]
+                    }}
+                    onCloseClick={() => {
+                        setSelectedParlour(null);
+                    }}
+                >
+                    <div>
+                        <h2>{selectedParlour.properties.Name}</h2>
+                        <p>{selectedParlour.properties.ADDRESSBUILDINGNAME}</p>
+                        <p>
+                            {selectedParlour.properties.ADDRESSBLOCKHOUSENUMBER}
+                            {" " + selectedParlour.properties.ADDRESSSTREETNAME}
+                            {", S(" + selectedParlour.properties.ADDRESSPOSTALCODE + ")"}
+                        </p>
+                    </div>
+                </InfoWindow>
+            )}
         </GoogleMap>
     );
 }

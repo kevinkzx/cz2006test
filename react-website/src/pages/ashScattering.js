@@ -6,30 +6,53 @@ import {
     Marker,
     InfoWindow
 } from "react-google-maps";
-import * as ashScatteringData from "./data/inland-ash-scattering-gardens.json";
+import * as ashScatteringData from "./data/ashScatteringData.json";
 
-function ashScatteringLocations() {
+function AshScattering() {
+    const [selectedLocation, setSelectedLocation] = useState(null);
 
     return (
         <GoogleMap
             defaultZoom={12}
             defaultCenter={{ lat: 1.352083, lng: 103.819839 }}
-
         >
-            {ashScatteringData.features.map((ashScattering) => (
+            {ashScatteringData.features.map((locations) => (
                 <Marker
-                    key={ashScattering.properties.Name}
+                    key={locations.properties.Name}
                     position={{
-                        lat: ashScattering.geometry.coordinates[1],
-                        lng: ashScattering.geometry.coordinates[0]
+                        lat: locations.geometry.coordinates[1],
+                        lng: locations.geometry.coordinates[0]
+                    }}
+                    onClick={() => {
+                        setSelectedLocation(locations);
                     }}
                 />
             ))}
+
+            {selectedLocation && (
+                <InfoWindow
+                    position={{
+                        lat: selectedLocation.geometry.coordinates[1],
+                        lng: selectedLocation.geometry.coordinates[0]
+                    }}
+                    onCloseClick={() => {
+                        setSelectedLocation(null);
+                    }}
+                >
+                    <div>
+                        <h2>{selectedLocation.properties.Name}</h2>
+                        <p>{selectedLocation.properties.description}</p>
+                        <p>
+                            {selectedLocation.properties.ADDRESSSTREETNAME}
+                        </p>
+                    </div>
+                </InfoWindow>
+            )}
         </GoogleMap>
     );
 }
 
-const MapWrapped = withScriptjs(withGoogleMap(ashScatteringLocations));
+const MapWrapped = withScriptjs(withGoogleMap(AshScattering));
 
 export default function App() {
     let googleKey = {REACT_APP_GOOGLE_KEY:`AIzaSyDQqDdByz7RV0721d5rYNfU7HWo98LiTr0`}
