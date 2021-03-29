@@ -15,6 +15,7 @@ export const PackageProvider = ({children}) => {
 	const [maxDay, setMaxDay] = useState(0);
 	const [casket, setCasket] = useState('All');
 	const [transportation, setTransportation] = useState(false);
+	const [eco, setEco] = useState(false);
 
 	const getPackage = (slug) => {
 		return packages.find(item => item.fields.slug === slug);
@@ -29,8 +30,11 @@ export const PackageProvider = ({children}) => {
 
 	useEffect(() => {
 		setSortedPackages(packages);
+		if (minDay < 0) {
+			setMinDay(0);
+		}
 		filterPackages();
-	}, [religion, location, price, maxDay, minDay, casket,transportation]);
+	}, [religion, location, price, maxDay, minDay, casket, transportation, eco]);
 
 	const filterPackages = () => {
 		let temp = packages;
@@ -51,6 +55,10 @@ export const PackageProvider = ({children}) => {
 		if (transportation) {
 			temp = temp.filter(item => item.fields.transportation === true);
 		}
+
+		if (eco) {
+			temp = temp.filter(item => item.fields.eco === true);
+		}
 		setSortedPackages(temp);
 	}
 
@@ -64,6 +72,7 @@ export const PackageProvider = ({children}) => {
 			minDay,
 			maxDay,
 			transportation,
+			eco,
 			getPackage,
 			setReligion,
 			setLocation,
@@ -71,7 +80,8 @@ export const PackageProvider = ({children}) => {
 			setMinDay,
 			setMaxDay,
 			setCasket,
-			setTransportation
+			setTransportation,
+			setEco
 		}}>
 			{children}
 		</PackageContext.Provider>

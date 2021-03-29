@@ -22,6 +22,7 @@ const PackageFilter = () => {
 		setMaxDay,
 		setCasket,
 		setTransportation,
+		setEco,
 		casket,
 		packages,
 		religion,
@@ -31,7 +32,8 @@ const PackageFilter = () => {
 		transportation,
 		location,
 		minDay,
-		maxDay
+		maxDay,
+		eco
 	} = context;
 
 	//Setting unique religion values
@@ -119,6 +121,14 @@ const PackageFilter = () => {
 							       checked={transportation}
 							       onChange={e => setTransportation(e.target.checked)}/>
 							<label htmlFor="transportation">transportation</label>
+						</PackageFilterFormExtra>
+						<PackageFilterFormExtra>
+							<input type="checkbox"
+							       name="eco"
+							       id="eco"
+							       checked={eco}
+							       onChange={e => setEco(e.target.checked)}/>
+							<label htmlFor="eco">Eco-Friendly</label>
 						</PackageFilterFormExtra>
 					</PackageFilterFormGroup>
 				</PackageFilterForm>
