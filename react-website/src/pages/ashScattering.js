@@ -6,20 +6,30 @@ import {
     Marker,
     InfoWindow
 } from "react-google-maps";
+import * as ashScatteringData from "./data/inland-ash-scattering-gardens.json";
 
-function Map() {
+function ashScatteringLocations() {
 
     return (
         <GoogleMap
-            defaultZoom={10}
+            defaultZoom={12}
             defaultCenter={{ lat: 1.352083, lng: 103.819839 }}
 
         >
+            {ashScatteringData.features.map((ashScattering) => (
+                <Marker
+                    key={ashScattering.properties.Name}
+                    position={{
+                        lat: ashScattering.geometry.coordinates[1],
+                        lng: ashScattering.geometry.coordinates[0]
+                    }}
+                />
+            ))}
         </GoogleMap>
     );
 }
 
-const MapWrapped = withScriptjs(withGoogleMap(Map));
+const MapWrapped = withScriptjs(withGoogleMap(ashScatteringLocations));
 
 export default function App() {
     let googleKey = {REACT_APP_GOOGLE_KEY:`AIzaSyDQqDdByz7RV0721d5rYNfU7HWo98LiTr0`}
