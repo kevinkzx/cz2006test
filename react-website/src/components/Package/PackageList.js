@@ -4,8 +4,8 @@ import PackageCard from "./PackageCard";
 import {EmptySearch, Package_List, PackageListCenter} from "./PackageElements";
 
 const PackageList = () => {
-	const packages = useContext(PackageContext);
-	if (packages.length === 0) {
+	const {sortedPackages} = useContext(PackageContext);
+	if (sortedPackages.length === 0) {
 		return (
 			<EmptySearch>
 				<h3>Unfortunately no packages matched your search preferences.</h3>
@@ -18,7 +18,7 @@ const PackageList = () => {
 		// </div>
 		<Package_List>
 			<PackageListCenter>
-				{packages.map(item=> {
+				{sortedPackages.map(item => {
 					return <PackageCard key={item.sys.id}
 					                    item={item}/>;
 				})}

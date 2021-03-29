@@ -1,10 +1,9 @@
 import React, {useEffect} from 'react';
-import PackageContainer from "../components/Package/PackageContainer";
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
+import SinglePackage from "../components/Package/SinglePackage";
 
-const PackagePage = () => {
-
+const SinglePackagePage = () => {
 	// to scroll to the top of the webpage when rendered
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -14,13 +13,13 @@ const PackagePage = () => {
 	return (
 		<>
 			<Navbar/>
-			<HeroSection HeroHeader="Check out our packages here."
+			<HeroSection HeroHeader="Hello"
 			             HeroPara="Book with us right now."
-			             getStartedButton="searchFilter"
+			             getStartedButton="packageInfo"
 			             scroll={true}/>
-			<PackageContainer/>
+			<SinglePackage/>
 		</>
 	);
 };
 
-export default PackagePage;
+export default SinglePackagePage;

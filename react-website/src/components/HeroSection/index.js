@@ -1,15 +1,15 @@
 import React, {useState} from 'react';
 import Video from '../../videos/video.mp4';
 import {
-	HeroContainer,
+	ArrowForward,
+	ArrowRight,
 	HeroBg,
-	VideoBg,
+	HeroBtnWrapper,
+	HeroContainer,
 	HeroContent,
 	HeroH1,
 	HeroP,
-	HeroBtnWrapper,
-	ArrowForward,
-	ArrowRight
+	VideoBg
 } from './HeroElements';
 import {Button, ButtonScroll} from '../ButtonElements';
 
@@ -41,6 +41,8 @@ const HeroSection = ({HeroHeader, HeroPara, getStartedButton, scroll}) => {
 					                        onMouseLeave={onHover}
 					                        primary="true"
 					                        dark="true"
+					                        smooth={true}
+					                        offset={-80}
 					>
 						Get started {hover ? <ArrowForward/> : <ArrowRight/>}
 					</ButtonScroll> : <Button to={getStartedButton}

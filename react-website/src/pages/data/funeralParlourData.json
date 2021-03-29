@@ -1,0 +1,562 @@
+{
+  "type": "FeatureCollection",
+  "name": "FUNERALPARLOURS",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ang Chin Moh Funeral Directors Pte Ltd",
+        "description": null,
+        "LANDXADDRESSPOINT": "32561.29555",
+        "LANDYADDRESSPOINT": "33623.0499",
+        "ADDRESSPOSTALCODE": "339696",
+        "ADDRESSBLOCKHOUSENUMBER": "88",
+        "ADDRESSFLOORNUMBER": "1",
+        "NAME2": null,
+        "ADDRESSSTREETNAME": "Geylang Bahru",
+        "ADDRESSUNITNUMBER": "2724",
+        "ADDRESSBUILDINGNAME": "",
+        "INC_CRC": "E5A33E9D691DDD88",
+        "FMEL_UPD_D": "20200417165314"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.874304200449998,
+          1.32034910001846
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ang Yew Seng Funeral Parlour",
+        "description": null,
+        "LANDXADDRESSPOINT": "28510.64866",
+        "LANDYADDRESSPOINT": "38137.6084",
+        "ADDRESSPOSTALCODE": "575712",
+        "ADDRESSBLOCKHOUSENUMBER": "38",
+        "ADDRESSFLOORNUMBER": "1",
+        "NAME2": null,
+        "ADDRESSSTREETNAME": "Sin Ming Drive",
+        "ADDRESSUNITNUMBER": "541",
+        "ADDRESSBUILDINGNAME": "",
+        "INC_CRC": "B957B6B561301BA7",
+        "FMEL_UPD_D": "20200417165315"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.837907100322994,
+          1.36117749999608
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Casket Fairprice Pte Ltd",
+        "description": null,
+        "LANDXADDRESSPOINT": "28509.15731",
+        "LANDYADDRESSPOINT": "38185.79694",
+        "ADDRESSPOSTALCODE": "575711",
+        "ADDRESSBLOCKHOUSENUMBER": "37",
+        "ADDRESSFLOORNUMBER": "1",
+        "NAME2": null,
+        "ADDRESSSTREETNAME": "Sin Ming Drive",
+        "ADDRESSUNITNUMBER": "567\/569\/573",
+        "ADDRESSBUILDINGNAME": "",
+        "INC_CRC": "3C04AEF1033CBB31",
+        "FMEL_UPD_D": "20200417165315"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.837893699912001,
+          1.36161329963547
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Century Products Company",
+        "description": null,
+        "LANDXADDRESSPOINT": "28510.64866",
+        "LANDYADDRESSPOINT": "38137.6084",
+        "ADDRESSPOSTALCODE": "575712",
+        "ADDRESSBLOCKHOUSENUMBER": "38",
+        "ADDRESSFLOORNUMBER": "1",
+        "NAME2": null,
+        "ADDRESSSTREETNAME": "Sin Ming Drive",
+        "ADDRESSUNITNUMBER": "533",
+        "ADDRESSBUILDINGNAME": "",
+        "INC_CRC": "B957B6B54CA77340",
+        "FMEL_UPD_D": "20200417165315"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.837907100322994,
+          1.36117749999608
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Chin Wah Heng Funeral Parlour",
+        "description": null,
+        "LANDXADDRESSPOINT": "28509.15731",
+        "LANDYADDRESSPOINT": "38185.79694",
+        "ADDRESSPOSTALCODE": "575711",
+        "ADDRESSBLOCKHOUSENUMBER": "37",
+        "ADDRESSFLOORNUMBER": "1",
+        "NAME2": null,
+        "ADDRESSSTREETNAME": "Sin Ming Drive",
+        "ADDRESSUNITNUMBER": "561\/563",
+        "ADDRESSBUILDINGNAME": "",
+        "INC_CRC": "3C04AEF12D59B476",
+        "FMEL_UPD_D": "20200417165315"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.837893699912001,
+          1.36161329963547
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Chng Hoon Casket",
+        "description": null,
+        "LANDXADDRESSPOINT": "32533.76171",
+        "LANDYADDRESSPOINT": "33662.92275",
+        "ADDRESSPOSTALCODE": "339697",
+        "ADDRESSBLOCKHOUSENUMBER": "89",
+        "ADDRESSFLOORNUMBER": "1",
+        "NAME2": null,
+        "ADDRESSSTREETNAME": "Geylang Bahru",
+        "ADDRESSUNITNUMBER": "2736",
+        "ADDRESSBUILDINGNAME": "",
+        "INC_CRC": "D1FCA7E3FD033BAA",
+        "FMEL_UPD_D": "20200417165315"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.874056799900004,
+          1.32070970043141
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Chye Seng Undertaker",
+        "description": null,
+        "LANDXADDRESSPOINT": "31122.30568",
+        "LANDYADDRESSPOINT": "35327.30958",
+        "ADDRESSPOSTALCODE": "319056",
+        "ADDRESSBLOCKHOUSENUMBER": "4",
+        "ADDRESSFLOORNUMBER": "1",
+        "NAME2": null,
+        "ADDRESSSTREETNAME": "Toa Payoh Industrial Park",
+        "ADDRESSUNITNUMBER": "1343",
+        "ADDRESSBUILDINGNAME": "",
+        "INC_CRC": "06BF0034BA4CCDA6",
+        "FMEL_UPD_D": "20200417165315"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.861374300221996,
+          1.33576200015127
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Dignity Funeral Services",
+        "description": null,
+        "LANDXADDRESSPOINT": "32561.29555",
+        "LANDYADDRESSPOINT": "33623.0499",
+        "ADDRESSPOSTALCODE": "339696",
+        "ADDRESSBLOCKHOUSENUMBER": "88",
+        "ADDRESSFLOORNUMBER": "1",
+        "NAME2": null,
+        "ADDRESSSTREETNAME": "Geylang Bahru",
+        "ADDRESSUNITNUMBER": "2726",
+        "ADDRESSBUILDINGNAME": "",
+        "INC_CRC": "E5A33E9DAC656065",
+        "FMEL_UPD_D": "20200417165315"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.874304200449998,
+          1.32034910001846
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Direct Funeral Services Pte Ltd",
+        "description": null,
+        "LANDXADDRESSPOINT": "32561.29555",
+        "LANDYADDRESSPOINT": "33623.0499",
+        "ADDRESSPOSTALCODE": "339696",
+        "ADDRESSBLOCKHOUSENUMBER": "88",
+        "ADDRESSFLOORNUMBER": "1",
+        "NAME2": null,
+        "ADDRESSSTREETNAME": "Geylang Bahru",
+        "ADDRESSUNITNUMBER": "2718",
+        "ADDRESSBUILDINGNAME": "",
+        "INC_CRC": "E5A33E9D28D9B8F4",
+        "FMEL_UPD_D": "20200417165315"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.874304200449998,
+          1.32034910001846
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Flying Home Pte Ltd",
+        "description": null,
+        "LANDXADDRESSPOINT": "31122.30568",
+        "LANDYADDRESSPOINT": "35327.30958",
+        "ADDRESSPOSTALCODE": "319056",
+        "ADDRESSBLOCKHOUSENUMBER": "4",
+        "ADDRESSFLOORNUMBER": "1",
+        "NAME2": null,
+        "ADDRESSSTREETNAME": "Toa Payoh Industrial Park",
+        "ADDRESSUNITNUMBER": "1345A",
+        "ADDRESSBUILDINGNAME": "",
+        "INC_CRC": "06BF00342D4D47F1",
+        "FMEL_UPD_D": "20200417165315"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.861374300221996,
+          1.33576200015127
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hosanna Bereavement Services Pte Ltd",
+        "description": null,
+        "LANDXADDRESSPOINT": "31122.30568",
+        "LANDYADDRESSPOINT": "35327.30958",
+        "ADDRESSPOSTALCODE": "319056",
+        "ADDRESSBLOCKHOUSENUMBER": "4",
+        "ADDRESSFLOORNUMBER": "1",
+        "NAME2": null,
+        "ADDRESSSTREETNAME": "Toa Payoh Industrial Park",
+        "ADDRESSUNITNUMBER": "1333",
+        "ADDRESSBUILDINGNAME": "",
+        "INC_CRC": "06BF003468189816",
+        "FMEL_UPD_D": "20200417165315"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.861374300221996,
+          1.33576200015127
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Jin Lu Funeral Service",
+        "description": null,
+        "LANDXADDRESSPOINT": "32533.76171",
+        "LANDYADDRESSPOINT": "33662.92275",
+        "ADDRESSPOSTALCODE": "339697",
+        "ADDRESSBLOCKHOUSENUMBER": "89",
+        "ADDRESSFLOORNUMBER": "1",
+        "NAME2": null,
+        "ADDRESSSTREETNAME": "Geylang Bahru",
+        "ADDRESSUNITNUMBER": "2740",
+        "ADDRESSBUILDINGNAME": "",
+        "INC_CRC": "D1FCA7E387E63BAB",
+        "FMEL_UPD_D": "20200417165315"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.874056799900004,
+          1.32070970043141
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Lam Bee Hup Kee Casket",
+        "description": null,
+        "LANDXADDRESSPOINT": "31122.30568",
+        "LANDYADDRESSPOINT": "35327.30958",
+        "ADDRESSPOSTALCODE": "319056",
+        "ADDRESSBLOCKHOUSENUMBER": "4",
+        "ADDRESSFLOORNUMBER": "1",
+        "NAME2": null,
+        "ADDRESSSTREETNAME": "Toa Payoh Industrial Park",
+        "ADDRESSUNITNUMBER": "1327",
+        "ADDRESSBUILDINGNAME": "",
+        "INC_CRC": "06BF003446B3F0DB",
+        "FMEL_UPD_D": "20200417165315"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.861374300221996,
+          1.33576200015127
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Simplicity Casket Pte Ltd",
+        "description": null,
+        "LANDXADDRESSPOINT": "28509.15731",
+        "LANDYADDRESSPOINT": "38185.79694",
+        "ADDRESSPOSTALCODE": "575711",
+        "ADDRESSBLOCKHOUSENUMBER": "37",
+        "ADDRESSFLOORNUMBER": "1",
+        "NAME2": null,
+        "ADDRESSSTREETNAME": "Sin Ming Drive",
+        "ADDRESSUNITNUMBER": "575",
+        "ADDRESSBUILDINGNAME": "",
+        "INC_CRC": "3C04AEF137D176AC",
+        "FMEL_UPD_D": "20200417165315"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.837893699912001,
+          1.36161329963547
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sin Ming Funeral Parlour",
+        "description": null,
+        "LANDXADDRESSPOINT": "28509.15731",
+        "LANDYADDRESSPOINT": "38185.79694",
+        "ADDRESSPOSTALCODE": "575711",
+        "ADDRESSBLOCKHOUSENUMBER": "37",
+        "ADDRESSFLOORNUMBER": "1",
+        "NAME2": null,
+        "ADDRESSSTREETNAME": "Sin Ming Drive",
+        "ADDRESSUNITNUMBER": "577",
+        "ADDRESSBUILDINGNAME": "",
+        "INC_CRC": "3C04AEF17A9E4342",
+        "FMEL_UPD_D": "20200417165315"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.837893699912001,
+          1.36161329963547
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Singapore Casket Co Pte Ltd",
+        "description": null,
+        "LANDXADDRESSPOINT": "31115.01226",
+        "LANDYADDRESSPOINT": "32718.9365",
+        "ADDRESSPOSTALCODE": "338737",
+        "ADDRESSBLOCKHOUSENUMBER": "131",
+        "ADDRESSFLOORNUMBER": "",
+        "NAME2": null,
+        "ADDRESSSTREETNAME": "Lavender Street",
+        "ADDRESSUNITNUMBER": "",
+        "ADDRESSBUILDINGNAME": "John Hochstadt Buillding",
+        "INC_CRC": "4F8F82C534AC43C8",
+        "FMEL_UPD_D": "20200417165315"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.861308500400995,
+          1.31217280003175
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Singapore Funeral Parlour",
+        "description": null,
+        "LANDXADDRESSPOINT": "38666.01544",
+        "LANDYADDRESSPOINT": "38850.82987",
+        "ADDRESSPOSTALCODE": "528746",
+        "ADDRESSBLOCKHOUSENUMBER": "91",
+        "ADDRESSFLOORNUMBER": "",
+        "NAME2": null,
+        "ADDRESSSTREETNAME": "Tampines Link",
+        "ADDRESSUNITNUMBER": "",
+        "ADDRESSBUILDINGNAME": "",
+        "INC_CRC": "A489F6B131FEEB4C",
+        "FMEL_UPD_D": "20200417165315"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.929160099628007,
+          1.36762570025051
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Singapore Funeral Services (SFS Care Pte Ltd)",
+        "description": null,
+        "LANDXADDRESSPOINT": "31122.30568",
+        "LANDYADDRESSPOINT": "35327.30958",
+        "ADDRESSPOSTALCODE": "319056",
+        "ADDRESSBLOCKHOUSENUMBER": "4",
+        "ADDRESSFLOORNUMBER": "1",
+        "NAME2": null,
+        "ADDRESSSTREETNAME": "Toa Payoh Industrial Park",
+        "ADDRESSUNITNUMBER": "1341",
+        "ADDRESSBUILDINGNAME": "",
+        "INC_CRC": "06BF0034C6011D10",
+        "FMEL_UPD_D": "20200417165315"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.861374300221996,
+          1.33576200015127
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Saint Joseph Dying Aid Association",
+        "description": null,
+        "LANDXADDRESSPOINT": "35222.47646",
+        "LANDYADDRESSPOINT": "39514.18662",
+        "ADDRESSPOSTALCODE": "534795",
+        "ADDRESSBLOCKHOUSENUMBER": "1259",
+        "ADDRESSFLOORNUMBER": "",
+        "NAME2": null,
+        "ADDRESSSTREETNAME": "Upper Serangoon Road",
+        "ADDRESSUNITNUMBER": "",
+        "ADDRESSBUILDINGNAME": "Church of the Nativity of the Blessed Virgin Mary",
+        "INC_CRC": "A9FCFCAC9D77FE31",
+        "FMEL_UPD_D": "20200417165315"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.898217700374005,
+          1.37362589985426
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Teck Hin Undertaker",
+        "description": null,
+        "LANDXADDRESSPOINT": "28509.15731",
+        "LANDYADDRESSPOINT": "38185.79694",
+        "ADDRESSPOSTALCODE": "575711",
+        "ADDRESSBLOCKHOUSENUMBER": "37",
+        "ADDRESSFLOORNUMBER": "1",
+        "NAME2": null,
+        "ADDRESSSTREETNAME": "Sin Ming Drive",
+        "ADDRESSUNITNUMBER": "565",
+        "ADDRESSBUILDINGNAME": "",
+        "INC_CRC": "3C04AEF13BF7FB91",
+        "FMEL_UPD_D": "20200417165315"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.837893699912001,
+          1.36161329963547
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Trinity Casket Pte Ltd",
+        "description": null,
+        "LANDXADDRESSPOINT": "28510.64866",
+        "LANDYADDRESSPOINT": "38137.6084",
+        "ADDRESSPOSTALCODE": "575712",
+        "ADDRESSBLOCKHOUSENUMBER": "38",
+        "ADDRESSFLOORNUMBER": "1",
+        "NAME2": null,
+        "ADDRESSSTREETNAME": "Sin Ming Drive",
+        "ADDRESSUNITNUMBER": "527",
+        "ADDRESSBUILDINGNAME": "",
+        "INC_CRC": "B957B6B591577F20",
+        "FMEL_UPD_D": "20200417165315"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.837907100322994,
+          1.36117749999608
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Union Casket Pte Ltd",
+        "description": null,
+        "LANDXADDRESSPOINT": "31122.30568",
+        "LANDYADDRESSPOINT": "35327.30958",
+        "ADDRESSPOSTALCODE": "319056",
+        "ADDRESSBLOCKHOUSENUMBER": "4",
+        "ADDRESSFLOORNUMBER": "1",
+        "NAME2": null,
+        "ADDRESSSTREETNAME": "Toa Payoh Industrial Park",
+        "ADDRESSUNITNUMBER": "1329",
+        "ADDRESSBUILDINGNAME": "",
+        "INC_CRC": "06BF003404E61223",
+        "FMEL_UPD_D": "20200417165315"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.861374300221996,
+          1.33576200015127
+        ]
+      }
+    }
+  ]
+}

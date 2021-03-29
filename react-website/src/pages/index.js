@@ -14,15 +14,14 @@ const Home = () => {
 		setIsOpen(!isOpen);
 	}
 
-
-
-
-
 	return (
 		<>
-			<Sidebar isOpen={isOpen} toggle={toggle}/>
+			<Sidebar isOpen={isOpen}
+			         toggle={toggle}/>
 			<Navbar toggle={toggle}/>
-			<HeroSection HeroHeader="Get your funeral services here today." HeroPara="Book our packages right now." getStartedButton="signup"/>
+			<HeroSection HeroHeader="Get your funeral services here today."
+			             HeroPara="Book our packages right now."
+			             getStartedButton="signup"/>
 			<InfoSection {...homeObjOne}/>
 			<InfoSection {...homeObjTwo}/>
 			<Services {...MapObj}/>
