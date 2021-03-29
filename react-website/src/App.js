@@ -5,6 +5,9 @@ import Home from "./pages";
 import SigninPage from './pages/signin';
 import PackagePage from "./pages/PackagePage";
 import PackageContext, {PackageProvider} from "./components/Context/PackageContext";
+import ParlourPage from "./pages/ParlourPage";
+import SingleParlour from "./pages/SingleParlour";
+//import Parlour from './components/Parlour/Parlour';
 
 // import Navbar from "./components/Navbar";
 
@@ -23,6 +26,12 @@ function App() {
 					       exact/>
 					<Route path="/packages"
 					       component={PackagePage}
+					       exact/>
+					<Route path="/parlour/"
+					       component={ParlourPage}
+					       exact/>
+					<Route path="/parlour/:slug"
+					       component={SingleParlour}
 					       exact/>
 				</Switch>
 			</Router>

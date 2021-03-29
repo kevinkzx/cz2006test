@@ -36,5 +36,6 @@ export const homeObjTwo = {
 	alt: 'Car',
 	dark: false,
 	primary: false,
-	darkText: true
+	darkText: true,
+	button: '/parlour'
 };
