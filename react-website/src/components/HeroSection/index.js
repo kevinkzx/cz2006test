@@ -39,8 +39,6 @@ const HeroSection = ({HeroHeader, HeroPara, getStartedButton, scroll}) => {
 					{scroll ? <ButtonScroll to={getStartedButton}
 					                        onMouseEnter={onHover}
 					                        onMouseLeave={onHover}
-					                        spy={true}
-					                        smooth={true}
 					                        primary="true"
 					                        dark="true"
 					>
