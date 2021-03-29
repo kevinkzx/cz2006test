@@ -418,11 +418,11 @@ h6 {
 .info h6 {
   font-weight: 300;
 }
-.room-extras {
+.parlourExtras {
   width: 80vw;
   margin: 0 auto 3rem auto;
 }
-.room-extras h6 {
+.parlourExtras h6 {
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
 }
@@ -436,7 +436,7 @@ h6 {
 @media screen and (min-width: 992px) {
   .singleParlourImages,
   .singleParlourInfo,
-  .room-extras {
+  .parlourExtras {
     width: 95vw;
     max-width: 1170px;
   }

@@ -7,6 +7,7 @@ import PackagePage from "./pages/PackagePage";
 import PackageContext, {PackageProvider} from "./components/Context/PackageContext";
 import ParlourPage from "./pages/ParlourPage";
 import SingleParlour from "./pages/SingleParlour";
+import Parlourmainpage from "./pages/Parlourmainpage";
 //import Parlour from './components/Parlour/Parlour';
 
 // import Navbar from "./components/Navbar";
@@ -29,6 +30,9 @@ function App() {
 					       exact/>
 					<Route path="/parlour/"
 					       component={ParlourPage}
+					       exact/>
+					<Route path="/parlourpage/"
+					       component={Parlourmainpage}
 					       exact/>
 					<Route path="/parlour/:slug"
 					       component={SingleParlour}

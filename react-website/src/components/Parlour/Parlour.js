@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 
 
 const Parlour = ({parlour})  => {
-    console.log(parlour);
+    //console.log(parlour);
     const {name,slug,images,price} = parlour;
 
     //destructure and return
@@ -21,10 +21,12 @@ const Parlour = ({parlour})  => {
                 for now i am using all default image first
                 */}
                 <img src={images} alt="parlour image"/>
+                {/*
                 <div className={styles.priceTop}>
                     <h6>${price}</h6>
                     <p>per night</p>
                 </div>
+                */}
                 <Link to={`/parlour/${slug}`} className={styles.roomLink}>
                     Description
                 </Link>

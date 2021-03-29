@@ -37,7 +37,7 @@ export default class SingleParlour extends Component {
         };
         
         //destructure the object
-        const {name,description,capacity,size,price,extras,images} = parlour;
+        const {name,description,number,generalpackages,caskets,images} = parlour;
 
         return(
             <>
@@ -62,7 +62,7 @@ export default class SingleParlour extends Component {
                             Back to Parlour
                         </Link>
                     </Banner>
-                    <h1>does this singular page work? {name}</h1>
+                    {/*<h1>does this singular page work? {name}</h1>*/}
                 </StyledHero>
 
                 <section className={styles.singleParlour}>
@@ -72,13 +72,30 @@ export default class SingleParlour extends Component {
                             <p>{description}</p>
                         </article>
                         <article className={styles.info}>
-                            <h3>info</h3>
-                            <h6>price: ${price}</h6>
+                            <h3>Number</h3>
+                            <h6>{number}</h6>
+                            <h6>Please call to get quotation</h6>
                         </article>
                     </div>
+                </section>
 
+                <section className={styles.parlourExtras}>
+                    <h6>General Packages Include</h6>
+                    <ul className={styles.extras}>
+                        {generalpackages.map((item,index) => (
+                            <li key={index}> - {item}</li>
+                        ))}
+                    </ul>
                 </section>
                 
+                <section className={styles.parlourExtras}>
+                    <h6>Caskets Available</h6>
+                    <ul className={styles.extras}>
+                        {caskets.map((item,index) => (
+                            <li key={index}> - {item}</li>
+                        ))}
+                    </ul>
+                </section>
             </>
         ) 
     }
