@@ -12,12 +12,15 @@ import cremation_burialPage from './pages/cremation_burial';
 import parlourPage from './pages/parlours';
 import facilitiesPage from './pages/burialAndCremation';
 import ashScatteringPage from './pages/ashScattering';
+import {Container} from "react-bootstrap";
+import {AuthProvider} from "./components/Signin/AuthContext";
+import Authentication from "./components/Signin/authentication";
 
 // import Navbar from "./components/Navbar";
 
 function App() {
 	return (
-		<>
+		<AuthProvider>
 			<PackageProvider>
 				<Router>
 					{/*<Navbar/>*/}
@@ -25,8 +28,8 @@ function App() {
 						<Route path="/"
 						       component={Home}
 						       exact/>
-						<Route path="/SignIn"
-						       component={SignInPage}
+						<Route path="/signin"
+						       component={Authentication}
 						       exact/>
 						<Route path="/packages"
 						       component={PackagePage}
@@ -55,7 +58,7 @@ function App() {
 					</Switch>
 				</Router>
 			</PackageProvider>
-		</>
+		</AuthProvider>
 	);
 }
 

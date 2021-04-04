@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 //import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-	<loginApp/>,
+	<App/>,
 	document.getElementById('root')
 );
 

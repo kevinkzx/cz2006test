@@ -19,7 +19,7 @@ export default function SignIn() {
 		try {
 			setError('')
 			setLoading(true)
-			await signIn(emailRef.current.value, passwordRef.current.value)
+			// await signIn(emailRef.current.value, passwordRef.current.value)
 		} catch {
 			setError('Failed to create an account')
 		}
@@ -46,7 +46,7 @@ export default function SignIn() {
 							<Form.Control type="password" ref={passwordConfirmRef} required />
 						</Form.Group>
 						<Button disabled={loading} className="w-100" type="submit">
-							Sign in
+							Sign In
 						</Button>
 					</Form>
 				</Card.Body>
