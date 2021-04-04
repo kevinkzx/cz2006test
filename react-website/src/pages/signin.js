@@ -1,12 +1,12 @@
-import React, { useRef, useState, Component } from 'react'
+import React, {useRef, useState, Component, useContext} from 'react'
 import { Form, Button, Card, Alert } from 'react-bootstrap'
-import { useAuth } from "../components/Signin/AuthContext"
+import AuthContext from "../components/Context/AuthContext";
 
 export default function SignIn() {
 	const emailRef = useRef()
 	const passwordRef = useRef()
 	const passwordConfirmRef = useRef()
-	const { signIn } = useAuth()
+	const {signIn} = useContext(AuthContext);
 	const [error,setError] = useState('')
 	const [loading,setLoading] = useState(false)
 
@@ -19,7 +19,7 @@ export default function SignIn() {
 		try {
 			setError('')
 			setLoading(true)
-			await signIn(emailRef.current.value, passwordRef.current.value)
+			// await signIn(emailRef.current.value, passwordRef.current.value)
 		} catch {
 			setError('Failed to create an account')
 		}
