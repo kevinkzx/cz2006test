@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from "./pages";
-import SigninPage from './pages/signin';
+import SignInPage from './pages/signin';
 import PackagePage from "./pages/PackagePage";
 import {PackageProvider} from "./components/Context/PackageContext";
 import SinglePackagePage from "./pages/SinglePackagePage";
@@ -25,8 +25,8 @@ function App() {
 						<Route path="/"
 						       component={Home}
 						       exact/>
-						<Route path="/signin"
-						       component={SigninPage}
+						<Route path="/SignIn"
+						       component={SignInPage}
 						       exact/>
 						<Route path="/packages"
 						       component={PackagePage}
