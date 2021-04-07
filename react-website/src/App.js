@@ -12,8 +12,6 @@ import cremation_burialPage from './pages/cremation_burial';
 import parlourPage from './pages/parlours';
 import facilitiesPage from './pages/burialAndCremation';
 import ashScatteringPage from './pages/ashScattering';
-import Authentication from "./components/Signin/authentication";
-import {AuthProvider} from "./components/Context/AuthContext";
 
 // import Navbar from "./components/Navbar";
 
