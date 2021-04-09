@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from "./pages";
-import SignInPage from './pages/signin';
+import SignInPage from './pages/signIn';
 import PackagePage from "./pages/PackagePage";
 import {PackageProvider} from "./components/Context/PackageContext";
 import SinglePackagePage from "./pages/SinglePackagePage";
