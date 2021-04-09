@@ -1,17 +1,31 @@
 import React, {createContext, useEffect, useState} from 'react';
 import items from "../Parlour/Data";
+import fire from "../../fire";
 
 const ParlourContext = createContext();
 export const ParlourProvider = ({children}) => {
-    const [parlours] = useState(items);
-    const [sortedParlours, setSortedParlours] = useState(items);
+    const [parlours, setParlours] = useState([]);
+    const [sortedParlours, setSortedParlours] = useState([]);
     
     //pass in the parluor we want and get it form array of parlours
     const getParlour = (slug) => {
         return parlours.find(item => item.slug === slug);
     }
 
-    
+    useEffect(() => {
+        fire.firestore()
+            .collection('Parlours')
+            .onSnapshot((snapshot) => {
+                const newParlours = snapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+                setParlours(newParlours);
+                setSortedParlours(newParlours);
+            })
+    }, []);
+
+
     useEffect(() => {
         setSortedParlours(parlours);
     });
@@ -21,7 +35,6 @@ export const ParlourProvider = ({children}) => {
         <ParlourContext.Provider value={{
             parlours,
             sortedParlours,
-            //setSortedParlours,
             getParlour
         }}>
             {children}
