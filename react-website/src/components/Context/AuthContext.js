@@ -1,31 +1,104 @@
 import React, {createContext, useEffect, useState} from 'react';
-// import {auth} from '../../firebase';
+import fire from "../../fire";
+
 
 const AuthContext = createContext();
 export const AuthProvider = ({children}) => {
-	const [currentUser, setCurrentUser] = useState();
-	const [loading, setLoading] = useState(true);
+	const [user, setUser] = useState('');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [emailError, setEmailError] = useState('');
+	const [passwordError, setPasswordError] = useState('');
+	const [hasAccount, setHasAccount] = useState(false);
 
-	const signIn = (email, password) => {
-		// return auth.createUserWithEmailAndPassword(email, password)
+	const clearInputs = () => {
+		setEmail('');
+		setPassword('');
+	}
+
+	const clearErrors = () => {
+		setEmailError('');
+		setPasswordError('');
+	}
+
+	const handleLogin = () => {
+		clearErrors();
+		fire
+		.auth()
+		.signInWithEmailAndPassword(email, password)
+		.catch(err => {
+			switch (err.code) {
+				case "auth/invalid-email":
+				case "auth/user-disabled":
+				case "auth/user-not-found":
+					setEmailError(err.message);
+					break;
+				case "auth/wrong-password":
+					setPasswordError(err.message);
+					break;
+			}
+		})
 	};
 
-	// useEffect(() => {
-	// 	const unsubscribe = auth.onAuthStateChanged(user => {
-	// 		setCurrentUser(user)
-	// 		setLoading(false)
-	// 	})
-	// 	return unsubscribe
-	// }, []);
+	const handleSignup = () => {
+		clearErrors();
+		fire
+		.auth()
+		.createUserWithEmailAndPassword(email, password)
+		.catch(err => {
+			switch (err.code) {
+				case "auth/email-already-in-use":
+				case "auth/invalid-email":
+					setEmailError(err.message);
+					break;
+				case "auth/weak-password":
+					setPasswordError(err.message);
+					break;
+			}
+		})
+	};
 
-	const value = {
-	    currentUser,
-	    signIn
-	}
+	const handleLogout = () => {
+		fire.auth()
+		    .signOut()
+		    .then(r => {
+		    });
+	};
+
+	const authListener = () => {
+		fire.auth()
+		    .onAuthStateChanged(user => {
+			    if (user) {
+				    clearInputs();
+				    setUser(user);
+			    } else {
+				    setUser("");
+			    }
+		    })
+	};
+
+	useEffect(() => {
+		authListener();
+	}, []);
 
 	return (
 		<>
-			<AuthContext.Provider value={value}>
+			<AuthContext.Provider value={{
+				user,
+				email,
+				password,
+				setEmail,
+				setPassword,
+				clearInputs,
+				clearErrors,
+				handleLogin,
+				handleSignup,
+				handleLogout,
+				hasAccount,
+				setHasAccount,
+				emailError,
+				passwordError
+			}}>
 				{children}
 			</AuthContext.Provider>
 		</>
