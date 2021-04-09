@@ -15,12 +15,12 @@ const ParlourList = () => {
 		)
 	}
 	*/
-	const {parlours} = useContext(ParlourContext);
+	const {sortedParlours} = useContext(ParlourContext);
 	return (
 		<Parlour_List>
 			<ParlourListCenter>
-				{parlours.map(item => {
-					return <ParlourCard key={item.sys.id}
+				{sortedParlours.map(item => {
+					return <ParlourCard key={item.id}
 										item={item}/>;
 				})}
 			</ParlourListCenter>

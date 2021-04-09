@@ -5,15 +5,15 @@ const ParlourCard = ({item}) => {
     return (
         <Parlour_Card>
             <ImgContainer>
-                <img src={item.fields.img}
+                <img src={item.img}
                     alt="parlour"/>
                 <PriceTop>
-                    <h6>${item.fields.price}</h6>
+                    <h6>${item.price}</h6>
                 </PriceTop>
-                <ParlourLink to={`/parlours/${item.fields.slug}`}>
+                <ParlourLink to={`/parlours/${item.slug}`}>
                     features
                 </ParlourLink>
-                <ParlourInfo>{item.fields.name}</ParlourInfo>
+                <ParlourInfo>{item.name}</ParlourInfo>
             </ImgContainer>
         </Parlour_Card>
     );

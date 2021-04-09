@@ -19,25 +19,23 @@ import img2 from "../../images/afterlife.JPG";
 
 export default [
 	{
-		sys: {
-			id: "1"
-		},
-		fields: {
-			name: "Afterlife Funeral Services",
-			slug: "Afterlife Funeral Services",
-			type: "double",
-			featured: true,
-			description: "11 Tuas south link 1 shine@Tuas",
-			generalpackages: [
-				"",
-				"",
-			],
-			caskets: [
-				"",
-				"",
-			],
-			img: img2,
-		}
+
+		id: "1",
+		
+		name: "Afterlife Funeral Services",
+		slug: "Afterlife Funeral Services",
+		type: "double",
+		featured: true,
+		description: "11 Tuas south link 1 shine@Tuas",
+		generalpackages: [
+			"",
+			"",
+		],
+		caskets: [
+			"",
+			"",
+		],
+		img: img2,
 	},
 	/*   {
 		sys: {
@@ -87,34 +85,33 @@ export default [
 	  }, */
 
 	{
-		sys: {
-			id: "4"
-		},
-		fields: {
-			name: "Trinity Casket",
-			slug: "Trinity Casket",
-			type: "Single",
-			number: "65389493",
-			featured: true,
-			description:
-				"Blk 38, Sin Ming Drive #01-527/531",
-			generalpackages: [
-				"Casket",
-				"Specialist Embalming",
-				"Transport",
-				"Ash Collection",
-				"Flowers, Tentage, Catering"
-			],
-			caskets: [
-				"Last Supper",
-				"Comfort",
-				"Infinite",
-				"Regal",
-				"Regal(white)",
-				"Hope(white)",
-				"Supreme",
-			],
-			img: img99,
-		}
+		
+		id: "4",
+		
+		name: "Trinity Casket",
+		slug: "Trinity Casket",
+		type: "Single",
+		number: "65389493",
+		featured: true,
+		description:
+			"Blk 38, Sin Ming Drive #01-527/531",
+		generalpackages: [
+			"Casket",
+			"Specialist Embalming",
+			"Transport",
+			"Ash Collection",
+			"Flowers, Tentage, Catering"
+		],
+		caskets: [
+			"Last Supper",
+			"Comfort",
+			"Infinite",
+			"Regal",
+			"Regal(white)",
+			"Hope(white)",
+			"Supreme",
+		],
+		img: img99,
+		
 	}
 ];

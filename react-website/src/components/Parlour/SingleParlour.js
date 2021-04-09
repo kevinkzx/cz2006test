@@ -19,17 +19,17 @@ const SingleParlour = () => {
             <h1>this the single parlour page</h1>
             <SingleParlourContainer>
                 <SingleParlourImage>
-                    <img src={item.fields.img}
+                    <img src={item.img}
                         alt="hge"/>
                 </SingleParlourImage>
                 <SingleParlourInfo>
                     <SingleParlourDesc>
                         <h3>details</h3>
-                        <p>{item.fields.name}</p>
+                        <p>{item.name}</p>
                     </SingleParlourDesc>
                     <ParlourInfor>
                         <h3>Info</h3>
-                        <h6>Description : {item.fields.description}</h6>
+                        <h6>Description : {item.description}</h6>
                     </ParlourInfor>
                 </SingleParlourInfo>
             </SingleParlourContainer>

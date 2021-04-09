@@ -8,7 +8,7 @@ export const ParlourProvider = ({children}) => {
     
     //pass in the parluor we want and get it form array of parlours
     const getParlour = (slug) => {
-        return parlours.find(item => item.fields.slug === slug);
+        return parlours.find(item => item.slug === slug);
     }
 
     
