@@ -1,11 +1,11 @@
 import React, {createContext, useEffect, useState} from 'react';
-import items from "../Package/Data";
+import fire from "../../fire";
 
 
 const PackageContext = createContext();
 export const PackageProvider = ({children}) => {
-	const [packages] = useState(items);
-	const [sortedPackages, setSortedPackages] = useState(items);
+	const [packages, setPackages] = useState([]);
+	const [sortedPackages, setSortedPackages] = useState([]);
 	const [religion, setReligion] = useState('All');
 	const [location, setLocation] = useState('All');
 	const [minPrice] = useState(0);
@@ -18,14 +18,28 @@ export const PackageProvider = ({children}) => {
 	const [eco, setEco] = useState(false);
 
 	const getPackage = (slug) => {
-		return packages.find(item => item.fields.slug === slug);
+		return packages.find(item => item.slug === slug);
 	}
 
 	useEffect(() => {
-		setMaxPrice(Math.max(...packages.map(item => item.fields.price)));
-		setPrice(Math.max(...packages.map(item => item.fields.price)));
-		setMaxDay(Math.max(...packages.map(item => item.fields.days)));
+		fire.firestore()
+		    .collection('Packages')
+		    .onSnapshot((snapshot) => {
+			    const newPackages = snapshot.docs.map((doc) => ({
+				    id: doc.id,
+				    ...doc.data()
+			    }));
+			    setPackages(newPackages);
+			    setSortedPackages(newPackages);
+		    })
 	}, []);
+
+	useEffect(() => {
+
+		setMaxPrice(Math.max(...packages.map(item => parseInt(item.price))));
+		setPrice(Math.max(...packages.map(item => parseInt(item.price))));
+		setMaxDay(Math.max(...packages.map(item => parseInt(item.days))));
+	}, [packages]);
 
 
 	useEffect(() => {
@@ -39,25 +53,25 @@ export const PackageProvider = ({children}) => {
 	const filterPackages = () => {
 		let temp = packages;
 		if (religion !== "All") {
-			temp = temp.filter(item => item.fields.religion === religion);
+			temp = temp.filter(item => item.religion === religion);
 		}
 		if (location !== "All") {
-			temp = temp.filter(item => item.fields.location === location);
+			temp = temp.filter(item => item.location === location);
 		}
 		if (casket !== "All") {
-			temp = temp.filter(item => item.fields.casket === casket);
+			temp = temp.filter(item => item.casket === casket);
 		}
 
-		temp = temp.filter(item => item.fields.price <= price);
+		temp = temp.filter(item => parseInt(item.price) <= price);
 
-		temp = temp.filter(item => item.fields.days >= minDay && item.fields.days <= maxDay);
+		temp = temp.filter(item => parseInt(item.days) >= minDay && parseInt(item.days) <= maxDay);
 
 		if (transportation) {
-			temp = temp.filter(item => item.fields.transportation === true);
+			temp = temp.filter(item => item.transportation === true);
 		}
 
 		if (eco) {
-			temp = temp.filter(item => item.fields.eco === true);
+			temp = temp.filter(item => item.eco === true);
 		}
 		setSortedPackages(temp);
 	}
