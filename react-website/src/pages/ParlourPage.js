@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react';
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
-import ParlourHome from "../components/Parlour/ParlourHome";
+//import ParlourHome from "../components/Parlour/ParlourHome";
+import ParlourContainer from "../components/Parlour/ParlourContainer";
 
 
 const ParlourPage = () => {
@@ -19,7 +20,7 @@ const ParlourPage = () => {
 			             getStartedButton="searchFilter"
 			             scroll={true}/>
 			<h1>Welcome to parlour page</h1>
-			<ParlourHome/>
+			<ParlourContainer/>
 		</>
 
 	)

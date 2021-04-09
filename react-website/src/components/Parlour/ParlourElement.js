@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {Link} from 'react-router-dom';
+import {Button} from "../ButtonElements";
 // --primaryColor: #af9a7d;
 // --mainWhite: #fff;
 // --offWhite: #f7f7f7;
@@ -35,25 +36,23 @@ export const ParlourListCenter = styled.div`
 
 // PackageCard CSS
 
-export const SingleParlour = styled.article`
+export const Parlour_Card = styled.article`
   box-shadow: 2px 5px 3px 0 rgba(0, 0, 0, 0.5);
   transition: all 0.3s linear;
 
-  //&:hover {
-  //  box-shadow: 4px 10px 5px 0 rgba(0, 0, 0, 0.5);
-  //}
+  &:hover {
+    box-shadow: 4px 10px 5px 0 rgba(0, 0, 0, 0.5);
+  }
 `;
 
-export const ParlourLink = styled(Link)
-.attrs(props => ({
-	className: 'btn-primary'
-}))`
+export const ParlourLink = styled(Button)`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: scale(0);
   transition: all 0.3s linear;
 `;
+
 
 export const PriceTop = styled.div`
   position: absolute;
@@ -122,5 +121,65 @@ border: 3px solid var(--primaryColor);
 transition: var(--mainTransition);
 text-transform: uppercase;
 cursor: pointer;
+`;
+
+export const SingleParlourContainer = styled.section`
+  padding: 5rem 0 0 0;
+`;
+
+export const SingleParlourImage = styled.div`
+  width: 50vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 50px;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+`;
+
+export const SingleParlourInfo = styled.div`
+  width: 80vw;
+  display: flex;
+  //grid-template-columns: 8ch auto;
+  justify-content: space-evenly;
+  margin: 2rem auto;
+`;
+
+export const SingleParlourDesc = styled.article`
+  margin: 1rem 0;
+
+  h3 {
+    text-transform: capitalize;
+    letter-spacing: 3px;
+    font-size: x-large;
+  }
+
+  p {
+    line-height: 1.5;
+    font-size: medium;
+  }
+`;
+
+export const ParlourInfor = styled.article`
+  margin: 1rem 0;
+
+  h3 h6 {
+    text-transform: capitalize;
+    letter-spacing: 3px;
+  }
+
+  h3 {
+    font-size: x-large;
+  }
+
+  h6 {
+    font-weight: 300;
+    font-size: medium;
+    line-height: 1.5;
+  }
 `;
 

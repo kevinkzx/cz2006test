@@ -36,7 +36,7 @@ export default [
 				"",
 				"",
 			],
-			images: img2,
+			img: img2,
 		}
 	},
 	/*   {
@@ -114,7 +114,7 @@ export default [
 				"Hope(white)",
 				"Supreme",
 			],
-			images: img99,
+			img: img99,
 		}
 	}
 ];
