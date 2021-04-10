@@ -1,9 +1,17 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import ParlourContext from "../Context/ParlourContext";
+import {SearchBar} from "./ParlourElement";
 
-export default function ParlourFilter() {
+const ParlourFilter = () => {
+	const {setSearch} = useContext(ParlourContext);
 	return (
-		<div>
-			hello from parlour filter
-		</div>
+		<SearchBar>
+			<input type="text"
+			       placeholder="Search"
+			       onChange={e => setSearch(e.target.value)}/>
+		</SearchBar>
+
 	)
 }
+
+export default ParlourFilter;

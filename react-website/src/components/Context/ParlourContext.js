@@ -10,22 +10,28 @@ export const ParlourProvider = ({children}) => {
     useEffect(() => {
         localStorage.setItem('myorders', JSON.stringify(orders))
     }, [orders]);
+    const [search, setSearch] = useState("");
     
     //pass in the parlour we want and get it form array of parlours
     const getParlour = (slug) => {
         return parlours.find(item => item.slug === slug);
     };
 
-    
+
     useEffect(() => {
-        setSortedParlours(parlours);
-    });
+        // setSortedParlours(parlours);
+        setSortedParlours(parlours.filter(parlour => {
+            return parlour.name.toLowerCase()
+                          .includes(search.toLowerCase());
+        }))
+    }, [search, sortedParlours]);
     
 
     return (
         <ParlourContext.Provider value={{
             parlours,
             sortedParlours,
+            setSearch,
             //setSortedParlours,
             orders,
             setOrders,
