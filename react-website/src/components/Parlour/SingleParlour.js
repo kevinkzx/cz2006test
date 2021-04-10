@@ -18,7 +18,7 @@ const SingleParlour = () => {
     let {slug} = useParams();
     const item = getParlour(slug);
     const caskets = item.caskets;
-    const GP = item.generalPackage;
+    //const GP = item.generalPackage;
     return (
         <div id="parlourInfo">
             <h1>this the single parlour page</h1>
@@ -40,11 +40,11 @@ const SingleParlour = () => {
                     </ParlourInfor>
                     <ParlourInfor>
                         <h3>General Packages</h3>
-                        <listItems>
+{/*                         <listItems>
                             {GP.map((item,index) => 
                                 <li key={index}> {item}</li>
                             )}
-                        </listItems>
+                        </listItems> */}
                     </ParlourInfor>
                     <ParlourInfor>
                         <h3>Caskets</h3>

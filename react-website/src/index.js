@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-//import reportWebVitals from './reportWebVitals';
-//import {ParlourProvider} from './components/Parlour/context';
-import {BrowserRouter as Router} from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css"
+import {AuthProvider} from "./components/Context/AuthContext";
 
 ReactDOM.render(
-	<Router>
+	<AuthProvider>
 		<App/>
-	</Router>,
+	</AuthProvider>,
 	document.getElementById('root')
 );
 
