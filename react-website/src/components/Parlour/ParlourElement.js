@@ -143,8 +143,8 @@ export const SingleParlourImage = styled.div`
 
 export const SingleParlourInfo = styled.div`
   width: 80vw;
-  display: flex;
-  //grid-template-columns: 8ch auto;
+  display: grid;
+  grid-template-columns: 13ch auto;
   justify-content: space-evenly;
   margin: 2rem auto;
 `;
@@ -156,6 +156,12 @@ export const SingleParlourDesc = styled.article`
     text-transform: capitalize;
     letter-spacing: 3px;
     font-size: x-large;
+  }
+
+  h6 {
+    font-weight: 300;
+    font-size: medium;
+    line-height: 1.5;
   }
 
   p {
@@ -182,4 +188,32 @@ export const ParlourInfor = styled.article`
     line-height: 1.5;
   }
 `;
+
+export const GeneralPackagesInfo = styled.article`
+  margin: 2rem 0;
+
+  h3 h6 {
+    text-transform: capitalize;
+    letter-spacing: 3px;
+  }
+
+  h3 {
+    font-size: x-large;
+  }
+
+  h6 {
+    font-weight: 300;
+    font-size: medium;
+    line-height: 1.5;
+  }
+`;
+
+export const listItems = styled.article`
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  grid-column-gap: 2rem;
+  grid-row-gap: 1rem;
+`;
+
 

@@ -5,11 +5,16 @@ const ParlourContext = createContext();
 export const ParlourProvider = ({children}) => {
     const [parlours] = useState(items);
     const [sortedParlours, setSortedParlours] = useState(items);
+    const [orders, setOrders] = useState([]); 
+
+    useEffect(() => {
+        localStorage.setItem('myorders', JSON.stringify(orders))
+    }, [orders]);
     
-    //pass in the parluor we want and get it form array of parlours
+    //pass in the parlour we want and get it form array of parlours
     const getParlour = (slug) => {
         return parlours.find(item => item.slug === slug);
-    }
+    };
 
     
     useEffect(() => {
@@ -22,6 +27,8 @@ export const ParlourProvider = ({children}) => {
             parlours,
             sortedParlours,
             //setSortedParlours,
+            orders,
+            setOrders,
             getParlour
         }}>
             {children}

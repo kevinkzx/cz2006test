@@ -25,9 +25,10 @@ export default [
 		name: "Afterlife Funeral Services",
 		slug: "Afterlife Funeral Services",
 		type: "double",
+		number: "69876543 / 81234567",
 		featured: true,
 		description: "11 Tuas south link 1 shine@Tuas",
-		generalpackages: [
+		generalPackage: [
 			"",
 			"",
 		],
@@ -95,7 +96,7 @@ export default [
 		featured: true,
 		description:
 			"Blk 38, Sin Ming Drive #01-527/531",
-		generalpackages: [
+		generalPackage: [
 			"Casket",
 			"Specialist Embalming",
 			"Transport",

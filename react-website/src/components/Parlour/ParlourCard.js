@@ -7,9 +7,6 @@ const ParlourCard = ({item}) => {
             <ImgContainer>
                 <img src={item.img}
                     alt="parlour"/>
-                <PriceTop>
-                    <h6>${item.price}</h6>
-                </PriceTop>
                 <ParlourLink to={`/parlours/${item.slug}`}>
                     features
                 </ParlourLink>
