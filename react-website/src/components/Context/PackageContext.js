@@ -35,7 +35,6 @@ export const PackageProvider = ({children}) => {
 	}, []);
 
 	useEffect(() => {
-
 		setMaxPrice(Math.max(...packages.map(item => parseInt(item.price))));
 		setPrice(Math.max(...packages.map(item => parseInt(item.price))));
 		setMaxDay(Math.max(...packages.map(item => parseInt(item.days))));
@@ -44,9 +43,7 @@ export const PackageProvider = ({children}) => {
 
 	useEffect(() => {
 		setSortedPackages(packages);
-		if (minDay < 0) {
-			setMinDay(0);
-		}
+		checkDays();
 		filterPackages();
 	}, [religion, location, price, maxDay, minDay, casket, transportation, eco]);
 
@@ -75,6 +72,18 @@ export const PackageProvider = ({children}) => {
 		}
 		setSortedPackages(temp);
 	}
+
+	const checkDays = () => {
+		if (minDay < 0) {
+			setMinDay(0);
+		}
+		if (maxDay < minDay) {
+			setMaxDay(minDay);
+		}
+		if (maxDay < 0) {
+			setMaxDay(0);
+		}
+	};
 
 	return (
 		<PackageContext.Provider value={{
