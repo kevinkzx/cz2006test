@@ -7,6 +7,8 @@ import PackagePage from "./pages/PackagePage";
 import {PackageProvider} from "./components/Context/PackageContext";
 import SingleParlourPage from "./pages/SingleParlourPage";
 import {ParlourProvider} from "./components/Context/ParlourContext";
+import {ReviewProvider} from "./components/Context/ReviewContext";
+
 import ParlourPage from "./pages/ParlourPage";
 //import Parlourmainpage from "./pages/Parlourmainpage";
 import SinglePackagePage from "./pages/SinglePackagePage";
@@ -21,50 +23,53 @@ import ashScatteringPage from './pages/ashScattering';
 function App() {
 	return (
 		<>
+		<ReviewProvider>
 			<PackageProvider>
-				<ParlourProvider>
-					<Router>
-						<Switch>
-							<Route path="/"
-								component={Home}
-								exact/>
-							<Route path="/signin"
-								component={SigninPage}
-								exact/>
-							<Route path="/packages"
-								component={PackagePage}
-								exact/>
-							<Route exact
-								path="/packages/:slug"
-								component={SinglePackagePage}/>
-							<Route path="/parlour/"
-								component={ParlourPage}
-								exact/>
-							<Route path="/parlours/:slug"
-								component={SingleParlourPage}
-								exact/>
-							<Route exact
-								path="/parlours"
-								component={parlours}/>
-							<Route exact
-								path="/burialAndCremation"
-								component={facilitiesPage}/>
-							<Route exact
-								path="/ashScattering"
-								component={ashScatteringPage}/>
-							<Route path="/funeral_process"
-								component={funeral_processPage}
-								exact/>
-							<Route path="/void_deck_booking"
-								component={void_deck_bookingPage}
-								exact/>
-							<Route path="/cremation_burial"
-								component={cremation_burialPage}
-								exact/>
-						</Switch>
-					</Router>
-				</ParlourProvider>
-			</PackageProvider>
+					<ParlourProvider>
+						<Router>
+							<Switch>
+								<Route path="/"
+									component={Home}
+									exact/>
+								<Route path="/signin"
+									component={SigninPage}
+									exact/>
+								<Route path="/packages"
+									component={PackagePage}
+									exact/>
+								<Route exact
+									path="/packages/:slug"
+									component={SinglePackagePage}/>
+								<Route path="/parlour/"
+									component={ParlourPage}
+									exact/>
+								<Route path="/parlours/:slug"
+									component={SingleParlourPage}
+									exact/>
+								<Route exact
+									path="/parlours"
+									component={parlours}/>
+								<Route exact
+									path="/burialAndCremation"
+									component={facilitiesPage}/>
+								<Route exact
+									path="/ashScattering"
+									component={ashScatteringPage}/>
+								<Route path="/funeral_process"
+									component={funeral_processPage}
+									exact/>
+								<Route path="/void_deck_booking"
+									component={void_deck_bookingPage}
+									exact/>
+								<Route path="/cremation_burial"
+									component={cremation_burialPage}
+									exact/>
+							</Switch>
+						</Router>
+					</ParlourProvider>
+				</PackageProvider>	
+		</ReviewProvider>
+			
 		</>
 	);
 }
