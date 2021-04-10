@@ -18,6 +18,7 @@ export const ParlourProvider = ({children}) => {
     };
 
 
+
     useEffect(() => {
         // setSortedParlours(parlours);
         setSortedParlours(parlours.filter(parlour => {
