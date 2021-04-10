@@ -19,7 +19,7 @@ const ParlourPage = () => {
 			             HeroPara="Book with us right now."
 			             getStartedButton="searchFilter"
 			             scroll={true}/>
-			<h1>Welcome to parlour page</h1>
+			{/*<h1>Welcome to parlour page</h1>*/}
 			<ParlourContainer/>
 		</>
 
