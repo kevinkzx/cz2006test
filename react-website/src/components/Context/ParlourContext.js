@@ -1,6 +1,5 @@
 import React, {createContext, useEffect, useState} from 'react';
-import items from "../Parlour/Data";
-import fire from "../../fire";
+import fire from "../../firebase/fire";
 
 const ParlourContext = createContext();
 export const ParlourProvider = ({children}) => {

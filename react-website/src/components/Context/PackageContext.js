@@ -1,5 +1,5 @@
 import React, {createContext, useEffect, useState} from 'react';
-import fire from "../../fire";
+import fire from "../../firebase/fire";
 
 
 const PackageContext = createContext();

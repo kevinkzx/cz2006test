@@ -9,7 +9,6 @@ const SignIn = () => {
 		email,
 		password,
 		setEmail,
-		handleLogout,
 		handleSignup,
 		hasAccount,
 		setPassword,
@@ -22,20 +21,16 @@ const SignIn = () => {
 
 	return (
 		<div className="signIn">
-			{user ? (
-				<Hero handleLogout={handleLogout}/>
-			) : (
-				<Login email={email}
-				       setEmail={setEmail}
-				       password={password}
-				       setPassword={setPassword}
-				       handleLogin={handleLogin}
-				       handleSignup={handleSignup}
-				       hasAccount={hasAccount}
-				       setHasAccount={setHasAccount}
-				       emailError={emailError}
-				       passwordError={passwordError}/>
-			)}
+			<Login email={email}
+			       setEmail={setEmail}
+			       password={password}
+			       setPassword={setPassword}
+			       handleLogin={handleLogin}
+			       handleSignup={handleSignup}
+			       hasAccount={hasAccount}
+			       setHasAccount={setHasAccount}
+			       emailError={emailError}
+			       passwordError={passwordError}/>
 		</div>
 	);
 };

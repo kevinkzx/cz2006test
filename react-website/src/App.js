@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 import './App.css';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 import Home from "./pages";
 import SigninPage from './pages/signIn';
 import PackagePage from "./pages/PackagePage";
@@ -15,9 +15,22 @@ import cremation_burialPage from './pages/cremation_burial';
 import parlours from './pages/parlours';
 import facilitiesPage from './pages/burialAndCremation';
 import ashScatteringPage from './pages/ashScattering';
+import AuthContext from "./components/Context/AuthContext";
+import fire from "./firebase/fire";
 
 
-function App() {
+const App = () => {
+	const {user, setUser,} = useContext(AuthContext);
+	useEffect(() => {
+		fire.auth()
+		    .onAuthStateChanged(userAuth => {
+			    if (!userAuth) {
+				    setUser(null);
+			    }
+			    setUser(userAuth);
+		    })
+
+	}, [user]);
 	return (
 		<>
 			<PackageProvider>
@@ -25,41 +38,41 @@ function App() {
 					<Router>
 						<Switch>
 							<Route path="/"
-								component={Home}
-								exact/>
+							       component={Home}
+							       exact/>
 							<Route path="/signin"
-								component={SigninPage}
-								exact/>
+							       render={() => user ? <Redirect to="/"/> : (<SigninPage/>)}
+							       exact/>
 							<Route path="/packages"
-								component={PackagePage}
-								exact/>
+							       component={PackagePage}
+							       exact/>
 							<Route exact
-								path="/packages/:slug"
-								component={SinglePackagePage}/>
+							       path="/packages/:slug"
+							       component={SinglePackagePage}/>
 							<Route path="/parlour/"
-								component={ParlourPage}
-								exact/>
+							       component={ParlourPage}
+							       exact/>
 							<Route path="/parlours/:slug"
-								component={SingleParlourPage}
-								exact/>
+							       component={SingleParlourPage}
+							       exact/>
 							<Route exact
-								path="/parlours"
-								component={parlours}/>
+							       path="/parlours"
+							       component={parlours}/>
 							<Route exact
-								path="/burialAndCremation"
-								component={facilitiesPage}/>
+							       path="/burialAndCremation"
+							       component={facilitiesPage}/>
 							<Route exact
-								path="/ashScattering"
-								component={ashScatteringPage}/>
+							       path="/ashScattering"
+							       component={ashScatteringPage}/>
 							<Route path="/funeral_process"
-								component={funeral_processPage}
-								exact/>
+							       component={funeral_processPage}
+							       exact/>
 							<Route path="/void_deck_booking"
-								component={void_deck_bookingPage}
-								exact/>
+							       component={void_deck_bookingPage}
+							       exact/>
 							<Route path="/cremation_burial"
-								component={cremation_burialPage}
-								exact/>
+							       component={cremation_burialPage}
+							       exact/>
 						</Switch>
 					</Router>
 				</ParlourProvider>
