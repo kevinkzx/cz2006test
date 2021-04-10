@@ -183,3 +183,28 @@ export const ParlourInfor = styled.article`
   }
 `;
 
+export const SearchBar = styled.div`
+  //padding-right: 150px;
+  //padding-left: 150px;
+  //margin-right: auto;
+  //margin-left: auto;
+  display: block;
+  margin: 30px auto;
+  width: 500px;
+
+  input {
+    background-color: #01bf71;
+    width: 500px;
+    padding: 10px;
+    margin: 0 auto;
+
+    border-radius: 5px;
+    //border: none;
+    font-size: 1.2rem;
+    color: black;
+
+
+  }
+
+`;
+
