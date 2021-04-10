@@ -56,7 +56,7 @@ export default [
 		name: "Lee Yang",
 		date : "2 February 2021",
 		review: "I would like to express our gratitude and big \
-		 Thank Yiu to the team. They ensure my Dad have a smooth last journey.\
+		 Thank You to the team. They ensure my Dad have a smooth last journey.\
 		  Without their advice, we would not know what to do.",
 	},
 
