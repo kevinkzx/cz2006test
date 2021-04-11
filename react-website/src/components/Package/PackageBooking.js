@@ -9,7 +9,7 @@ const PackageBooking = () => {
     const {getPackage} = useContext(PackageContext);
     let {slug} = useParams();
     const item = getPackage(slug);
-    const result = localStorage.getItem('packageorder');
+    // const result = localStorage.getItem('packageorder');
     const {user} = useContext(AuthContext);
     const alert = useAlert();
     
@@ -39,13 +39,9 @@ const PackageBooking = () => {
 
     const handleClickEvent = () => {
         const form = nameForm.current;
-        console.log(form['address'].value)
-        var packageorder = {"name":item.name,"price":item.price};
-        localStorage.setItem('packageorder', JSON.stringify(packageorder));
-        var package_Order = JSON.parse(result);
-        //package_Order is the object of the package. 
-        //can access the values of the object with package_Order.price package_Order.name
-        console.log(package_Order.price);
+        // console.log(form['address'].value)
+        // console.log(item.price);
+        // console.log(item.religion);
         alert.show('Successfully booked this package'); 
     };
 
@@ -58,15 +54,15 @@ const PackageBooking = () => {
         alert.show('Please log in first!');
     };
 
-    function loggedin() {
-        var packageorder = {"name":item.name,"price":item.price};
-        localStorage.setItem('packageorder', JSON.stringify(packageorder));
-        var package_Order = JSON.parse(result);
-        //package_Order is the object of the package. 
-        //can access the values of the object with package_Order.price package_Order.name
-        console.log(package_Order.price);
-        alert.show('Successfully booked this package'); 
-    };
+    // function loggedin() {
+    //     var packageorder = {"name":item.name,"price":item.price};
+    //     localStorage.setItem('packageorder', JSON.stringify(packageorder));
+    //     var package_Order = JSON.parse(result);
+    //     //package_Order is the object of the package.
+    //     //can access the values of the object with package_Order.price package_Order.name
+    //     console.log(package_Order.price);
+    //     alert.show('Successfully booked this package');
+    // };
 
     return (
         <div>

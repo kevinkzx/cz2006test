@@ -48,12 +48,9 @@ export const AuthProvider = ({children}) => {
 			.then(function (user) {
 				fire.firestore()
 				    .collection('Users')
-				    .add({
-					    email,
-					    password,
-					    orderHistory: []
-				    })
-				    . then(r =>{})
+				    .doc(email)
+				    .set({email, password, orderHistory: []})
+				    .then();
 			})
 			.catch(err => {
 				switch (err.code) {
