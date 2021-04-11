@@ -77,9 +77,9 @@ const PackageFilter = () => {
 						</PackageFilterFormControl>
 					</PackageFilterFormGroup>
 					<PackageFilterFormGroup>
-						<label htmlFor="location">Location</label>
-						<PackageFilterFormControl name="location"
-						                          id="location"
+						<label htmlFor="location2">Location</label>
+						<PackageFilterFormControl name="location2"
+						                          id="location2"
 						                          value={location}
 						                          onChange={e => setLocation(e.target.value)}>
 							{locations}
