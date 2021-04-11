@@ -48,6 +48,7 @@ const SinglePackage = () => {
 						<h6>Transportation: {item.transportation ? "Included" : "Not included"}</h6>
 						<h6>Casket Type: {item.casket}</h6>
 						<h6>Eco-Friendly? {item.eco ? "Yes" : "No"}</h6>
+						<h6>Provider: {item.parlour}</h6>
 					</PackageInfor>
 					
 				</SinglePackageInfo>

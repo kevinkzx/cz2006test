@@ -2,11 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import {AuthProvider} from "./components/Context/AuthContext";
+import {transitions, positions, Provider as AlertProvider} from 'react-alert';
+import AlertTemplate from 'react-alert-template-basic';
+
+const options = {
+	position: positions.BOTTOM_CENTER,
+	timeout: 5000,
+	offest: '30px',
+	transition: transitions.SCALE
+}
 
 ReactDOM.render(
-	<AuthProvider>
-		<App/>
-	</AuthProvider>,
+	<AlertProvider template={AlertTemplate} {...options}>
+		<AuthProvider>
+			<App/>
+		</AuthProvider>
+	</AlertProvider>,
+	
 	document.getElementById('root')
 );
 
