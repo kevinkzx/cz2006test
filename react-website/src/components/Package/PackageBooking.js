@@ -1,18 +1,16 @@
-import React, {Component, useRef, useContext} from 'react'
+import React, {useRef, useContext} from 'react'
 import {useParams} from "react-router-dom";
 import PackageContext from "../Context/PackageContext";
 import AuthContext from "../Context/AuthContext";
 import {useAlert} from "react-alert";
 import InputField from "./InputField";
-import fire from "../../firebase/fire";
-import firebase from 'firebase';
+import emailjs from 'emailjs-com';
 
 const PackageBooking = () => {
 	const {getPackage} = useContext(PackageContext);
 	let {slug} = useParams();
 	const item = getPackage(slug);
-	// const result = localStorage.getItem('packageorder');
-	const {user, booking} = useContext(AuthContext);
+	const {user, email, booking} = useContext(AuthContext);
 	const alert = useAlert();
 
 
@@ -46,8 +44,28 @@ const PackageBooking = () => {
 			address: form['address'].value,
 		}
 		booking(data);
+		const param = {
+			...data,
+			email,
+			religion: item.religion,
+			location: item.location,
+			days: item.days,
+			transportation: item.transportation ? "Included" : "Not included",
+			casket: item.casket,
+			eco: item.eco ? "Included" : "Not included"
+		}
+		sendEmail(param);
 		alert.show('Successfully booked this package');
 	};
+
+	const sendEmail = (templateParams) => {
+		emailjs.send('service_k995ykf', 'template_qp377on', templateParams, 'user_PCSCABHzVKDKmfFro8SMh')
+		       .then(function (response) {
+			       console.log('SUCCESS!', response.status, response.text);
+		       }, function (error) {
+			       console.log('FAILED...', error);
+		       });
+	}
 
 	function isloggedin() {
 		return user !== null;
