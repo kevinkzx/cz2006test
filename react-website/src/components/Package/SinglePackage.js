@@ -13,7 +13,6 @@ import ReviewList from '../Reviews/ReviewList';
 import {ReviewTitle} from '../Reviews/ReviewsElements';
 
 
-import ReviewContext from "../Context/ReviewContext";
 
 
 
