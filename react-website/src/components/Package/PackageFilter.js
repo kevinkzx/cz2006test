@@ -11,8 +11,8 @@ import {
 	PackageFilterWrapper
 } from "./PackageElements";
 
-const getUnique = (items, access, value) => {
-	return [...new Set(items.map(item => item[access][value]))];
+const getUnique = (items, value) => {
+	return [...new Set(items.map(item => item[value]))];
 }
 
 
@@ -41,7 +41,7 @@ const PackageFilter = () => {
 	} = context;
 
 	//Setting unique religion values
-	let religions = getUnique(packages, 'fields', 'religion');
+	let religions = getUnique(packages, 'religion');
 	religions = ['All', ...religions];
 	religions = religions.map((item, index) => {
 		return <option value={item}
@@ -49,7 +49,7 @@ const PackageFilter = () => {
 	});
 
 	//Setting unique location values
-	let locations = getUnique(packages, 'fields', 'location');
+	let locations = getUnique(packages, 'location');
 	locations = ['All', ...locations];
 	locations = locations.map((item, index) => {
 		return <option value={item}
@@ -57,7 +57,7 @@ const PackageFilter = () => {
 	});
 
 	//Setting unique casket values
-	let caskets = getUnique(packages, 'fields', 'casket');
+	let caskets = getUnique(packages, 'casket');
 	caskets = ['All', ...caskets];
 	caskets = caskets.map((item, index) => {
 		return <option value={item}

@@ -19,7 +19,7 @@ const PackageList = () => {
 		<Package_List>
 			<PackageListCenter>
 				{sortedPackages.map(item => {
-					return <PackageCard key={item.sys.id}
+					return <PackageCard key={item.id}
 					                    item={item}/>;
 				})}
 			</PackageListCenter>
