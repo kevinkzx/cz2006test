@@ -1,5 +1,6 @@
 import React, {createContext, useEffect, useState} from 'react';
 import fire from "../../firebase/fire";
+import firebase from "firebase";
 
 
 const AuthContext = createContext();
@@ -74,6 +75,25 @@ export const AuthProvider = ({children}) => {
 			clearInputs();
 		};
 
+		const booking = (data) => {
+			fire.firestore()
+			    .collection("Users")
+			    .doc("b@hotmail.com")
+			    .update(
+				    {
+					    orderHistory: firebase.firestore.FieldValue.arrayUnion(
+						    {
+							    ...data,
+							    created: firebase.firestore.Timestamp.now()
+						    }
+					    )
+				    }
+			    )
+			    .then(r => {
+				    console.log("Success booking")
+			    })
+		}
+
 // const authListener = () => {
 // 	fire.auth()
 // 	    .onAuthStateChanged(user => {
@@ -107,7 +127,8 @@ export const AuthProvider = ({children}) => {
 					hasAccount,
 					setHasAccount,
 					emailError,
-					passwordError
+					passwordError,
+					booking
 				}}>
 					{children}
 				</AuthContext.Provider>
