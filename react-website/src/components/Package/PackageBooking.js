@@ -4,6 +4,7 @@ import PackageContext from "../Context/PackageContext";
 import AuthContext from "../Context/AuthContext";
 import { useAlert } from "react-alert";
 import InputField from "./InputField";
+import PackageForm from "./PackageForm";
 
 const PackageBooking = () => {
     const {getPackage} = useContext(PackageContext);
@@ -35,7 +36,7 @@ const PackageBooking = () => {
         };
     }; */
 
-    const nameForm = useRef(null);
+/*     const nameForm = useRef(null);
 
     const handleClickEvent = () => {
         const form = nameForm.current;
@@ -45,7 +46,8 @@ const PackageBooking = () => {
         var package_Order = JSON.parse(result);
         //package_Order is the object of the package. 
         //can access the values of the object with package_Order.price package_Order.name
-        console.log(package_Order.price);
+        console.log(package_Order.name);
+        console.log(user.email);
         alert.show('Successfully booked this package'); 
     };
 
@@ -66,19 +68,20 @@ const PackageBooking = () => {
         //can access the values of the object with package_Order.price package_Order.name
         console.log(package_Order.price);
         alert.show('Successfully booked this package'); 
-    };
+    }; */
 
     return (
         <div>
 
             {/* <button onClick={testfunction}>Click here to book package</button> */}
             {/* <h1>Hello from package booking</h1> */}
-            <button onClick={() => isloggedin() ? handleClickEvent() : notloggedin()}>
+            {/* <button onClick={() => isloggedin() ? handleClickEvent() : notloggedin()}>
                 Click here to book package
-            </button>
-            <form ref={nameForm}>
+            </button> */}
+            <PackageForm/>
+            {/* <form ref={nameForm}>
                 <InputField label={'Enter Address here'} name={'address'}/>
-            </form>
+            </form> */}
         </div>
     );
 };
