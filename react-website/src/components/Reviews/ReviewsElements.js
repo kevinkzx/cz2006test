@@ -84,4 +84,36 @@ export const Header = styled.p`
 `;
 
 
+export const ReviewInputContainer = styled.div`
+  margin: 2rem 25%;
+  
+
+`;
+
+export const Review_Input = styled.textarea`
+  display: block;
+  height: 200px;
+  width:100%;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  border: solid #01bf71;
+  margin-bottom: 1rem;
+`;
+
+export const SubmitReviewButton = styled.input`
+  border: 2px solid #4CAF50;
+  background-color: white;
+  color: black;
+  width: auto;
+  padding: 14px 28px;
+  font-size: 18px;
+  cursor: pointer;
+
+
+  &:hover {
+ background-color: #4CAF50;
+
+  }
+
+`;
 
