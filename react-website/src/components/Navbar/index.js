@@ -39,7 +39,7 @@ const Navbar = ({toggle}) => {
 
 	const goToPackages = () => {
 		history.push('/');
-		scroll.scrollTo(900);
+		scroll.scrollTo(800);
 	};
 
 	const goToParlours = () => {
@@ -49,7 +49,7 @@ const Navbar = ({toggle}) => {
 
 	const goToMap = () => {
 		history.push('/');
-		scroll.scrollTo(2600);
+		scroll.scrollTo(2500);
 	};
 
 	const goToInfo = () => {
@@ -72,38 +72,38 @@ const Navbar = ({toggle}) => {
 						<NavMenu>
 							<NavItem>
 								<NavLinks to="packages"
-								          smooth={true}
-								          duration={500}
-								          spy={true}
-								          exact={'true'}
-								          offset={-80}
+								          // smooth={true}
+								          // duration={500}
+								          // spy={true}
+								          // exact={'true'}
+								          // offset={-80}
 										  onClick={goToPackages}>Packages</NavLinks>
 							</NavItem>
 							<NavItem>
 								<NavLinks to="parlours"
-								          smooth={true}
-								          duration={500}
-								          spy={true}
-								          exact={'true'}
-								          offset={-80}
+								          // smooth={true}
+								          // duration={500}
+								          // spy={true}
+								          // exact={'true'}
+								          // offset={-80}
 										  onClick={goToParlours}>Parlours</NavLinks>
 							</NavItem>
 							<NavItem>
 								<NavLinks to="location"
-								          smooth={true}
-								          duration={500}
-								          spy={true}
-								          exact={'true'}
-								          offset={-80}
+								          // smooth={true}
+								          // duration={500}
+								          // spy={true}
+								          // exact={'true'}
+								          // offset={-80}
 										  onClick={goToMap}>Location</NavLinks>
 							</NavItem>
 							<NavItem>
 								<NavLinks to="information"
-								          smooth={true}
-								          duration={500}
-								          spy={true}
-								          exact={'true'}
-								          offset={-80}
+								          // smooth={true}
+								          // duration={500}
+								          // spy={true}
+								          // exact={'true'}
+								          // offset={-80}
 										  onClick={goToInfo}>Information</NavLinks>
 							</NavItem>
 						</NavMenu>
