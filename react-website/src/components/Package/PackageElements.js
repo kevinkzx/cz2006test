@@ -239,3 +239,18 @@ export const PackageFilterFormExtra = styled.div`
     margin-left: 0.5rem;
   }
 `;
+
+
+
+export const CompareInstructions = styled.h3`
+  color: black; 
+  margin: 0; 
+  text-align: center;
+  font-weight: 700;
+  }
+`;
+
+
+
+
+

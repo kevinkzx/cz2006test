@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
 
-
-
-
-
 //ReviewCard css
 
 export const Review_Card = styled.article`
@@ -62,6 +58,8 @@ export const ReviewContainer = styled.div`
 
 export const TextContainer = styled.div`
   padding: 2rem;
+  font-size: 1.5rem;
+
 `;
 
 
