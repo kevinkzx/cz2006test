@@ -9,41 +9,50 @@ import {
 	SidebarWrapper,
 	SideBtnWrap
 } from "./SidebarElements";
+import * as PropTypes from "prop-types";
 
-const Sidebar = ({isOpen, toggle}) => {
-	return (
-		<SidebarContainer isOpen={isOpen}
-		                  onClick={toggle}>
-			<Icon onClick={toggle}>
-				<CloseIcon/>
-			</Icon>
-			<SidebarWrapper>
-				<SidebarMenu>
-					<SidebarLink to="packages"
-					             onClick={toggle}>
-						Packages
-					</SidebarLink>
-					<SidebarLink to="parlours"
-					             onClick={toggle}>
-						Parlours
-					</SidebarLink>
-					<SidebarLink to="location"
-					             onClick={toggle}>
-						Location
-					</SidebarLink>
-					<SidebarLink to="information"
-					             onClick={toggle}>
-						Information
-					</SidebarLink>
-				</SidebarMenu>
-				<SideBtnWrap>
-					<SidebarRoute to="/signin">
-						Sign In
-					</SidebarRoute>
-				</SideBtnWrap>
-			</SidebarWrapper>
-		</SidebarContainer>
-	);
-};
+class Sidebar extends React.Component {
+	render() {
+		let {isOpen, toggle} = this.props;
+		return (
+			<SidebarContainer isOpen={isOpen}
+							  onClick={toggle}>
+				<Icon onClick={toggle}>
+					<CloseIcon/>
+				</Icon>
+				<SidebarWrapper>
+					<SidebarMenu>
+						<SidebarLink to="packages"
+									 onClick={toggle}>
+							Packages
+						</SidebarLink>
+						<SidebarLink to="parlours"
+									 onClick={toggle}>
+							Parlours
+						</SidebarLink>
+						<SidebarLink to="location"
+									 onClick={toggle}>
+							Location
+						</SidebarLink>
+						<SidebarLink to="information"
+									 onClick={toggle}>
+							Information
+						</SidebarLink>
+					</SidebarMenu>
+					<SideBtnWrap>
+						<SidebarRoute to="/signin">
+							Sign In
+						</SidebarRoute>
+					</SideBtnWrap>
+				</SidebarWrapper>
+			</SidebarContainer>
+		);
+	}
+}
+
+Sidebar.propTypes = {
+	isOpen: PropTypes.any,
+	toggle: PropTypes.any
+}
 
 export default Sidebar;
