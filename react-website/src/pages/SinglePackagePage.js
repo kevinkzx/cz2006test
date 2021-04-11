@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import SinglePackage from "../components/Package/SinglePackage";
+import PackageBooking from "../components/Package/PackageBooking";
 
 const SinglePackagePage = () => {
 	// to scroll to the top of the webpage when rendered
@@ -18,6 +19,7 @@ const SinglePackagePage = () => {
 			             getStartedButton="packageInfo"
 			             scroll={true}/>
 			<SinglePackage/>
+			<PackageBooking/>
 		</>
 	);
 };
