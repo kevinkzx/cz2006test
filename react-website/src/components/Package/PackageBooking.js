@@ -52,7 +52,8 @@ const PackageBooking = () => {
 			days: item.days,
 			transportation: item.transportation ? "Included" : "Not included",
 			casket: item.casket,
-			eco: item.eco ? "Included" : "Not included"
+			eco: item.eco ? "Included" : "Not included",
+			provider: item.provider
 		}
 		sendEmail(param);
 		alert.show('Successfully booked this package');

@@ -22,16 +22,17 @@ export const PackageProvider = ({children}) => {
 	}
 
 	useEffect(() => {
-		fire.firestore()
-		    .collection('Packages')
-		    .onSnapshot((snapshot) => {
-			    const newPackages = snapshot.docs.map((doc) => ({
-				    id: doc.id,
-				    ...doc.data()
-			    }));
-			    setPackages(newPackages);
-			    setSortedPackages(newPackages);
-		    })
+		const unsubscribe = fire.firestore()
+		                        .collection('Packages')
+		                        .onSnapshot((snapshot) => {
+			                        const newPackages = snapshot.docs.map((doc) => ({
+				                        id: doc.id,
+				                        ...doc.data()
+			                        }));
+			                        setPackages(newPackages);
+			                        setSortedPackages(newPackages);
+		                        })
+		return () => unsubscribe();
 	}, []);
 
 	useEffect(() => {
