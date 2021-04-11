@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {FaBars} from 'react-icons/fa';
 import {IconContext} from "react-icons/lib";
 import {animateScroll as scroll} from 'react-scroll';
@@ -13,9 +13,11 @@ import {
 	NavLogo,
 	NavMenu
 } from './NavbarElements';
+import AuthContext from "../Context/AuthContext";
 
 const Navbar = ({toggle}) => {
 	const [scrollNav, setScrollNav] = useState(false);
+	const {user, handleLogout} = useContext(AuthContext);
 
 	const changeNav = () => {
 		if (window.scrollY >= 80) {
@@ -79,9 +81,13 @@ const Navbar = ({toggle}) => {
 								          offset={-80}>Information</NavLinks>
 							</NavItem>
 						</NavMenu>
-						<NavBtn>
+						{!user && (<NavBtn>
 							<NavBtnLink to='/signin'>Sign In</NavBtnLink>
-						</NavBtn>
+						</NavBtn>)}
+						{user && (
+							<NavBtnLink to='/' onClick={handleLogout}>Log Out</NavBtnLink>
+						)}
+
 					</NavbarContainer>
 				</Nav>
 			</IconContext.Provider>
