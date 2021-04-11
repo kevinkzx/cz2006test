@@ -81,11 +81,14 @@ const Navbar = ({toggle}) => {
 								          offset={-80}>Information</NavLinks>
 							</NavItem>
 						</NavMenu>
-						{!user && (<NavBtn>
-							<NavBtnLink to='/signin'>Sign In</NavBtnLink>
-						</NavBtn>)}
+						{!user && (
+							<NavBtn>
+								<NavBtnLink to='/signIn'>Sign In</NavBtnLink>
+							</NavBtn>)}
 						{user && (
-							<NavBtnLink to='/' onClick={handleLogout}>Log Out</NavBtnLink>
+							<NavBtn>
+								<NavBtnLink to='/' onClick={handleLogout}>Log Out</NavBtnLink>
+							</NavBtn>
 						)}
 
 					</NavbarContainer>
