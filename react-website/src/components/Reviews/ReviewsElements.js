@@ -100,7 +100,7 @@ export const Review_Input = styled.textarea`
   margin-bottom: 1rem;
 `;
 
-export const SubmitReviewButton = styled.input`
+export const SubmitReviewButton = styled.button`
   border: 2px solid #4CAF50;
   background-color: white;
   color: black;

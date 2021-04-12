@@ -19,16 +19,14 @@ const ReviewInput = () => {
     //             review: input['review'].value,
     //         }
     //     createReview(data);
-    // }
-
+    // 
 	
-
-
 	return (
 		<>
             <ReviewInputContainer> 	
-				<Review_Input name={'review'} placeholder="Leave a review here..."/>
-                <SubmitReviewButton onClick={() =>  handleClickEvent() } type='submit'>Submit</SubmitReviewButton>
+
+				<Review_Input  placeholder="Leave a review here..."></Review_Input>
+                <SubmitReviewButton  type='submit'>Submit</SubmitReviewButton>
 
 			</ReviewInputContainer>
             

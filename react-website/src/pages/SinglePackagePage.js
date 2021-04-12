@@ -5,6 +5,9 @@ import SinglePackage from "../components/Package/SinglePackage";
 import PackageBooking from "../components/Package/PackageBooking";
 import ReviewInput from '../components/Reviews/ReviewInput';
 
+
+
+
 const SinglePackagePage = () => {
 	// to scroll to the top of the webpage when rendered
 	useEffect(() => {
@@ -21,9 +24,8 @@ const SinglePackagePage = () => {
 			             scroll={true}/>
 			<SinglePackage/>
 
+	
 			<ReviewInput/>
-
-
 			<PackageBooking/>
 		</>
 	);
