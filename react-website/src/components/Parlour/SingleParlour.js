@@ -10,6 +10,8 @@ import {
 import {useParams} from "react-router-dom";
 import ParlourContext from "../Context/ParlourContext";
 import { ItemDescription } from 'semantic-ui-react';
+import Map from "./ParlourMapIndex";
+import { withScriptjs } from "react-google-maps";
 
 const SingleParlour = () => {
     const {getParlour} = useContext(ParlourContext);
@@ -17,6 +19,9 @@ const SingleParlour = () => {
     const item = getParlour(slug);
     const caskets = item.caskets;
     const GP = item.generalPackages;
+    const MapLoader = withScriptjs(Map);
+    let googleKey = {REACT_APP_GOOGLE_KEY: `AIzaSyDQqDdByz7RV0721d5rYNfU7HWo98LiTr0`};
+
     return (
         <div id="parlourInfo">
             <h1>this the single parlour page</h1>
@@ -53,6 +58,12 @@ const SingleParlour = () => {
                     </ParlourInfor>
                 </SingleParlourInfo>
             </SingleParlourContainer>
+            <MapLoader
+                googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${
+					googleKey.REACT_APP_GOOGLE_KEY
+				}`}
+				loadingElement={<div style={{height: `100%`}}/>}
+            />
         </div>
     );
 };

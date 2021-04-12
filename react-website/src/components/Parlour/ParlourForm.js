@@ -17,11 +17,6 @@ import AuthContext from "../Context/AuthContext";
 import ParlourContext from "../Context/ParlourContext";
 import { useAlert } from "react-alert";
 import {ParlourFormContext} from "../Context/ParlourFormContext";
-
-
-
-
-    
   
   function ConfirmationDialogRaw(props) {
     const { onClose, value: valueProp, open, ...other } = props;
@@ -33,9 +28,13 @@ import {ParlourFormContext} from "../Context/ParlourFormContext";
     let {slug} = useParams();
     const item = getParlour(slug);
     const GP = item.generalPackages;
-    //console.log(GP);
     
-  
+    //console.log(Object.keys(GP).length);
+    //GP[Object.keys(GP).length] = "nill";
+    //console.log(GP);
+    //const tempGP = GP;
+    //tempGP[Object.keys(GP).length] = "nill";
+
     React.useEffect(() => {
       if (!open) {
         setValue(valueProp);

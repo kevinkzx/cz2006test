@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {GoogleMap, InfoWindow, Marker, withGoogleMap, withScriptjs} from "react-google-maps";
 import * as parloursData from "./data/funeralParlourData.json";
 
+
 function Parlours() {
 	const [selectedParlour, setSelectedParlour] = useState(null);
 
@@ -34,6 +35,7 @@ function Parlours() {
 					}}
 				>
 					<div>
+						{/* <h1>adding link here to open googlemaps</h1> */}
 						<h2>{selectedParlour.properties.Name}</h2>
 						<p>{selectedParlour.properties.ADDRESSBUILDINGNAME}</p>
 						<p>

@@ -35,8 +35,14 @@ export default function FormDialog() {
             //console.log(item.name);
             //console.log(user.email);
             const form = nameForm.current;
-            //console.log(form['address'].value);
-            myorder.setAddress(form['address'].value);
+            console.log(form['address'].value);
+            
+            if ((form['address'].value) === '') {
+                alert.show('Address cannot be empty!');
+            }
+            else {
+                myorder.setAddress(form['address'].value);
+            };
         };    
       setOpen(false);
     };
