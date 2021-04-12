@@ -1,5 +1,6 @@
 import React, {createContext, useEffect, useState} from 'react';
 import fire from "../../firebase/fire";
+import firebase from "firebase";
 
 
 const PackageContext = createContext();
@@ -24,6 +25,7 @@ export const PackageProvider = ({children}) => {
 	useEffect(() => {
 		const unsubscribe = fire.firestore()
 		                        .collection('Packages')
+		                        .orderBy("name")
 		                        .onSnapshot((snapshot) => {
 			                        const newPackages = snapshot.docs.map((doc) => ({
 				                        id: doc.id,
@@ -47,6 +49,26 @@ export const PackageProvider = ({children}) => {
 		checkDays();
 		filterPackages();
 	}, [religion, location, price, maxDay, minDay, casket, transportation, eco]);
+
+	const updateReview = (email, input, packageId) => {
+		fire.firestore()
+		    .collection("Packages")
+		    .doc(packageId)
+		    .update(
+			    {
+				    reviews: firebase.firestore.FieldValue.arrayUnion(
+					    {
+						    email,
+						    review: input,
+						    created: firebase.firestore.Timestamp.now()
+					    }
+				    )
+			    }
+		    )
+		    .then(r => {
+			    console.log("Success update of review.")
+		    })
+	}
 
 	const filterPackages = () => {
 		let temp = packages;
@@ -105,7 +127,8 @@ export const PackageProvider = ({children}) => {
 			setMaxDay,
 			setCasket,
 			setTransportation,
-			setEco
+			setEco,
+			updateReview
 		}}>
 			{children}
 		</PackageContext.Provider>

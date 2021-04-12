@@ -7,7 +7,7 @@ export const Review_Card = styled.article`
     margin: 2rem 20%;
     box-shadow: 2px 5px 3px 0 rgba(0, 0, 0, 0.5);
     transition: all 0.3s linear;
-  }
+  
 `;
 
 
@@ -34,7 +34,7 @@ export const Reviewer = styled.div`
 
 export const Date = styled.div`
   top: 0;
-  left: 10;
+  left: 10px;
   color: black;
   padding: 0.3rem 0.6rem 0.5rem;
   border-bottom-right-radius: 1rem;

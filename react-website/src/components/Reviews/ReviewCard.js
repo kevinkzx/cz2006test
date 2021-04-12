@@ -1,6 +1,5 @@
-
 import React, {useContext} from 'react';
-import { TextContainer, Date, ReviewContainer, Reviewer, Review_Card } from './ReviewsElements';
+import {TextContainer, Date, ReviewContainer, Reviewer, Review_Card} from './ReviewsElements';
 import {useParams} from "react-router-dom";
 
 
@@ -11,22 +10,23 @@ const ReviewCard = ({item}) => {
 
 	return (
 		<Review_Card>
-            <ReviewContainer>
-               
-                <Reviewer>
-                    <h6><strong>{item.name}</strong></h6>
-                </Reviewer>
+			<ReviewContainer>
 
-                <Date>            
-                    <h6>{item.date}</h6>      
-                </Date>
+				<Reviewer>
+					<h6><strong>{item.email}</strong></h6>
+				</Reviewer>
 
-                <TextContainer>
-                    <h6> {item.review} </h6>
-                </TextContainer>
+				<Date>
+					<h6>{item.created.toDate()
+					         .toLocaleDateString()}</h6>
+				</Date>
 
-            </ReviewContainer>
-				
+				<TextContainer>
+					<h6> {item.review} </h6>
+				</TextContainer>
+
+			</ReviewContainer>
+
 		</Review_Card>
 	);
 };

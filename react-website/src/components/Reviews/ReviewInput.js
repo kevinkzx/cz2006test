@@ -1,37 +1,40 @@
-import React from 'react';
-import ReviewContext from '../Context/ReviewContext';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import {Review_Input, ReviewInputContainer, SubmitReviewButton} from "./ReviewsElements"
 import {useParams} from "react-router-dom";
+import PackageContext from "../Context/PackageContext";
+import AuthContext from "../Context/AuthContext";
 
 
 const ReviewInput = () => {
 
-	// let {slug} = useParams();
-    // const input = useRef(null);
+	let {slug} = useParams();
+	const {getPackage, updateReview} = useContext(PackageContext);
+	const {email} = useContext(AuthContext);
+	const item = getPackage(slug);
+	const [input, setInput] = useState("");
+
+	// const input = useRef(null);
 
 
-	const handleClickEvent = () => {
-        // const input = input.current;
-        // const data = {
-        //         name: username,
-        //         date: Date.now,
-        //         slug: slug,
-        //         review: input['review'].value,
-        //     }
-        // createReview(data);
-		console.log("Hello")
-    }
+	const handleClickEvent = (event) => {
+		event.preventDefault();
+		updateReview(email, input, item.id);
+		setInput("");
+		console.log(input)
+	}
 
 
 	return (
 		<>
-            <ReviewInputContainer> 	
+			<ReviewInputContainer>
 
-				<Review_Input  placeholder="Leave a review here..."/>
-                <SubmitReviewButton onClick={handleClickEvent} type='submit'>Submit</SubmitReviewButton>
+				<Review_Input onChange={(e) => setInput(e.target.value)}
+				              placeholder="Leave a review here..."/>
+				<SubmitReviewButton onClick={handleClickEvent}
+					type='submit'>Submit</SubmitReviewButton>
 
 			</ReviewInputContainer>
-            
+
 		</>
 	);
 };
