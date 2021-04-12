@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {Link} from 'react-router-dom';
 import {Button} from "../ButtonElements";
 // --primaryColor: #af9a7d;
 // --mainWhite: #fff;
@@ -76,19 +75,19 @@ export const PriceTop = styled.div`
 
 export const ImgContainer = styled.div`
   position: relative;
-  
+
   & img {
     width: 100%;
     display: block;
     transition: all 0.3s linear;
   }
-  
+
   &:hover {
     background: rgba(0, 0, 0, 0.8);
   }
 
   &:hover img {
-   opacity: 0.3;
+    opacity: 0.3;
   }
 
   &:hover ${PriceTop} {
@@ -98,7 +97,7 @@ export const ImgContainer = styled.div`
   &:hover ${ParlourLink} {
     transform: translate(-50%, -50%) scale(1);
   }
-  
+
 `;
 
 export const ParlourInfo = styled.p`
@@ -111,16 +110,16 @@ export const ParlourInfo = styled.p`
 `;
 
 export const btnPrimary = styled.div`
-display: inline-block;
-text-decoration: none;
-letter-spacing: var(--mainSpacing);
-color: var(--mainBlack);
-background: var(--primaryColor);
-padding: 0.4rem 0.9rem;
-border: 3px solid var(--primaryColor);
-transition: var(--mainTransition);
-text-transform: uppercase;
-cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: var(--mainSpacing);
+  color: var(--mainBlack);
+  background: var(--primaryColor);
+  padding: 0.4rem 0.9rem;
+  border: 3px solid var(--primaryColor);
+  transition: var(--mainTransition);
+  text-transform: uppercase;
+  cursor: pointer;
 `;
 
 export const SingleParlourContainer = styled.section`
@@ -189,7 +188,7 @@ export const ListItems = styled.article`
   grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   grid-column-gap: 2rem;
   grid-row-gap: 1rem;
-  
+
 `;
 
 export const FormGrid = styled.div`
@@ -204,7 +203,7 @@ export const SearchTitle = styled.div`
   text-align: center;
   margin-bottom: 4rem;
   margin-top: 2rem;
-  
+
 
   h4 {
     font-size: 2rem;
@@ -218,6 +217,36 @@ export const SearchTitle = styled.div`
     height: 5px;
     margin: 0 auto;
     background: #01BF71;
+  }
+`;
+
+export const SearchBar = styled.div`
+  margin-left: 30%;
+  margin-bottom: 7rem;
+
+  input {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 50%;
+    background: #f1f1f1;
+  }
+
+  button {
+    float: left;
+    width: 8%;
+    padding: 10px;
+    background: #01BF71;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+
+    &:hover {
+      background: black;
+    }
   }
 `;
 

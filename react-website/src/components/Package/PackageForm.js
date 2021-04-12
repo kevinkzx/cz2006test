@@ -1,4 +1,4 @@
-import React, {useRef, useContext} from 'react';
+import React, {useContext, useRef} from 'react';
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Dialog from '@material-ui/core/Dialog';
@@ -30,8 +30,6 @@ export default function FormDialog() {
 			console.log('please log in first');
 			alert.show('Please log in first!');
 		} else {
-			// console.log(item.name);
-			// console.log(user.email);
 			const form = nameForm.current;
 			if (!form['address'].value) {
 				console.log("Please enter address");

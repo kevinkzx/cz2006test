@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useRef, useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {Review_Input, ReviewInputContainer, SubmitReviewButton} from "./ReviewsElements"
 import {useParams} from "react-router-dom";
 import PackageContext from "../Context/PackageContext";
@@ -21,10 +21,12 @@ const ReviewInput = () => {
 		event.preventDefault();
 		if (!input) {
 			alert.show("Please write a review first before submitting.")
+		} else if (!user) {
+			alert.show("Please log in first.")
 		} else {
 			updateReview(user.email, input, item.id);
 			setInput("");
-			console.log(input)
+			console.log(input);
 		}
 	}
 
