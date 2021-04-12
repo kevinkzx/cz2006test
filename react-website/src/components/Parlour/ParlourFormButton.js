@@ -10,9 +10,8 @@ import {useParams} from "react-router-dom";
 import AuthContext from "../Context/AuthContext";
 import { useAlert } from "react-alert";
 import ParlourContext from "../Context/ParlourContext";
-import {ParlourFormContext} from "../Context/ParlourFormContext";
 
-export default function FormDialog() {
+export default function FormDialog(props) {
     const [open, setOpen] = React.useState(false);
     const {getParlour} = useContext(ParlourContext);
     let {slug} = useParams();
@@ -20,12 +19,11 @@ export default function FormDialog() {
     const {user} = useContext(AuthContext);
     const alert = useAlert();
     const nameForm = useRef(null);
-    const myorder = useContext(ParlourFormContext);
 
     const handleClickOpen = () => {
       setOpen(true);
     };
-  
+
     const handleClose = (useraddress) => {
         if (user === null){
             //console.log('please log in first');
@@ -35,9 +33,14 @@ export default function FormDialog() {
             //console.log(item.name);
             //console.log(user.email);
             const form = nameForm.current;
+            if (form['address'].value === '') {
+                alert.show("Address cannot be empty");
+            } else {
+                props.setAddress(form['address'].value);
+            }
             //console.log(form['address'].value);
-            myorder.setAddress(form['address'].value);
-        };    
+            // myorder.setAddress(form['address'].value);
+        };
       setOpen(false);
     };
 
@@ -56,7 +59,7 @@ export default function FormDialog() {
             <DialogContentText>
               To engage this parlour, enter your address.
             </DialogContentText>
-            <form ref ={nameForm}>
+            <form ref={nameForm}>
             <TextField
               autoFocus
               margin="dense"

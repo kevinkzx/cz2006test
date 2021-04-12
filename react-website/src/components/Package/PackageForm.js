@@ -17,7 +17,7 @@ export default function FormDialog() {
 	const {getPackage} = useContext(PackageContext);
 	let {slug} = useParams();
 	const item = getPackage(slug);
-	const {user, booking, email} = useContext(AuthContext);
+	const {user, booking} = useContext(AuthContext);
 	const alert = useAlert();
 	const nameForm = useRef(null);
 
@@ -33,24 +33,30 @@ export default function FormDialog() {
 			// console.log(item.name);
 			// console.log(user.email);
 			const form = nameForm.current;
-			const data = {
-				name: item.name,
-				price: item.price,
-				address: form['address'].value,
+			if (!form['address'].value) {
+				console.log("Please enter address");
+				alert.show("Please enter an address.")
+			} else {
+				const data = {
+					name: item.name,
+					price: item.price,
+					address: form['address'].value,
+					type: "package"
+				};
+				booking(data, "Users");
+				const param = {
+					...data,
+					email: user.email,
+					religion: item.religion,
+					location: item.location,
+					days: item.days,
+					transportation: item.transportation ? "Included" : "Not included",
+					casket: item.casket,
+					eco: item.eco ? "Yes" : "No",
+					provider: item.parlour
+				}
+				sendEmail(param);
 			}
-			booking(data);
-			const param = {
-				...data,
-				email,
-				religion: item.religion,
-				location: item.location,
-				days: item.days,
-				transportation: item.transportation ? "Included" : "Not included",
-				casket: item.casket,
-				eco: item.eco ? "Yes" : "No",
-				provider: item.parlour
-			}
-			sendEmail(param);
 			// console.log(form['address'].value);
 		}
 		;

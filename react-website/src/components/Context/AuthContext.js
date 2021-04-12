@@ -56,7 +56,7 @@ export const AuthProvider = ({children}) => {
 				fire.firestore()
 				    .collection('Users')
 				    .doc(email)
-				    .set({email, password, orderHistory: []})
+				    .set({email, password, orderHistory: [], engageHistory: []})
 				    .then();
 			})
 			.catch(err => {
@@ -81,9 +81,9 @@ export const AuthProvider = ({children}) => {
 			clearInputs();
 		};
 
-		const booking = (data) => {
+		const booking = (data, collectionName) => {
 			fire.firestore()
-			    .collection("Users")
+			    .collection(collectionName)
 			    .doc(email)
 			    .update(
 				    {

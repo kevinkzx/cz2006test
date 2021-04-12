@@ -16,7 +16,6 @@ import {useParams} from "react-router-dom";
 import AuthContext from "../Context/AuthContext";
 import ParlourContext from "../Context/ParlourContext";
 import { useAlert } from "react-alert";
-import {ParlourFormContext} from "../Context/ParlourFormContext";
 
   
   function ConfirmationDialogRaw(props) {
@@ -112,14 +111,13 @@ import {ParlourFormContext} from "../Context/ParlourFormContext";
     },
   }));
   
-  export default function ConfirmationDialog() {
+  export default function ConfirmationDialog(props) {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const [value, setValue] = React.useState('Nill');
     const {user} = useContext(AuthContext);
     const alert = useAlert();
-    const myorder = useContext(ParlourFormContext);
-  
+
     const handleClickListItem = () => {
       setOpen(true);
     };
@@ -138,14 +136,16 @@ import {ParlourFormContext} from "../Context/ParlourFormContext";
             alert.show('Please log in first!');
         }
         else {
-            console.log(newValue);
+            // console.log(newValue);
         }
         setOpen(false);
   
         if (newValue) {
-            setValue(newValue);
-            myorder.setCaskets(newValue);
-        };
+          setValue(newValue);
+          props.setCaskets(newValue);
+          // myorder.setCaskets(newValue);
+        }
+
     };
 
 
