@@ -5,22 +5,22 @@ import SingleParlour from "../components/Parlour/SingleParlour";
 import ParlourBooking from "../components/Parlour/ParlourBooking";
 
 const SingleParlourPage = () => {
-    //to scroll to the top of the webpage when rendered
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+	//to scroll to the top of the webpage when rendered
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
-    return (
-        <>
-            <Navbar/>
-            <HeroSection HeroHeader="Hello"
+	return (
+		<>
+			<Navbar/>
+			<HeroSection HeroHeader="Hello"
 			             HeroPara="Book with us right now."
 			             getStartedButton="packageInfo"
 			             scroll={true}/>
 			<SingleParlour/>
-            <ParlourBooking/>
-        </>
-    );
+			<ParlourBooking/>
+		</>
+	);
 };
 
 export default SingleParlourPage;

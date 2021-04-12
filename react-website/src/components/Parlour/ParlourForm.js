@@ -137,12 +137,12 @@ export default function ConfirmationDialog(props) {
 	};
 
 	const handleBook = (newValue) => {
-		if (user === null) {
-			//console.log('please log in first');
-			alert.show('Please log in first!');
-		} else {
-			//console.log(newValue);
-		}
+		// if (user === null) {
+		// 	//console.log('please log in first');
+		// 	alert.show('Please log in first!');
+		// } else {
+		// 	//console.log(newValue);
+		// }
 		setOpen(false);
 
 		if (newValue) {

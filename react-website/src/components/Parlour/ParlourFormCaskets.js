@@ -17,7 +17,7 @@ import AuthContext from "../Context/AuthContext";
 import ParlourContext from "../Context/ParlourContext";
 import { useAlert } from "react-alert";
 
-  
+
   function ConfirmationDialogRaw(props) {
     const { onClose, value: valueProp, open, ...other } = props;
     const [value, setValue] = React.useState(valueProp);
@@ -29,32 +29,32 @@ import { useAlert } from "react-alert";
     const item = getParlour(slug);
     const caskets = item.caskets;
     //console.log(caskets);
-    
-  
+
+
     React.useEffect(() => {
       if (!open) {
         setValue(valueProp);
       }
     }, [valueProp, open]);
-  
+
     const handleEntering = () => {
       if (radioGroupRef.current != null) {
         radioGroupRef.current.focus();
       }
     };
-  
+
     const handleCancel = () => {
       onClose();
     };
-  
+
     const handleOk = () => {
       onClose(value);
     };
-  
+
     const handleChange = (event) => {
       setValue(event.target.value);
     };
-  
+
     return (
       <Dialog
         disableBackdropClick
@@ -92,13 +92,13 @@ import { useAlert } from "react-alert";
       </Dialog>
     );
   }
-  
+
   ConfirmationDialogRaw.propTypes = {
     onClose: PropTypes.func.isRequired,
     open: PropTypes.bool.isRequired,
     value: PropTypes.string.isRequired,
   };
-  
+
   const useStyles = makeStyles((theme) => ({
     root: {
       width: '100%',
@@ -110,7 +110,7 @@ import { useAlert } from "react-alert";
       maxHeight: 435,
     },
   }));
-  
+
   export default function ConfirmationDialog(props) {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
@@ -121,25 +121,25 @@ import { useAlert } from "react-alert";
     const handleClickListItem = () => {
       setOpen(true);
     };
-  
+
     const handleClose = (newValue) => {
       setOpen(false);
-  
+
       if (newValue) {
         setValue(newValue);
       }
     };
-  
+
     const handleBook = (newValue) => {
-        if (user === null) {
-            console.log('please log in first');
-            alert.show('Please log in first!');
-        }
-        else {
-            // console.log(newValue);
-        }
+        // if (user === null) {
+        //     console.log('please log in first');
+        //     alert.show('Please log in first!');
+        // }
+        // else {
+        //     // console.log(newValue);
+        // }
         setOpen(false);
-  
+
         if (newValue) {
           setValue(newValue);
           props.setCaskets(newValue);
@@ -177,5 +177,5 @@ import { useAlert } from "react-alert";
         </List>
       </div>
     );
-    
+
   }

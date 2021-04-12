@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useContext, useState} from 'react'
 import {useParams} from "react-router-dom";
 import ParlourContext from "../Context/ParlourContext";
 import ParlourForm from "./ParlourForm";
@@ -13,40 +13,22 @@ const ParlourBooking = () => {
 	let {slug} = useParams();
 	const item = getParlour(slug);
 	const alert = useAlert();
-	const [generalPackages, setGeneralPackages] = useState("");
-	const [caskets, setCaskets] = useState("");
-	const [address, setAddress] = useState("");
+	const [generalPackages, setGeneralPackages] = useState(null);
+	const [caskets, setCaskets] = useState(null);
+	const [address, setAddress] = useState(null);
 
 	const {user, booking} = useContext(AuthContext);
-	// if (!generalPackages && !caskets) {
-	// 	alert.show("Please book at least one of the services.")
-	// 	console.log("hello");
-	// } else
-	// if (user && !address) {
-	// 	alert.show("Please enter an address");
-	// } else {
-	// 	const data = {
-	// 		type: "parlour service",
-	// 		generalPackages,
-	// 		caskets,
-	// 	};
-	// 	console.log(data);
-	// 	// booking();
-	// }
-	// useEffect(() => {
-	// 	setGeneralPackages("");
-	// 	setCaskets("");
-	// 	// setAddress("");
-	// }, []);
-
-	// useEffect(() => {
-	// 	console.log("hello")
-	// }, [address])
 
 	const testBook = () => {
-		console.log(generalPackages);
-		console.log(caskets);
-		console.log(address);
+		if (!generalPackages && !caskets) {
+			alert.show("Please select a service first");
+		} else if (!address) {
+			alert.show("Please write address");
+		} else {
+			console.log(generalPackages);
+			console.log(caskets);
+			console.log(address);
+		}
 	};
 
 

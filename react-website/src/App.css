@@ -29,8 +29,9 @@ button {
     width: 100%;
     min-height: 100vh;
     padding: 0 20px;
-    background: #e9e9e9;
+    background: white;
     display: flex;
+    margin-top: 50px;
 }
 
 .login .loginContainer {

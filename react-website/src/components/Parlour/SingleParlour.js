@@ -38,7 +38,7 @@ const SingleParlour = () => {
                     <ParlourInfor>
                         <h3>General Packages</h3>
                         <ListItems>
-                            {GP.map((item,index) => 
+                            {GP.map((item,index) =>
                                 <li key={index}> - {item}</li>
                             )}
                         </ListItems>

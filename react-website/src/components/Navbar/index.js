@@ -1,5 +1,5 @@
-import React, {useContext, useEffect, useState, useRef} from 'react';
-import { useHistory } from "react-router-dom";
+import React, {useContext, useEffect, useState} from 'react';
+import {useHistory} from "react-router-dom";
 import {FaBars} from 'react-icons/fa';
 import {IconContext} from "react-icons/lib";
 import {animateScroll as scroll} from 'react-scroll';
@@ -72,39 +72,39 @@ const Navbar = ({toggle}) => {
 						<NavMenu>
 							<NavItem>
 								<NavLinks to="packages"
-								          // smooth={true}
-								          // duration={500}
-								          // spy={true}
-								          // exact={'true'}
-								          // offset={-80}
-										  onClick={goToPackages}>Packages</NavLinks>
+									// smooth={true}
+									// duration={500}
+									// spy={true}
+									// exact={'true'}
+									// offset={-80}
+									      onClick={goToPackages}>Packages</NavLinks>
 							</NavItem>
 							<NavItem>
 								<NavLinks to="parlours"
-								          // smooth={true}
-								          // duration={500}
-								          // spy={true}
-								          // exact={'true'}
-								          // offset={-80}
-										  onClick={goToParlours}>Parlours</NavLinks>
+									// smooth={true}
+									// duration={500}
+									// spy={true}
+									// exact={'true'}
+									// offset={-80}
+									      onClick={goToParlours}>Parlours</NavLinks>
 							</NavItem>
 							<NavItem>
 								<NavLinks to="location"
-								          // smooth={true}
-								          // duration={500}
-								          // spy={true}
-								          // exact={'true'}
-								          // offset={-80}
-										  onClick={goToMap}>Location</NavLinks>
+									// smooth={true}
+									// duration={500}
+									// spy={true}
+									// exact={'true'}
+									// offset={-80}
+									      onClick={goToMap}>Location</NavLinks>
 							</NavItem>
 							<NavItem>
 								<NavLinks to="information"
-								          // smooth={true}
-								          // duration={500}
-								          // spy={true}
-								          // exact={'true'}
-								          // offset={-80}
-										  onClick={goToInfo}>Information</NavLinks>
+									// smooth={true}
+									// duration={500}
+									// spy={true}
+									// exact={'true'}
+									// offset={-80}
+									      onClick={goToInfo}>Information</NavLinks>
 							</NavItem>
 						</NavMenu>
 						{!user && (
@@ -113,7 +113,8 @@ const Navbar = ({toggle}) => {
 							</NavBtn>)}
 						{user && (
 							<NavBtn>
-								<NavBtnLink to='/' onClick={handleLogout}>Log Out</NavBtnLink>
+								<NavBtnLink to='/'
+								            onClick={handleLogout}>Log Out</NavBtnLink>
 							</NavBtn>
 						)}
 

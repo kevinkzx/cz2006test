@@ -18,9 +18,9 @@ export default [
 			img: img1,
 
 		}
-	}, 
-	
-	
+	},
+
+
 	{
 		sys: {
 			id: "2"
@@ -36,10 +36,10 @@ export default [
 			eco: false,
 			price: 500,
 			img: img1,
-		
+
 		}
-	}, 
-	
+	},
+
 	{
 		sys: {
 			id: "3"
@@ -55,7 +55,7 @@ export default [
 			eco: true,
 			price: 5000,
 			img: img1,
-			
+
 		}
 	}
 ];

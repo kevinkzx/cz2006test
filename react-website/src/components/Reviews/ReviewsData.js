@@ -6,8 +6,8 @@ export default [
 		date : "6 March 2021",
 		review: "Great service by the funeral company. Highly recommended for smooth \
 		funeral service.",
-		
-	}, 
+
+	},
 
 	{
 
@@ -17,10 +17,10 @@ export default [
 		review: "First of all I would like to express my appreciation for Casket Fairprice \
 		especially during this difficult period. Not only they were prompt in their response, \
 		they were professional throughout the entire process.",
-		
-	}, 
 
-	
+	},
+
+
 
 	{
 		slug: "package-2",
@@ -28,7 +28,7 @@ export default [
 		date : "10 May 2020",
 		review: "High professional team of funeral directors. Highly recommended."
 
-	}, 
+	},
 
 	{
 		slug: "package-2",
@@ -38,7 +38,7 @@ export default [
 		gratefulness to Mr Joseph Ooi & Miss Vivien for the great services rendered to us during our recent bereavement.\
 		Calls were answered within a few rings in the wee hours and both were very attentive and helpful."
 
-	}, 
+	},
 
 
 	{
@@ -62,6 +62,6 @@ export default [
 
 
 
-	
+
 
 ];

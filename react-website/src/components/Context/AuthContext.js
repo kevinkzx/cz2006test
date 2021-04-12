@@ -1,4 +1,4 @@
-import React, {createContext, useEffect, useState} from 'react';
+import React, {createContext, useState} from 'react';
 import fire from "../../firebase/fire";
 import firebase from "firebase";
 
@@ -69,7 +69,7 @@ export const AuthProvider = ({children}) => {
 						setPasswordError(err.message);
 						break;
 				}
-				;
+
 			})
 		};
 

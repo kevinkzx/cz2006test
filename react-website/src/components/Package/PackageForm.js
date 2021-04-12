@@ -57,7 +57,7 @@ export default function FormDialog() {
 			}
 			// console.log(form['address'].value);
 		}
-		;
+
 		setOpen(false);
 	};
 

@@ -21,7 +21,7 @@ export default [
 	{
 
 		id: "1",
-		
+
 		name: "Afterlife Funeral Services",
 		slug: "Afterlife Funeral Services",
 		type: "double",
@@ -85,9 +85,9 @@ export default [
 	  }, */
 
 	{
-		
+
 		id: "4",
-		
+
 		name: "Trinity Casket",
 		slug: "Trinity Casket",
 		type: "Single",
@@ -112,6 +112,6 @@ export default [
 			"Supreme",
 		],
 		img: img99,
-		
+
 	}
 ];

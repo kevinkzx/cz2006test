@@ -23,14 +23,14 @@ const SinglePackage = () => {
 	const item = getPackage(slug);
 
 
-	
 
-	
+
+
 
 	return (
 		<div id="packageInfo">
 			<SinglePackageContainer>
-				
+
 				<SinglePackageImage>
 					{/*<img src={item.img}*/}
 					{/*     alt="hge"/>*/}
@@ -50,13 +50,13 @@ const SinglePackage = () => {
 						<h6>Eco-Friendly? {item.eco ? "Yes" : "No"}</h6>
 						<h6>Provider: {item.parlour}</h6>
 					</PackageInfor>
-					
+
 				</SinglePackageInfo>
 
 				<ReviewTitle>Reviews</ReviewTitle>
 
 
-				<ReviewList/>	
+				<ReviewList/>
 
 
 

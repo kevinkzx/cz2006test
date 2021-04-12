@@ -1,6 +1,5 @@
 import React, {useContext} from "react";
 import Login from '../components/Signin/Login';
-import Hero from '../components/Signin/Hero';
 import AuthContext from "../components/Context/AuthContext";
 
 const SignIn = () => {
