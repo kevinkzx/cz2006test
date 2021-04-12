@@ -7,15 +7,28 @@ import {useParams} from "react-router-dom";
 const ReviewInput = () => {
 
 	// let {slug} = useParams();
-	// const {user, email, booking} = useContext(AuthContext);
+    // const input = useRef(null);
 
 
-    
+	// const handleClickEvent = () => {
+    //     const input = input.current;
+    //     const data = {
+    //             name: username,
+    //             date: Date.now,
+    //             slug: slug,
+    //             review: input['review'].value,
+    //         }
+    //     createReview(data);
+    // }
+
+	
+
+
 	return (
 		<>
             <ReviewInputContainer> 	
-				<Review_Input placeholder="Leave a review here..."/>
-                <SubmitReviewButton type='submit'>Submit</SubmitReviewButton>
+				<Review_Input name={'review'} placeholder="Leave a review here..."/>
+                <SubmitReviewButton onClick={() =>  handleClickEvent() } type='submit'>Submit</SubmitReviewButton>
 
 			</ReviewInputContainer>
             
