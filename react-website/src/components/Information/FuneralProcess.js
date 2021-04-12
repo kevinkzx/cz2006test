@@ -5,11 +5,18 @@ import Title from "../Parlour/Title";
 
 
 import React from 'react';
+import HeroSection from "../HeroSection";
 
 const FuneralProcess = () => {
 	return (
 		<>
-			<Title title="Funeral process"/>
+			<HeroSection HeroHeader="Funeral Process."
+			             HeroPara="Click the button to see the process of a funeral."
+			             getStartedButton="funeralProcess"
+			             scroll={true}/>
+			<div id="funeralProcess">
+				<Title title="Funeral process"/>
+			</div>
 			<Container>
 				<h3>Step 1: Decide on a funeral home</h3><br/>
 				<h3>Step 2: Obtain a Certificate of Cause of Death (CCOD)</h3><br/>

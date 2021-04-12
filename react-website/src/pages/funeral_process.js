@@ -1,9 +1,12 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Navbar from "../components/Navbar";
 import FuneralProcess from "../components/Information/FuneralProcess";
 
 
-const funeral_processPage = () => {
+const Funeral_processPage = () => {
+	useEffect(() => {
+		window.scroll(0, 0);
+	}, []);
 	return (
 		<>
 			<Navbar/>
@@ -12,4 +15,4 @@ const funeral_processPage = () => {
 	)
 }
 
-export default funeral_processPage;
+export default Funeral_processPage;
