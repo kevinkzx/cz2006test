@@ -11,7 +11,7 @@ const ReviewList = () => {
 	return (
         <>
             {reviews.map(item => {
-				if(item.slug == slug){
+				if(item.slug === slug){
 					return <ReviewCard key={item.slug} item={item}/>;
 				}
 			})}
