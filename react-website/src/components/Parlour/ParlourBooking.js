@@ -55,7 +55,6 @@ const ParlourBooking = () => {
 
 	return (
 		<div>
-			<h1>Fill in the form below to engage a parlour</h1>
 			<FormGrid>
 				<ParlourForm setGeneralPackages={setGeneralPackages}/>
 				<ParlourFormCaskets setCaskets={setCaskets}/>
