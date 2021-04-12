@@ -192,3 +192,11 @@ export const ListItems = styled.article`
   
 `;
 
+export const FormGrid = styled.div`
+  width: 80vw;
+  display: grid;
+  grid-template-columns: 30ch auto;
+  justify-content: space-evenly;
+  margin: 2rem auto;
+`;
+

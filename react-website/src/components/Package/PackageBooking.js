@@ -2,9 +2,10 @@ import React, {useRef, useContext} from 'react'
 import {useParams} from "react-router-dom";
 import PackageContext from "../Context/PackageContext";
 import AuthContext from "../Context/AuthContext";
-import {useAlert} from "react-alert";
+import { useAlert } from "react-alert";
 import InputField from "./InputField";
 import emailjs from 'emailjs-com';
+import PackageForm from "./PackageForm";
 
 const PackageBooking = () => {
 	const {getPackage} = useContext(PackageContext);
@@ -14,25 +15,25 @@ const PackageBooking = () => {
 	const alert = useAlert();
 
 
-	/*     function testfunction() {
-			//console.log(user);
-			//console.log(item.name);
+/*     function testfunction() {
+        //console.log(user);
+        //console.log(item.name);
 
-			//user is not logged in
-			if (user === null) {
-				console.log("please log in");
-				alert.show('Please log in first!');
-			}
-			else {
-				var packageorder = {"name":item.name,"price":item.price};
-				localStorage.setItem('packageorder', JSON.stringify(packageorder));
-				var package_Order = JSON.parse(result);
-				//package_Order is the object of the package.
-				//can access the values of the object with package_Order.price package_Order.name
-				console.log(package_Order.price);
-				alert.show('Successfully booked this package');
-			};
-		}; */
+        //user is not logged in
+        if (user === null) {
+            console.log("please log in");
+            alert.show('Please log in first!');
+        }
+        else {
+            var packageorder = {"name":item.name,"price":item.price};
+            localStorage.setItem('packageorder', JSON.stringify(packageorder));
+            var package_Order = JSON.parse(result);
+            //package_Order is the object of the package. 
+            //can access the values of the object with package_Order.price package_Order.name
+            console.log(package_Order.price);
+            alert.show('Successfully booked this package');
+        };
+    }; */
 
 	const nameForm = useRef(null);
 
@@ -87,20 +88,20 @@ const PackageBooking = () => {
 	//     alert.show('Successfully booked this package');
 	// };
 
-	return (
-		<div>
+    return (
+        <div>
 
-			{/* <button onClick={testfunction}>Click here to book package</button> */}
-			{/* <h1>Hello from package booking</h1> */}
-			<button onClick={() => isloggedin() ? handleClickEvent() : notloggedin()}>
-				Click here to book package
-			</button>
-			<form ref={nameForm}>
-				<InputField label={'Enter Address here'}
-				            name={'address'}/>
-			</form>
-		</div>
-	);
+            {/* <button onClick={testfunction}>Click here to book package</button> */}
+            {/* <h1>Hello from package booking</h1> */}
+            {/* <button onClick={() => isloggedin() ? handleClickEvent() : notloggedin()}>
+                Click here to book package
+            </button> */}
+            <PackageForm/>
+            {/* <form ref={nameForm}>
+                <InputField label={'Enter Address here'} name={'address'}/>
+            </form> */}
+        </div>
+    );
 };
 
 export default PackageBooking;
