@@ -37,6 +37,7 @@ export default function FormDialog(props) {
                 alert.show("Address cannot be empty");
             } else {
                 props.setAddress(form['address'].value);
+                props.testBook();
             }
             //console.log(form['address'].value);
             // myorder.setAddress(form['address'].value);

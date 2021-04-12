@@ -39,9 +39,15 @@ const ParlourBooking = () => {
 	// 	// setAddress("");
 	// }, []);
 
-	useEffect(() => {
-		console.log("hello")
-	}, [address])
+	// useEffect(() => {
+	// 	console.log("hello")
+	// }, [address])
+
+	const testBook = () => {
+		console.log(generalPackages);
+		console.log(caskets);
+		console.log(address);
+	};
 
 
 	return (
@@ -50,7 +56,8 @@ const ParlourBooking = () => {
 			<FormGrid>
 				<ParlourForm setGeneralPackages={setGeneralPackages}/>
 				<ParlourFormCaskets setCaskets={setCaskets}/>
-				<ParlourFormButton setAddress={setAddress}/>
+				<ParlourFormButton setAddress={setAddress}
+				                   testBook={testBook}/>
 			</FormGrid>
 		</div>
 	);
