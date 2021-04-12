@@ -81,13 +81,32 @@ export const AuthProvider = ({children}) => {
 			clearInputs();
 		};
 
-		const booking = (data, collectionName) => {
+		const booking = (data) => {
 			fire.firestore()
-			    .collection(collectionName)
+			    .collection("Users")
 			    .doc(user.email)
 			    .update(
 				    {
 					    orderHistory: firebase.firestore.FieldValue.arrayUnion(
+						    {
+							    ...data,
+							    created: firebase.firestore.Timestamp.now()
+						    }
+					    )
+				    }
+			    )
+			    .then(r => {
+				    console.log("Success booking")
+			    })
+		}
+
+		const query = (data) => {
+			fire.firestore()
+			    .collection("Users")
+			    .doc(user.email)
+			    .update(
+				    {
+					    queryHistory: firebase.firestore.FieldValue.arrayUnion(
 						    {
 							    ...data,
 							    created: firebase.firestore.Timestamp.now()
@@ -134,7 +153,8 @@ export const AuthProvider = ({children}) => {
 					setHasAccount,
 					emailError,
 					passwordError,
-					booking
+					booking,
+					query
 				}}>
 					{children}
 				</AuthContext.Provider>

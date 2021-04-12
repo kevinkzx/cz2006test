@@ -7,6 +7,7 @@ import ParlourFormCaskets from "./ParlourFormCaskets";
 import ParlourFormButton from "./ParlourFormButton";
 import AuthContext from "../Context/AuthContext";
 import {useAlert} from "react-alert";
+import emailjs from "emailjs-com";
 
 const ParlourBooking = () => {
 	const {getParlour} = useContext(ParlourContext);
@@ -17,7 +18,9 @@ const ParlourBooking = () => {
 	const [caskets, setCaskets] = useState(null);
 	const [address, setAddress] = useState(null);
 
-	const {user, booking} = useContext(AuthContext);
+	const {
+		query, user
+	} = useContext(AuthContext);
 
 	const testBook = () => {
 		if (!generalPackages && !caskets) {
@@ -25,11 +28,29 @@ const ParlourBooking = () => {
 		} else if (!address) {
 			alert.show("Please write address");
 		} else {
-			console.log(generalPackages);
-			console.log(caskets);
-			console.log(address);
+			const data = {
+				generalPackages,
+				caskets,
+				address
+			}
+			query(data)
+			const param = {
+				...data,
+				email: user.email,
+				name: item.name
+			}
+			sendEmail(param);
 		}
 	};
+
+	const sendEmail = (templateParams) => {
+		emailjs.send('service_k995ykf', 'template_s4l8cue', templateParams, 'user_PCSCABHzVKDKmfFro8SMh')
+		       .then(function (response) {
+			       console.log('SUCCESS!', response.status, response.text);
+		       }, function (error) {
+			       console.log('FAILED...', error);
+		       });
+	}
 
 
 	return (

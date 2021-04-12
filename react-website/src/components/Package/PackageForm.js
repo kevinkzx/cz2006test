@@ -25,7 +25,7 @@ export default function FormDialog() {
 		setOpen(true);
 	};
 
-	const handleClose = (useraddress) => {
+	const handleClose = () => {
 		if (user === null) {
 			console.log('please log in first');
 			alert.show('Please log in first!');
@@ -55,7 +55,6 @@ export default function FormDialog() {
 				}
 				sendEmail(param);
 			}
-			// console.log(form['address'].value);
 		}
 
 		setOpen(false);

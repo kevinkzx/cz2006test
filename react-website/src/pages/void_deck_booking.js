@@ -1,15 +1,15 @@
 import React from 'react'
 import Container from '@material-ui/core/Container';
-import {Title, Wrapper} from './InformationElements'
+import {Wrapper} from './InformationElements'
 
 
 const void_deck_bookingPage = () => {
 	return (
 		<div>
 			<Wrapper>
-				<Title>
-					Void deck booking
-				</Title>
+
+				<h1>Void deck booking</h1>
+
 			</Wrapper>
 			<Container>
 				Get a permit from your Town Council and contact them to secure booking dates for the
