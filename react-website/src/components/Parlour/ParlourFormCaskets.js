@@ -18,10 +18,6 @@ import ParlourContext from "../Context/ParlourContext";
 import { useAlert } from "react-alert";
 import {ParlourFormContext} from "../Context/ParlourFormContext";
 
-
-
-
-    
   
   function ConfirmationDialogRaw(props) {
     const { onClose, value: valueProp, open, ...other } = props;
@@ -32,8 +28,8 @@ import {ParlourFormContext} from "../Context/ParlourFormContext";
     const {getParlour} = useContext(ParlourContext);
     let {slug} = useParams();
     const item = getParlour(slug);
-    const GP = item.generalPackages;
-    //console.log(GP);
+    const caskets = item.caskets;
+    //console.log(caskets);
     
   
     React.useEffect(() => {
@@ -71,7 +67,7 @@ import {ParlourFormContext} from "../Context/ParlourFormContext";
         open={open}
         {...other}
       >
-        <DialogTitle id="confirmation-dialog-title">General Packages</DialogTitle>
+        <DialogTitle id="confirmation-dialog-title">Caskets</DialogTitle>
         <DialogContent dividers>
           <RadioGroup
             ref={radioGroupRef}
@@ -81,7 +77,7 @@ import {ParlourFormContext} from "../Context/ParlourFormContext";
             //this sets the outside value to what the user choose in list
             onChange={handleChange}
           >
-            {GP.map((option) => (
+            {caskets.map((option) => (
               <FormControlLabel value={option} key={option} control={<Radio />} label={option} />
             ))}
           </RadioGroup>
@@ -138,17 +134,17 @@ import {ParlourFormContext} from "../Context/ParlourFormContext";
   
     const handleBook = (newValue) => {
         if (user === null) {
-            //console.log('please log in first');
+            console.log('please log in first');
             alert.show('Please log in first!');
         }
         else {
-            //console.log(newValue);
+            console.log(newValue);
         }
         setOpen(false);
   
         if (newValue) {
             setValue(newValue);
-            myorder.setGeneralP(newValue);
+            myorder.setCaskets(newValue);
         };
     };
 
@@ -165,7 +161,7 @@ import {ParlourFormContext} from "../Context/ParlourFormContext";
             onClick={handleClickListItem}
             role="listitem"
           >
-            <ListItemText primary="General Packages" secondary={value} />
+            <ListItemText primary="Caskets" secondary={value} />
           </ListItem>
           <ConfirmationDialogRaw
             classes={{
