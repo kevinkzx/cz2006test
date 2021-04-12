@@ -12,7 +12,7 @@ export const ParlourProvider = ({children}) => {
     }
 
     useEffect(() => {
-        fire.firestore()
+        const unsubscribe = fire.firestore()
             .collection('Parlours')
             .onSnapshot((snapshot) => {
                 const newParlours = snapshot.docs.map((doc) => ({
@@ -22,6 +22,7 @@ export const ParlourProvider = ({children}) => {
                 setParlours(newParlours);
                 setSortedParlours(newParlours);
             })
+        return () => unsubscribe();
     }, []);
 
 

@@ -1,5 +1,6 @@
 import React, {createContext, useEffect, useState} from 'react';
 import fire from "../../firebase/fire";
+import firebase from "firebase";
 
 
 const AuthContext = createContext();
@@ -26,6 +27,12 @@ export const AuthProvider = ({children}) => {
 			fire
 			.auth()
 			.signInWithEmailAndPassword(email, password)
+			.then(
+				function () {
+					setEmail(email);
+					setPassword(password);
+				}
+			)
 			.catch(err => {
 				switch (err.code) {
 					case "auth/invalid-email":
@@ -48,12 +55,9 @@ export const AuthProvider = ({children}) => {
 			.then(function (user) {
 				fire.firestore()
 				    .collection('Users')
-				    .add({
-					    email,
-					    password,
-					    orderHistory: []
-				    })
-				    . then(r =>{})
+				    .doc(email)
+				    .set({email, password, orderHistory: []})
+				    .then();
 			})
 			.catch(err => {
 				switch (err.code) {
@@ -76,6 +80,25 @@ export const AuthProvider = ({children}) => {
 			    });
 			clearInputs();
 		};
+
+		const booking = (data) => {
+			fire.firestore()
+			    .collection("Users")
+			    .doc(email)
+			    .update(
+				    {
+					    orderHistory: firebase.firestore.FieldValue.arrayUnion(
+						    {
+							    ...data,
+							    created: firebase.firestore.Timestamp.now()
+						    }
+					    )
+				    }
+			    )
+			    .then(r => {
+				    console.log("Success booking")
+			    })
+		}
 
 // const authListener = () => {
 // 	fire.auth()
@@ -110,7 +133,8 @@ export const AuthProvider = ({children}) => {
 					hasAccount,
 					setHasAccount,
 					emailError,
-					passwordError
+					passwordError,
+					booking
 				}}>
 					{children}
 				</AuthContext.Provider>

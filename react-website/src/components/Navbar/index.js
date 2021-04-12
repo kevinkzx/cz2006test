@@ -1,5 +1,4 @@
-import React, {useContext, useEffect, useState, useRef} from 'react';
-import { useHistory } from "react-router-dom";
+import React, {useContext, useEffect, useState} from 'react';
 import {FaBars} from 'react-icons/fa';
 import {IconContext} from "react-icons/lib";
 import {animateScroll as scroll} from 'react-scroll';
@@ -19,7 +18,6 @@ import AuthContext from "../Context/AuthContext";
 const Navbar = ({toggle}) => {
 	const [scrollNav, setScrollNav] = useState(false);
 	const {user, handleLogout} = useContext(AuthContext);
-	const history = useHistory();
 
 	const changeNav = () => {
 		if (window.scrollY >= 80) {
@@ -37,26 +35,6 @@ const Navbar = ({toggle}) => {
 		scroll.scrollToTop();
 	};
 
-	const goToPackages = () => {
-		history.push('/');
-		scroll.scrollTo(900);
-	};
-
-	const goToParlours = () => {
-		history.push('/');
-		scroll.scrollTo(1700);
-	};
-
-	const goToMap = () => {
-		history.push('/');
-		scroll.scrollTo(2600);
-	};
-
-	const goToInfo = () => {
-		history.push('/');
-		scroll.scrollTo(3400);
-	};
-
 	return (
 		<>
 			<IconContext.Provider value={{color: '#fff'}}>
@@ -72,49 +50,46 @@ const Navbar = ({toggle}) => {
 						<NavMenu>
 							<NavItem>
 								<NavLinks to="packages"
-								          smooth={true}
-								          duration={500}
-								          spy={true}
-								          exact={'true'}
-								          offset={-80}
+								          // smooth={true}
+								          // duration={500}
+								          // spy={true}
+								          // exact={'true'}
+								          // offset={-80}
 										  onClick={goToPackages}>Packages</NavLinks>
 							</NavItem>
 							<NavItem>
 								<NavLinks to="parlours"
-								          smooth={true}
-								          duration={500}
-								          spy={true}
-								          exact={'true'}
-								          offset={-80}
+								          // smooth={true}
+								          // duration={500}
+								          // spy={true}
+								          // exact={'true'}
+								          // offset={-80}
 										  onClick={goToParlours}>Parlours</NavLinks>
 							</NavItem>
 							<NavItem>
 								<NavLinks to="location"
-								          smooth={true}
-								          duration={500}
-								          spy={true}
-								          exact={'true'}
-								          offset={-80}
+								          // smooth={true}
+								          // duration={500}
+								          // spy={true}
+								          // exact={'true'}
+								          // offset={-80}
 										  onClick={goToMap}>Location</NavLinks>
 							</NavItem>
 							<NavItem>
 								<NavLinks to="information"
-								          smooth={true}
-								          duration={500}
-								          spy={true}
-								          exact={'true'}
-								          offset={-80}
+								          // smooth={true}
+								          // duration={500}
+								          // spy={true}
+								          // exact={'true'}
+								          // offset={-80}
 										  onClick={goToInfo}>Information</NavLinks>
 							</NavItem>
 						</NavMenu>
-						{!user && (
-							<NavBtn>
-								<NavBtnLink to='/signIn'>Sign In</NavBtnLink>
-							</NavBtn>)}
+						{!user && (<NavBtn>
+							<NavBtnLink to='/signin'>Sign In</NavBtnLink>
+						</NavBtn>)}
 						{user && (
-							<NavBtn>
-								<NavBtnLink to='/' onClick={handleLogout}>Log Out</NavBtnLink>
-							</NavBtn>
+							<NavBtnLink to='/' onClick={handleLogout}>Log Out</NavBtnLink>
 						)}
 
 					</NavbarContainer>

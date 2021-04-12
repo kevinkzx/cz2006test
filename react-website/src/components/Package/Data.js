@@ -15,9 +15,13 @@ export default [
 			casket: "Metal",
 			eco: true,
 			price: 100,
-			img: img1
+			img: img1,
+
 		}
-	}, {
+	}, 
+	
+	
+	{
 		sys: {
 			id: "2"
 		},
@@ -31,9 +35,12 @@ export default [
 			casket: "Wooden",
 			eco: false,
 			price: 500,
-			img: img1
+			img: img1,
+		
 		}
-	}, {
+	}, 
+	
+	{
 		sys: {
 			id: "3"
 		},
@@ -47,7 +54,8 @@ export default [
 			casket: "Wooden",
 			eco: true,
 			price: 5000,
-			img: img1
+			img: img1,
+			
 		}
 	}
 ];

@@ -1,9 +1,21 @@
 import React from 'react';
 import {ImgContainer, Package_Card, PackageInfo, PackageLink, PriceTop} from "./PackageElements";
 import img1 from '../../images/svg-1.svg';
+import SinglePackage from './SinglePackage';
+
+
+
+
+const handleChange = () => {
+	console.log('hello');
+};
+
 
 const PackageCard = ({item}) => {
+	
+
 	return (
+		
 		<Package_Card>
 			<ImgContainer>
 				<img src={img1}
@@ -15,7 +27,17 @@ const PackageCard = ({item}) => {
 				<PackageLink to={`/packages/${item.slug}`}>
 					features
 				</PackageLink>
-				<PackageInfo>{item.name}</PackageInfo>
+				<PackageInfo>{item.name} 	
+					<input type="checkbox"
+							name="compare"
+							id="compare"
+							onChange
+							 ={handleChange}/> 
+				</PackageInfo>
+					
+			
+
+			
 			</ImgContainer>
 		</Package_Card>
 	);

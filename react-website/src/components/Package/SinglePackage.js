@@ -4,18 +4,33 @@ import {
 	SinglePackageContainer,
 	SinglePackageDesc,
 	SinglePackageImage,
-	SinglePackageInfo
+	SinglePackageInfo,
+
 } from "./PackageElements";
 import {useParams} from "react-router-dom";
 import PackageContext from "../Context/PackageContext";
+import ReviewList from '../Reviews/ReviewList';
+import {ReviewTitle} from '../Reviews/ReviewsElements';
+
+
+
+
+
 
 const SinglePackage = () => {
 	const {getPackage} = useContext(PackageContext);
 	let {slug} = useParams();
 	const item = getPackage(slug);
+
+
+	
+
+	
+
 	return (
 		<div id="packageInfo">
 			<SinglePackageContainer>
+				
 				<SinglePackageImage>
 					{/*<img src={item.img}*/}
 					{/*     alt="hge"/>*/}
@@ -33,9 +48,20 @@ const SinglePackage = () => {
 						<h6>Transportation: {item.transportation ? "Included" : "Not included"}</h6>
 						<h6>Casket Type: {item.casket}</h6>
 						<h6>Eco-Friendly? {item.eco ? "Yes" : "No"}</h6>
+						<h6>Provider: {item.parlour}</h6>
 					</PackageInfor>
+					
 				</SinglePackageInfo>
+
+				<ReviewTitle>Reviews</ReviewTitle>
+
+
+				<ReviewList/>	
+
+
+
 			</SinglePackageContainer>
+
 		</div>
 	);
 };
