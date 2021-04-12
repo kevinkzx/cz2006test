@@ -27,6 +27,12 @@ export const AuthProvider = ({children}) => {
 			fire
 			.auth()
 			.signInWithEmailAndPassword(email, password)
+			.then(
+				function () {
+					setEmail(email);
+					setPassword(password);
+				}
+			)
 			.catch(err => {
 				switch (err.code) {
 					case "auth/invalid-email":
@@ -78,7 +84,7 @@ export const AuthProvider = ({children}) => {
 		const booking = (data) => {
 			fire.firestore()
 			    .collection("Users")
-			    .doc("b@hotmail.com")
+			    .doc(email)
 			    .update(
 				    {
 					    orderHistory: firebase.firestore.FieldValue.arrayUnion(
