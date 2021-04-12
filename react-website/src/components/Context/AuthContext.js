@@ -25,79 +25,79 @@ export const AuthProvider = ({children}) => {
 		const handleLogin = () => {
 			clearErrors();
 			fire
-			.auth()
-			.signInWithEmailAndPassword(email, password)
-			.then(
-				function () {
-					setEmail(email);
-					setPassword(password);
-				}
-			)
-			.catch(err => {
-				switch (err.code) {
-					case "auth/invalid-email":
-					case "auth/user-disabled":
-					case "auth/user-not-found":
-						setEmailError(err.message);
-						break;
-					case "auth/wrong-password":
-						setPasswordError(err.message);
-						break;
-				}
-			})
+				.auth()
+				.signInWithEmailAndPassword(email, password)
+				.then(
+					function () {
+						setEmail(email);
+						setPassword(password);
+					}
+				)
+				.catch(err => {
+					switch (err.code) {
+						case "auth/invalid-email":
+						case "auth/user-disabled":
+						case "auth/user-not-found":
+							setEmailError(err.message);
+							break;
+						case "auth/wrong-password":
+							setPasswordError(err.message);
+							break;
+					}
+				})
 		};
 
 		const handleSignup = () => {
 			clearErrors();
 			fire
-			.auth()
-			.createUserWithEmailAndPassword(email, password)
-			.then(function (user) {
-				fire.firestore()
-				    .collection('Users')
-				    .doc(email)
-				    .set({email, password, orderHistory: []})
-				    .then();
-			})
-			.catch(err => {
-				switch (err.code) {
-					case "auth/email-already-in-use":
-					case "auth/invalid-email":
-						setEmailError(err.message);
-						break;
-					case "auth/weak-password":
-						setPasswordError(err.message);
-						break;
-				}
-				;
-			})
+				.auth()
+				.createUserWithEmailAndPassword(email, password)
+				.then(function (user) {
+					fire.firestore()
+						.collection('Users')
+						.doc(email)
+						.set({email, password, orderHistory: [], engageHistory: []})
+						.then();
+				})
+				.catch(err => {
+					switch (err.code) {
+						case "auth/email-already-in-use":
+						case "auth/invalid-email":
+							setEmailError(err.message);
+							break;
+						case "auth/weak-password":
+							setPasswordError(err.message);
+							break;
+					}
+					;
+				})
 		};
 
 		const handleLogout = () => {
 			fire.auth()
-			    .signOut()
-			    .then(r => {
-			    });
+				.signOut()
+				.then(r => {
+				});
 			clearInputs();
 		};
 
-		const booking = (data) => {
+		const booking = (data, collectionName) => {
 			fire.firestore()
-			    .collection("Users")
-			    .doc(email)
-			    .update(
-				    {
-					    orderHistory: firebase.firestore.FieldValue.arrayUnion(
-						    {
-							    ...data,
-							    created: firebase.firestore.Timestamp.now()
-						    }
-					    )
-				    }
-			    )
-			    .then(r => {
-				    console.log("Success booking")
-			    })
+				.collection(collectionName)
+				.doc(email)
+				.update(
+					{
+						orderHistory: firebase.firestore.FieldValue.arrayUnion(
+							{
+								...data,
+								created: firebase.firestore.Timestamp.now()
+							}
+						)
+					}
+				)
+				.then(r => {
+					console.log("Success booking")
+				})
 		}
 
 // const authListener = () => {

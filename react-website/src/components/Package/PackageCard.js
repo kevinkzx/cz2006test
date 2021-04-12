@@ -12,14 +12,14 @@ const handleChange = () => {
 
 
 const PackageCard = ({item}) => {
-	
+
 
 	return (
-		
+
 		<Package_Card>
 			<ImgContainer>
 				<img src={img1}
-				     alt="package"/>
+					 alt="package"/>
 				<PriceTop>
 					<h6>{item.religion}</h6>
 					<h6>${item.price}</h6>
@@ -27,17 +27,12 @@ const PackageCard = ({item}) => {
 				<PackageLink to={`/packages/${item.slug}`}>
 					features
 				</PackageLink>
-				<PackageInfo>{item.name} 	
-					<input type="checkbox"
-							name="compare"
-							id="compare"
-							onChange
-							 ={handleChange}/> 
-				</PackageInfo>
-					
-			
+				<PackageInfo>{item.name}</PackageInfo>
 
-			
+
+
+
+
 			</ImgContainer>
 		</Package_Card>
 	);
