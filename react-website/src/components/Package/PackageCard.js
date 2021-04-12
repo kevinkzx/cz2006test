@@ -27,13 +27,8 @@ const PackageCard = ({item}) => {
 				<PackageLink to={`/packages/${item.slug}`}>
 					features
 				</PackageLink>
-				<PackageInfo>{item.name} 	
-					<input type="checkbox"
-							name="compare"
-							id="compare"
-							onChange
-							 ={handleChange}/> 
-				</PackageInfo>
+				<PackageInfo>{item.name}</PackageInfo>
+				
 					
 			
 
