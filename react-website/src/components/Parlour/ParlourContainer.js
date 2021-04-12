@@ -1,5 +1,4 @@
 import React from 'react';
-//import PackageFilter from '../Package/PackageFilter';
 import ParlourFilter from './ParlourFilter';
 import ParlourList from './ParlourList';
 

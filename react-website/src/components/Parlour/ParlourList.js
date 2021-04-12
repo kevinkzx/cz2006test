@@ -5,7 +5,6 @@ import {EmptySearch, Parlour_List, ParlourListCenter} from "./ParlourElement";
 
 
 const ParlourList = () => {
-	/*
 	const {sortedParlours} = useContext(ParlourContext);
 	if (sortedParlours.length === 0) {
 		return (
@@ -14,8 +13,6 @@ const ParlourList = () => {
 			</EmptySearch>
 		)
 	}
-	*/
-	const {sortedParlours} = useContext(ParlourContext);
 	return (
 		<Parlour_List>
 			<ParlourListCenter>

@@ -84,7 +84,7 @@ export const AuthProvider = ({children}) => {
 		const booking = (data, collectionName) => {
 			fire.firestore()
 			    .collection(collectionName)
-			    .doc(email)
+			    .doc(user.email)
 			    .update(
 				    {
 					    orderHistory: firebase.firestore.FieldValue.arrayUnion(

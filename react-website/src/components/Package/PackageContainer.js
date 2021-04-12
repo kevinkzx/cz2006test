@@ -5,7 +5,6 @@ import PackageFilter from "./PackageFilter";
 const PackageContainer = () => {
 	return (
 		<>
-			
 			<PackageFilter/>
 			<PackageList/>
 		</>

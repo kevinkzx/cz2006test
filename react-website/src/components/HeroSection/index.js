@@ -42,7 +42,7 @@ const HeroSection = ({HeroHeader, HeroPara, getStartedButton, scroll}) => {
 					                        primary="true"
 					                        dark="true"
 					                        smooth={true}
-					                        offset={-80}
+					                        offset={-220}
 					>
 						Get started {hover ? <ArrowForward/> : <ArrowRight/>}
 					</ButtonScroll> : <Button to={getStartedButton}

@@ -102,7 +102,7 @@ export const ImgContainer = styled.div`
 `;
 
 export const ParlourInfo = styled.p`
-  background: grey;
+  background: #01BF71;
   text-transform: capitalize;
   padding: 0.5rem 0;
   text-align: center;
@@ -198,5 +198,26 @@ export const FormGrid = styled.div`
   grid-template-columns: 8ch auto;
   justify-content: space-evenly;
   margin: 2rem auto;
+`;
+
+export const SearchTitle = styled.div`
+  text-align: center;
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+  
+
+  h4 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+  }
+
+  div {
+    width: 5rem;
+    height: 5px;
+    margin: 0 auto;
+    background: #01BF71;
+  }
 `;
 

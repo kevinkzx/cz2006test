@@ -5,6 +5,7 @@ const ParlourContext = createContext();
 export const ParlourProvider = ({children}) => {
     const [parlours, setParlours] = useState([]);
     const [sortedParlours, setSortedParlours] = useState([]);
+    const [search, setSearch] = useState("");
     
     //pass in the parluor we want and get it form array of parlours
     const getParlour = (slug) => {
@@ -25,16 +26,20 @@ export const ParlourProvider = ({children}) => {
         return () => unsubscribe();
     }, []);
 
+    useEffect(()=>{
+        setSortedParlours(parlours.filter(item =>{
+            return item.name.toLowerCase()
+                       .includes(search.toLowerCase());
+        }))
+    },[search])
 
-    useEffect(() => {
-        setSortedParlours(parlours);
-    });
     
 
     return (
         <ParlourContext.Provider value={{
             parlours,
             sortedParlours,
+            setSearch,
             getParlour
         }}>
             {children}

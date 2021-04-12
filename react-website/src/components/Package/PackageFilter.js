@@ -10,6 +10,7 @@ import {
 	PackageFilterFormSizeInputWrapper,
 	PackageFilterWrapper
 } from "./PackageElements";
+import Title from "../Parlour/Title";
 
 const getUnique = (items, value) => {
 	return [...new Set(items.map(item => item[value]))];
@@ -64,80 +65,83 @@ const PackageFilter = () => {
 		               key={index}>{item}</option>;
 	});
 	return (
-		<div id="searchFilter">
-			<PackageFilterWrapper>
-				<PackageFilterForm>
-					<PackageFilterFormGroup>
-						<label htmlFor="religion">Religion</label>
-						<PackageFilterFormControl name="religion"
-						                          id="religion"
-						                          value={religion}
-						                          onChange={e => setReligion(e.target.value)}>
-							{religions}
-						</PackageFilterFormControl>
-					</PackageFilterFormGroup>
-					<PackageFilterFormGroup>
-						<label htmlFor="location2">Location</label>
-						<PackageFilterFormControl name="location2"
-						                          id="location2"
-						                          value={location}
-						                          onChange={e => setLocation(e.target.value)}>
-							{locations}
-						</PackageFilterFormControl>
-					</PackageFilterFormGroup>
-					<PackageFilterFormGroup>
-						<label htmlFor="casket">Casket Type</label>
-						<PackageFilterFormControl name="casket"
-						                          id="casket"
-						                          value={casket}
-						                          onChange={e => setCasket(e.target.value)}>
-							{caskets}
-						</PackageFilterFormControl>
-					</PackageFilterFormGroup>
-					<PackageFilterFormGroup>
-						<label htmlFor="price">package price ${price}</label>
-						<PackageFilterFormInput type="range"
-						                        name="price"
-						                        min={minPrice}
-						                        max={maxPrice}
-						                        id="price"
-						                        value={price}
-						                        onChange={e => setPrice(e.target.value)}/>
-					</PackageFilterFormGroup>
-					<PackageFilterFormGroup>
-						<label htmlFor="day">Number of days</label>
-						<PackageFilterFormSizeInputWrapper>
-							<PackageFilterFormSizeInput
-								name="minDay"
-								value={minDay}
-								onChange={e => setMinDay(e.target.value)}/>
-							<PackageFilterFormSizeInput
-								name="maxDay"
-								value={maxDay}
-								onChange={e => setMaxDay(e.target.value)}/>
-						</PackageFilterFormSizeInputWrapper>
-					</PackageFilterFormGroup>
-					<PackageFilterFormGroup>
-						<PackageFilterFormExtra>
-							<input type="checkbox"
-							       name="transportation"
-							       id="transportation"
-							       checked={transportation}
-							       onChange={e => setTransportation(e.target.checked)}/>
-							<label htmlFor="transportation">transportation</label>
-						</PackageFilterFormExtra>
-						<PackageFilterFormExtra>
-							<input type="checkbox"
-							       name="eco"
-							       id="eco"
-							       checked={eco}
-							       onChange={e => setEco(e.target.checked)}/>
-							<label htmlFor="eco">Eco-Friendly</label>
-						</PackageFilterFormExtra>
-					</PackageFilterFormGroup>
-				</PackageFilterForm>
-			</PackageFilterWrapper>
-		</div>
+		<>
+			<Title title="Filter Parlours"/>
+			<div id="searchFilter">
+				<PackageFilterWrapper>
+					<PackageFilterForm>
+						<PackageFilterFormGroup>
+							<label htmlFor="religion">Religion</label>
+							<PackageFilterFormControl name="religion"
+							                          id="religion"
+							                          value={religion}
+							                          onChange={e => setReligion(e.target.value)}>
+								{religions}
+							</PackageFilterFormControl>
+						</PackageFilterFormGroup>
+						<PackageFilterFormGroup>
+							<label htmlFor="location2">Location</label>
+							<PackageFilterFormControl name="location2"
+							                          id="location2"
+							                          value={location}
+							                          onChange={e => setLocation(e.target.value)}>
+								{locations}
+							</PackageFilterFormControl>
+						</PackageFilterFormGroup>
+						<PackageFilterFormGroup>
+							<label htmlFor="casket">Casket Type</label>
+							<PackageFilterFormControl name="casket"
+							                          id="casket"
+							                          value={casket}
+							                          onChange={e => setCasket(e.target.value)}>
+								{caskets}
+							</PackageFilterFormControl>
+						</PackageFilterFormGroup>
+						<PackageFilterFormGroup>
+							<label htmlFor="price">package price ${price}</label>
+							<PackageFilterFormInput type="range"
+							                        name="price"
+							                        min={minPrice}
+							                        max={maxPrice}
+							                        id="price"
+							                        value={price}
+							                        onChange={e => setPrice(e.target.value)}/>
+						</PackageFilterFormGroup>
+						<PackageFilterFormGroup>
+							<label htmlFor="day">Number of days</label>
+							<PackageFilterFormSizeInputWrapper>
+								<PackageFilterFormSizeInput
+									name="minDay"
+									value={minDay}
+									onChange={e => setMinDay(e.target.value)}/>
+								<PackageFilterFormSizeInput
+									name="maxDay"
+									value={maxDay}
+									onChange={e => setMaxDay(e.target.value)}/>
+							</PackageFilterFormSizeInputWrapper>
+						</PackageFilterFormGroup>
+						<PackageFilterFormGroup>
+							<PackageFilterFormExtra>
+								<input type="checkbox"
+								       name="transportation"
+								       id="transportation"
+								       checked={transportation}
+								       onChange={e => setTransportation(e.target.checked)}/>
+								<label htmlFor="transportation">transportation</label>
+							</PackageFilterFormExtra>
+							<PackageFilterFormExtra>
+								<input type="checkbox"
+								       name="eco"
+								       id="eco"
+								       checked={eco}
+								       onChange={e => setEco(e.target.checked)}/>
+								<label htmlFor="eco">Eco-Friendly</label>
+							</PackageFilterFormExtra>
+						</PackageFilterFormGroup>
+					</PackageFilterForm>
+				</PackageFilterWrapper>
+			</div>
+		</>
 	);
 };
 
