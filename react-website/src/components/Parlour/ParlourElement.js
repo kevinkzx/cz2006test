@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import {Button} from "../ButtonElements";
+import Button1 from "@material-ui/core/Button";
+
 // --primaryColor: #af9a7d;
 // --mainWhite: #fff;
 // --offWhite: #f7f7f7;
@@ -107,6 +109,7 @@ export const ParlourInfo = styled.p`
   text-align: center;
   font-weight: 700;
   letter-spacing: 3px;
+  
 `;
 
 export const btnPrimary = styled.div`
@@ -123,7 +126,7 @@ export const btnPrimary = styled.div`
 `;
 
 export const SingleParlourContainer = styled.section`
-  padding: 5rem 0 0 0;
+  margin-bottom: 100px;
 `;
 
 export const SingleParlourImage = styled.div`
@@ -143,7 +146,8 @@ export const SingleParlourImage = styled.div`
 export const SingleParlourInfo = styled.div`
   width: 80vw;
   display: grid;
-  grid-template-columns: 13ch auto;
+  grid-template-columns: 40ch auto;
+  grid-column-gap: 3rem;
   justify-content: space-evenly;
   margin: 2rem auto;
 `;
@@ -155,6 +159,7 @@ export const SingleParlourDesc = styled.article`
     text-transform: capitalize;
     letter-spacing: 3px;
     font-size: x-large;
+    margin-bottom: 10px;
   }
 
   p {
@@ -173,6 +178,8 @@ export const ParlourInfor = styled.article`
 
   h3 {
     font-size: x-large;
+    margin-bottom: 10px;
+    
   }
 
   h6 {
@@ -187,7 +194,9 @@ export const ListItems = styled.article`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   grid-column-gap: 2rem;
-  grid-row-gap: 1rem;
+  grid-row-gap: 1.5rem;
+  margin-top: 2rem;
+  
 
 `;
 
@@ -248,5 +257,16 @@ export const SearchBar = styled.div`
       background: black;
     }
   }
+`;
+
+export const MapWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const ParlourBookingWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 `;
 

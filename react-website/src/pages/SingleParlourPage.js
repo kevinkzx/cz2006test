@@ -15,7 +15,7 @@ const SingleParlourPage = () => {
 			<Navbar/>
 			<HeroSection HeroHeader="Hello"
 			             HeroPara="Book with us right now."
-			             getStartedButton="packageInfo"
+			             getStartedButton="parlourInfo"
 			             scroll={true}/>
 			<SingleParlour/>
 			<ParlourBooking/>

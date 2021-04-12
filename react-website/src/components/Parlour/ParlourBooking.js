@@ -2,12 +2,13 @@ import React, {useContext, useState} from 'react'
 import {useParams} from "react-router-dom";
 import ParlourContext from "../Context/ParlourContext";
 import ParlourForm from "./ParlourForm";
-import {FormGrid} from "./ParlourElement";
+import {FormGrid, ParlourBookingWrapper} from "./ParlourElement";
 import ParlourFormCaskets from "./ParlourFormCaskets";
 import ParlourFormButton from "./ParlourFormButton";
 import AuthContext from "../Context/AuthContext";
 import {useAlert} from "react-alert";
 import emailjs from "emailjs-com";
+import {NormalButtonWrapper} from "../ButtonElements";
 
 const ParlourBooking = () => {
 	const {getParlour} = useContext(ParlourContext);
@@ -40,6 +41,8 @@ const ParlourBooking = () => {
 				name: item.name
 			}
 			sendEmail(param);
+			alert.show("Successful")
+			setAddress(null);
 		}
 	};
 
@@ -50,18 +53,21 @@ const ParlourBooking = () => {
 		       }, function (error) {
 			       console.log('FAILED...', error);
 		       });
-	}
+	};
 
 
 	return (
-		<div>
-			<FormGrid>
+
+		<FormGrid>
+			<ParlourBookingWrapper>
 				<ParlourForm setGeneralPackages={setGeneralPackages}/>
 				<ParlourFormCaskets setCaskets={setCaskets}/>
-				<ParlourFormButton setAddress={setAddress}
-				                   testBook={testBook}/>
-			</FormGrid>
-		</div>
+				<NormalButtonWrapper>
+					<ParlourFormButton setAddress={setAddress}
+					                   testBook={testBook}/>
+				</NormalButtonWrapper>
+			</ParlourBookingWrapper>
+		</FormGrid>
 	);
 };
 

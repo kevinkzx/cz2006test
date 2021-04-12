@@ -54,6 +54,7 @@ export default function FormDialog() {
 					provider: item.parlour
 				}
 				sendEmail(param);
+				alert.show("Successful booking.")
 			}
 		}
 

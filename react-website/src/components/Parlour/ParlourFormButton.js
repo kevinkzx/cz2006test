@@ -1,23 +1,18 @@
-import React, {useContext, useRef} from 'react';
+import React, {useContext} from 'react';
 import Button from "@material-ui/core/Button";
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import {useParams} from "react-router-dom";
 import AuthContext from "../Context/AuthContext";
 import {useAlert} from "react-alert";
-import ParlourContext from "../Context/ParlourContext";
+import {NormalButton} from "../ButtonElements";
 
 export default function FormDialog(props) {
 	const [open, setOpen] = React.useState(false);
-	const {getParlour} = useContext(ParlourContext);
-	let {slug} = useParams();
-	const item = getParlour(slug);
 	const {user} = useContext(AuthContext);
 	const alert = useAlert();
-	const nameForm = useRef(null);
 
 	const handleClickOpen = () => {
 		if (!user) {
@@ -38,11 +33,9 @@ export default function FormDialog(props) {
 
 	return (
 		<div>
-			<Button variant="outlined"
-			        color="primary"
-			        onClick={handleClickOpen}>
+			<NormalButton onClick={handleClickOpen}>
 				Click here to engage parlour
-			</Button>
+			</NormalButton>
 			<Dialog open={open}
 			        onClose={handleCancel}
 			        aria-labelledby="form-dialog-title">
@@ -53,7 +46,7 @@ export default function FormDialog(props) {
 					</DialogContentText>
 					<input type="text"
 					       placeholder="Type your address"
-					       onChange={event => props.setAddress(event.target.value)}/>
+					       onChange={event => props.setAddress(event.currentTarget.value)}/>
 				</DialogContent>
 				<DialogActions>
 					<Button onClick={handleCancel}

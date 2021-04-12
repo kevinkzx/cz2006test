@@ -4,6 +4,7 @@ import HeroSection from "../components/HeroSection";
 import SinglePackage from "../components/Package/SinglePackage";
 import PackageBooking from "../components/Package/PackageBooking";
 import ReviewInput from '../components/Reviews/ReviewInput';
+import Title from "../components/Parlour/Title";
 
 
 const SinglePackagePage = () => {
@@ -20,6 +21,7 @@ const SinglePackagePage = () => {
 			             HeroPara="Book with us right now."
 			             getStartedButton="packageInfo"
 			             scroll={true}/>
+			<Title title="Details"/>
 			<SinglePackage/>
 
 
