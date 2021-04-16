@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {
 	PackageInfor,
 	SinglePackageContainer,
@@ -11,6 +11,7 @@ import {useParams} from "react-router-dom";
 import PackageContext from "../Context/PackageContext";
 import ReviewList from '../Reviews/ReviewList';
 import {ReviewTitle} from '../Reviews/ReviewsElements';
+import {wait, waitFor} from "@testing-library/react";
 
 
 
@@ -21,10 +22,6 @@ const SinglePackage = () => {
 	const {getPackage} = useContext(PackageContext);
 	let {slug} = useParams();
 	const item = getPackage(slug);
-
-
-
-
 
 
 	return (
@@ -57,7 +54,6 @@ const SinglePackage = () => {
 
 
 				<ReviewList/>
-
 
 
 			</SinglePackageContainer>

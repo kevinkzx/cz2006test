@@ -12,8 +12,8 @@ export const ParlourProvider = ({children}) => {
 		return parlours.find(item => item.slug === slug);
 	}
 
-	useEffect(() => {
-		const unsubscribe = fire.firestore()
+	useEffect( () => {
+		const unsubscribe =  fire.firestore()
 		                        .collection('Parlours')
 		                        .onSnapshot((snapshot) => {
 			                        const newParlours = snapshot.docs.map((doc) => ({
