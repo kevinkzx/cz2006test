@@ -5,10 +5,16 @@ import PackageContext from "../Context/PackageContext";
 import AuthContext from "../Context/AuthContext";
 import {useAlert} from "react-alert";
 
-
+/**
+ * Component for the input of reviews
+ * @returns ReviewInput component
+ */
 const ReviewInput = () => {
 
 	let {slug} = useParams();
+	/**
+	 * Updates the review of that package
+	 */
 	const {getPackage, updateReview} = useContext(PackageContext);
 	const {user} = useContext(AuthContext);
 	const item = getPackage(slug);
@@ -16,7 +22,12 @@ const ReviewInput = () => {
 	const alert = useAlert();
 	// const input = useRef(null);
 
-
+	/**
+	 * Function log to review for the user that is currently logged in to the package
+	 * Checks if the user has written a review. review cannot be empty
+	 * Checks if the user is logged in.
+	 * @param {object} event when the user click on submit in the review box.
+	 */
 	const handleClickEvent = (event) => {
 		event.preventDefault();
 		if (!input) {

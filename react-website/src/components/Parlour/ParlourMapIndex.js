@@ -23,9 +23,19 @@ const Map = () => {
 	const [directions, setDirections] = useState(null);
 	const [lat, setLat] = useState(0.0);
 	const [lng, setLng] = useState(0.0);
+	/**
+	 * The latitude of the parlour
+	 */
 	const destlat = item.lat;
+	/**
+	 * The longitude of the parlour
+	 */
 	const destlng = item.lng;
 
+	/**
+	 * Gets the current latitude and longitude of the user.
+	 * The current position where the user is accessing the website from.
+	 */
 	useEffect(() => {
 		if (navigator && navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(pos => {
@@ -38,11 +48,14 @@ const Map = () => {
 		}
 	}, [lat,lng])
 
+	/**
+	 * Using DirectionsSerivce() provided by google map api.
+	 */
 	const directionsService = new google.maps.DirectionsService();
 
-
-	console.log("FUCK");
-
+	/**
+	 * Set the origin location to where the user is
+	 */
 	const origin = {
 		lat,
 		lng
@@ -50,6 +63,11 @@ const Map = () => {
 	const destination = { lat:destlat, lng:destlng };
 	console.log(destination);
 
+	/**
+	 * Function to render the direction from user current location to parlour
+	 * The mode of directions render is by driving.
+	 * If there is not direction, will not have result
+	 */
 	directionsService.route(
 		{
 			origin: origin,
@@ -64,6 +82,9 @@ const Map = () => {
 			}
 		}
 	);
+	/**
+	 * Display the map with route from origin to location.
+	 */
 	const GoogleMapExample = withGoogleMap(props => (
 		<GoogleMap
 			defaultCenter={{lat: 1.352083, lng: 103.819839}}

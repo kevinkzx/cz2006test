@@ -12,6 +12,10 @@ import AuthContext from "../Context/AuthContext";
 import {useAlert} from "react-alert";
 import emailjs from "emailjs-com";
 
+/**
+ * This is the component for user to enter the address where they want the package to be held at.
+ * @returns a form for user to input address 
+ */
 export default function FormDialog() {
 	const [open, setOpen] = React.useState(false);
 	const {getPackage} = useContext(PackageContext);
@@ -24,7 +28,12 @@ export default function FormDialog() {
 	const handleClickOpen = () => {
 		setOpen(true);
 	};
-
+	/**
+	 * This function checks whether the user is logged in
+	 * Checks if the input field is empty
+	 * If all fields are valid, set the value of package price, name and address to update databse
+	 * Calls the email sending function
+	 */
 	const handleClose = () => {
 		if (user === null) {
 			console.log('please log in first');
@@ -60,7 +69,10 @@ export default function FormDialog() {
 
 		setOpen(false);
 	};
-
+	/**
+	 * This is the function that uses email api to send email to the user
+	 * @param {object} templateParams the email template
+	 */
 	const sendEmail = (templateParams) => {
 		emailjs.send('service_k995ykf', 'template_qp377on', templateParams, 'user_PCSCABHzVKDKmfFro8SMh')
 		       .then(function (response) {

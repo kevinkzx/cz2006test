@@ -20,6 +20,9 @@ export default function FormDialog(props) {
 	const {user} = useContext(AuthContext);
 	const alert = useAlert();
 
+	/**
+	 * Function to check if the user is logged in
+	 */
 	const handleClickOpen = () => {
 		if (!user) {
 			alert.show("Please log in first")
@@ -28,6 +31,9 @@ export default function FormDialog(props) {
 		}
 	};
 
+	/**
+	 * Calls the booking function.
+	 */
 	const handleClose = () => {
 		props.testBook();
 		setOpen(false);

@@ -3,9 +3,17 @@ import {GoogleMap, InfoWindow, Marker, withGoogleMap, withScriptjs} from "react-
 import * as ashScatteringData from "./data/ashScatteringData.json";
 import Navbar from "../components/Navbar";
 
+/**
+ * This function returns the location of ash scattering 
+ * If a user clicks on the marker, an infowindow with mroe information would be displayed
+ * @returns Marker of the location and info window when user click on the marker
+ */
 function AshScattering() {
 	const [selectedLocation, setSelectedLocation] = useState(null);
-
+	/**
+	 * Display the pins of the location
+	 * When the user click on a pin, an info window will show more information.
+	 */
 	return (
 		<GoogleMap
 			defaultZoom={12}
@@ -48,7 +56,10 @@ function AshScattering() {
 }
 
 const MapWrapped = withScriptjs(withGoogleMap(AshScattering));
-
+/**
+ * Display the map using google map api
+ * @returns a map showign the markers.
+ */
 export default function App() {
 	let googleKey = {REACT_APP_GOOGLE_KEY: `AIzaSyDQqDdByz7RV0721d5rYNfU7HWo98LiTr0`}
 	return (

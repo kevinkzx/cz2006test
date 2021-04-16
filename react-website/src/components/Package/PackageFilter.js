@@ -16,7 +16,11 @@ const getUnique = (items, value) => {
 	return [...new Set(items.map(item => item[value]))];
 }
 
-
+/**
+ * Sets the filter according to what the user want
+ * User can filter based on religion, location, price, number of days, casket, packages, religion.
+ * @returns PackageFilter component
+ */
 const PackageFilter = () => {
 	const context = useContext(PackageContext);
 	const {
@@ -42,6 +46,9 @@ const PackageFilter = () => {
 	} = context;
 
 	//Setting unique religion values
+	/**
+	 * Sets the unique religion values
+	 */
 	let religions = getUnique(packages, 'religion');
 	religions = ['All', ...religions];
 	religions = religions.map((item, index) => {
@@ -49,6 +56,9 @@ const PackageFilter = () => {
 		               key={index}>{item}</option>;
 	});
 
+	/**
+	 * Sets the unique location values
+	 */
 	//Setting unique location values
 	let locations = getUnique(packages, 'location');
 	locations = ['All', ...locations];
@@ -57,6 +67,9 @@ const PackageFilter = () => {
 		               key={index}>{item}</option>;
 	});
 
+	/**
+	 * Sets the unique casket values
+	 */
 	//Setting unique casket values
 	let caskets = getUnique(packages, 'casket');
 	caskets = ['All', ...caskets];

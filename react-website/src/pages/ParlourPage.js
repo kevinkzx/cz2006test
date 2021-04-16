@@ -4,7 +4,10 @@ import HeroSection from "../components/HeroSection";
 //import ParlourHome from "../components/Parlour/ParlourHome";
 import ParlourContainer from "../components/Parlour/ParlourContainer";
 
-
+/**
+ * This is the page to display all the parlours available
+ * @returns ParlourPage
+ */
 const ParlourPage = () => {
 
 	useEffect(() => {

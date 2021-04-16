@@ -2,8 +2,8 @@ import React from "react";
 import {SearchTitle} from "./ParlourElement";
 
 /**
- * Component for user input of parlour to search for.
- * @param {obect} title 
+ * Component to display a title
+ * @param {obect} title component for user to input the title
  * @returns Title component
  */
 const Title = ({title}) => {

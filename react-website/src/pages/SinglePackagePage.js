@@ -6,7 +6,10 @@ import PackageBooking from "../components/Package/PackageBooking";
 import ReviewInput from '../components/Reviews/ReviewInput';
 import Title from "../components/Parlour/Title";
 
-
+/**
+ * This is the page for each individual package 
+ * @returns SinglePackagePage
+ */
 const SinglePackagePage = () => {
 	// to scroll to the top of the webpage when rendered
 	useEffect(() => {

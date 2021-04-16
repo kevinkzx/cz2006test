@@ -2,6 +2,10 @@ import React, {useContext} from "react";
 import Login from '../components/Signin/Login';
 import AuthContext from "../components/Context/AuthContext";
 
+/**
+ * This is the page for user to sign in
+ * @returns SignIn
+ */
 const SignIn = () => {
 	const {
 		user,

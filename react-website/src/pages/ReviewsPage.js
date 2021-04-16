@@ -1,6 +1,10 @@
 import React, {useEffect} from 'react';
 import Reviews from '../components/Reviews';
 
+/**
+ * This is the page for reviews.
+ * @returns ReviewsPage
+ */
 const ReviewsPage = () => {
 	// to scroll to the top of the webpage when rendered
 	useEffect(() => {

@@ -32,6 +32,7 @@ const ParlourBooking = () => {
 
 	/**
 	 * Checks if any of the field that the user input is empty
+	 * If not empty, set data as package, casket chosen by user and address input and use sendEmail function
 	 */
 	const testBook = () => {
 		if (!generalPackages && !caskets) {

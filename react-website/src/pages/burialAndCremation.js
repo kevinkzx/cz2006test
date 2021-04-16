@@ -3,9 +3,17 @@ import {GoogleMap, InfoWindow, Marker, withGoogleMap, withScriptjs} from "react-
 import * as burialAndCremationData from "./data/burialAndCremationData.json";
 import Navbar from "../components/Navbar";
 
+/**
+ * This function returns the location of the burial and cremation site
+ * If a user clicks on the pin, an infowindow with more information would be displayed
+ * @returns Marker of the location and info window when user click on the marker
+ */
 function BurialAndCremation() {
 	const [selectedFacility, setSelectedFacility] = useState(null);
-
+	/**
+	 * Display the pins of the location.
+	 * When the user click on a pin, an info window will show more information.
+	 */
 	return (
 		<GoogleMap
 			defaultZoom={12}
@@ -50,6 +58,10 @@ function BurialAndCremation() {
 
 const MapWrapped = withScriptjs(withGoogleMap(BurialAndCremation));
 
+/**
+ * Display the map using google map api
+ * @returns a map showing the markers.
+ */
 export default function App() {
 	let googleKey = {REACT_APP_GOOGLE_KEY: `AIzaSyDQqDdByz7RV0721d5rYNfU7HWo98LiTr0`}
 	return (

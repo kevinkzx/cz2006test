@@ -17,7 +17,11 @@ import AuthContext from "../Context/AuthContext";
 import ParlourContext from "../Context/ParlourContext";
 import { useAlert } from "react-alert";
 
-
+  /**
+   * This sets the value of the caskets inside the pop up form
+   * @param {object} props the casket user chooses in the pop up form
+   * @returns the value chosen by the user.
+   */
   function ConfirmationDialogRaw(props) {
     const { onClose, value: valueProp, open, ...other } = props;
     const [value, setValue] = React.useState(valueProp);
@@ -111,6 +115,11 @@ import { useAlert } from "react-alert";
     },
   }));
 
+  /**
+   * This changes the value after the user has chosen a casket from the pop up form.
+   * @param {object} props the value that user choose in the pop up form
+   * @returns the value that the user choose
+   */
   export default function ConfirmationDialog(props) {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
@@ -130,6 +139,10 @@ import { useAlert } from "react-alert";
       }
     };
 
+    /**
+     * Sets the value of caskets to the one that user chooses.
+     * @param {object} newValue the casket that the user chose
+     */
     const handleBook = (newValue) => {
         // if (user === null) {
         //     console.log('please log in first');

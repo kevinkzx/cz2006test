@@ -4,7 +4,10 @@ import ReviewCard from './ReviewCard';
 import {useParams} from "react-router-dom";
 import PackageContext from "../Context/PackageContext";
 
-
+/**
+ * Component for list of reviews for each package
+ * @returns ReviewList component
+ */
 const ReviewList = () => {
 	// const {reviews} = useContext(ReviewContext);
 	const {getPackage} = useContext(PackageContext);
