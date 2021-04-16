@@ -9,6 +9,12 @@ import {
 import ParlourContext from "../Context/ParlourContext";
 import {useParams} from "react-router-dom";
 
+/**
+ * Component for map component in individual parlour page.
+ * Shows the location of the current user and the location of the parlour.
+ * Renders the direction by form of driving on the map.
+ * @returns Map component
+ */
 const Map = () => {
 
 	const {getParlour} = useContext(ParlourContext);

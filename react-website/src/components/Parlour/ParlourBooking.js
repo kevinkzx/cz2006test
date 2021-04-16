@@ -10,6 +10,10 @@ import {useAlert} from "react-alert";
 import emailjs from "emailjs-com";
 import {NormalButtonWrapper} from "../ButtonElements";
 
+/**
+ * This returns the name of the parlour, package, caskets and address of the user when they engage a parlour
+ * @returns forms for the user to pick
+ */
 const ParlourBooking = () => {
 	const {getParlour} = useContext(ParlourContext);
 	let {slug} = useParams();
@@ -19,10 +23,16 @@ const ParlourBooking = () => {
 	const [caskets, setCaskets] = useState(null);
 	const [address, setAddress] = useState(null);
 
+	/**
+	 * Gets the user that is currently logged in
+	 */
 	const {
 		query, user
 	} = useContext(AuthContext);
 
+	/**
+	 * Checks if any of the field that the user input is empty
+	 */
 	const testBook = () => {
 		if (!generalPackages && !caskets) {
 			alert.show("Please select a service first");
@@ -46,6 +56,10 @@ const ParlourBooking = () => {
 		}
 	};
 
+	/**
+	 * Uses the email api to send a confirmation email
+	 * @param {*} templateParams template object to send email
+	 */
 	const sendEmail = (templateParams) => {
 		emailjs.send('service_k995ykf', 'template_s4l8cue', templateParams, 'user_PCSCABHzVKDKmfFro8SMh')
 		       .then(function (response) {

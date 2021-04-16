@@ -7,7 +7,12 @@ const handleChange = () => {
 	console.log('hello');
 };
 
-
+/**
+ * Component for each package in list of packages
+ * Shows the religion, price the link to each individual package page.
+ * @param {object} item the package that we want
+ * @returns PackageCard component.
+ */
 const PackageCard = ({item}) => {
 
 

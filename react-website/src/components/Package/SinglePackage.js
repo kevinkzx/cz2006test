@@ -15,7 +15,11 @@ import {ReviewTitle} from '../Reviews/ReviewsElements';
 
 
 
-
+/**
+ * Component for each package in their individual packages page.
+ * Gets the packages by their slug and show the information of the packages.
+ * @returns SinglePackage component.
+ */
 
 const SinglePackage = () => {
 	const {getPackage} = useContext(PackageContext);

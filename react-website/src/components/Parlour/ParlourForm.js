@@ -17,7 +17,11 @@ import AuthContext from "../Context/AuthContext";
 import ParlourContext from "../Context/ParlourContext";
 import {useAlert} from "react-alert";
 
-
+/**
+ * Function to display pop up menu for user to choose which package they want
+ * @param {object} props the general package that user click on
+ * @returns Pop up dialog for user to click on general packages that they want
+ */
 function ConfirmationDialogRaw(props) {
 	const {onClose, value: valueProp, open, ...other} = props;
 	const [value, setValue] = React.useState(valueProp);
@@ -30,19 +34,22 @@ function ConfirmationDialogRaw(props) {
 	const GP = item.generalPackages;
 	//console.log(GP);
 
-
+	
 	React.useEffect(() => {
 		if (!open) {
 			setValue(valueProp);
 		}
 	}, [valueProp, open]);
-
+	
 	const handleEntering = () => {
 		if (radioGroupRef.current != null) {
 			radioGroupRef.current.focus();
 		}
 	};
 
+	/**
+	 * Closes the pop up
+	 */
 	const handleCancel = () => {
 		onClose();
 	};
@@ -51,6 +58,10 @@ function ConfirmationDialogRaw(props) {
 		onClose(value);
 	};
 
+	/**
+	 * Set the form to display the general package that user choose.
+	 * @param {object} event the general package that user choose
+	 */
 	const handleChange = (event) => {
 		setValue(event.target.value);
 	};
@@ -117,6 +128,11 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
+/**
+ * This component renders the option chosen by the user.
+ * @param {*} props the general package that user choose
+ * @returns The form displaying the choice of general package
+ */
 export default function ConfirmationDialog(props) {
 	const classes = useStyles();
 	const [open, setOpen] = React.useState(false);
@@ -136,6 +152,10 @@ export default function ConfirmationDialog(props) {
 		}
 	};
 
+	/**
+	 * Sets the value to the one that users chooses.
+	 * @param {*} newValue the general package that user chooses.
+	 */
 	const handleBook = (newValue) => {
 		// if (user === null) {
 		// 	//console.log('please log in first');
@@ -152,7 +172,7 @@ export default function ConfirmationDialog(props) {
 		}
 	};
 
-
+	
 	return (
 		<div className={classes.root}>
 			<List component="div"

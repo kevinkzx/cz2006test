@@ -1,5 +1,11 @@
 import React, {useState} from 'react';
 
+/**
+ * Component for input field
+ * @param {object} name, name of the input field
+ * @param {object} label, label of the input field 
+ * @returns an input field for user to input their details.
+ */
 export default function InputField({name, label}) {
 	const [state, setState] = useState('');
 	return (

@@ -9,6 +9,12 @@ import AuthContext from "../Context/AuthContext";
 import {useAlert} from "react-alert";
 import {NormalButton} from "../ButtonElements";
 
+/**
+ * Component for form to allow user to input address if they want to engage parlour.
+ * Checks whether the user is logged in.
+ * @param {object} props Address of the user input
+ * @returns Form for user to input address.
+ */
 export default function FormDialog(props) {
 	const [open, setOpen] = React.useState(false);
 	const {user} = useContext(AuthContext);

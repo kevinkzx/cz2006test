@@ -13,6 +13,10 @@ import Map from "./ParlourMapIndex";
 import {withScriptjs} from "react-google-maps";
 import Title from "./Title";
 
+/**
+ * Component for the individual parlours
+ * @returns SingleParlour component. Displays the name, information, general packages and caskets of the individual parlour. Renders the map
+ */
 const SingleParlour = () => {
 	const {getParlour} = useContext(ParlourContext);
 	let {slug} = useParams();
