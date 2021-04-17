@@ -11,6 +11,9 @@ import {
 } from "./SidebarElements";
 import * as PropTypes from "prop-types";
 
+/**
+ * This component renders the side bar to show buttons in navbar, when the the page of the website is reduced horizontally
+ */
 class Sidebar extends React.Component {
 	render() {
 		let {isOpen, toggle} = this.props;

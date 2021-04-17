@@ -4,6 +4,11 @@ import firebase from "firebase";
 
 
 const PackageContext = createContext();
+/**
+ * Context for packages.
+ * @param {object} children 
+ * @returns {object} children. as well as methods in context
+ */
 export const PackageProvider = ({children}) => {
 	const [packages, setPackages] = useState([]);
 	const [sortedPackages, setSortedPackages] = useState([]);
@@ -36,11 +41,19 @@ export const PackageProvider = ({children}) => {
 			}, []
 		)
 		;
-
+		
+		/**
+		 * Function to get individual packages by their slug
+		 * @param {object} slug slug of the package
+		 * @returns The package with the corresponding slug
+		 */
 		const getPackage = (slug) => {
 			return packages.find(item => item.slug === slug);
 		}
 
+		/**
+		 * Sets the defauly maximum days and price to be the maximum among the list of packages
+		 */
 		useEffect(() => {
 			setMaxPrice(Math.max(...packages.map(item => parseInt(item.price))));
 			setPrice(Math.max(...packages.map(item => parseInt(item.price))));
@@ -54,6 +67,12 @@ export const PackageProvider = ({children}) => {
 			filterPackages();
 		}, [religion, location, price, maxDay, minDay, casket, transportation, eco]);
 
+		/**
+		 * Fucntion to update the package with reviews left by user
+		 * @param {string} email email of the user that is leaving the review
+		 * @param {string} input the review
+		 * @param {*} packageId id of the package
+		 */
 		const updateReview = (email, input, packageId) => {
 			fire.firestore()
 			    .collection("Packages")
@@ -74,6 +93,9 @@ export const PackageProvider = ({children}) => {
 			    })
 		}
 
+		/**
+		 * Function to set the filters given by the user.
+		 */
 		const filterPackages = () => {
 			let temp = packages;
 			if (religion !== "All") {

@@ -5,7 +5,9 @@ import {AuthProvider} from "./components/Context/AuthContext";
 import {positions, Provider as AlertProvider, transitions} from 'react-alert';
 import AlertTemplate from 'react-alert-template-basic';
 
-
+/**
+ * AlertProvider component and AuthProvider component wraps the App component so that it can be used throughout the webpage
+ */
 const options = {
 	position: positions.BOTTOM_CENTER,
 	timeout: 5000,

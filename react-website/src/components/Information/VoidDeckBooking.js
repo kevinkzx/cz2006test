@@ -3,6 +3,10 @@ import HeroSection from "../HeroSection";
 import Title from "../Parlour/Title";
 import Container from "@material-ui/core/Container";
 
+/**
+ * This component contains the information for void deck booking.
+ * @returns VoidDeckBooking component.
+ */
 const VoidDeckBooking = () => {
 	return (
 		<>

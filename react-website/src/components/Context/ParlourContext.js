@@ -4,8 +4,8 @@ import fire from "../../firebase/fire";
 const ParlourContext = createContext();
 /**
  * Context for parlours
- * @param {*} children
- * @returns {*}
+ * @param {object} children
+ * @returns {object} children. as well as methods in context
  */
 export const ParlourProvider = ({children}) => {
 	const [parlours, setParlours] = useState([]);

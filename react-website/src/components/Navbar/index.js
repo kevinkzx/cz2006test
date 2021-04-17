@@ -16,6 +16,12 @@ import {
 } from './NavbarElements';
 import AuthContext from "../Context/AuthContext";
 
+/**
+ * This component is responsible for the navigation bar.
+ * User can click on the navigation bar to scroll to the indiviudal infosection
+ * @param {object} toggle The section that users click on
+ * @returns the navbar component to be displayed at the top of the web page.
+ */
 const Navbar = ({toggle}) => {
 	const [scrollNav, setScrollNav] = useState(false);
 	const {user, handleLogout} = useContext(AuthContext);
@@ -33,25 +39,38 @@ const Navbar = ({toggle}) => {
 		window.addEventListener('scroll', changeNav);
 	}, []);
 
+	/**
+	 * Scrolls to the top when user click on Home in home page
+	 */
 	const toggleHome = () => {
 		scroll.scrollToTop();
 	};
-
+	/**
+	 * Scrolls to the section of packages in home page
+	 */
 	const goToPackages = () => {
 		history.push('/');
 		scroll.scrollTo(800);
 	};
 
+	/**
+	 * Scrolls to the section of parlours in home page
+	 */
 	const goToParlours = () => {
 		history.push('/');
 		scroll.scrollTo(1700);
 	};
 
+	/**
+	 * Scrolls to the section of Location in home page
+	 */
 	const goToMap = () => {
 		history.push('/');
 		scroll.scrollTo(2500);
 	};
-
+	/**
+	 * Scrolls to the section of information in home page
+	 */
 	const goToInfo = () => {
 		history.push('/');
 		scroll.scrollTo(3400);

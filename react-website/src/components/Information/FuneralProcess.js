@@ -7,6 +7,10 @@ import Title from "../Parlour/Title";
 import React from 'react';
 import HeroSection from "../HeroSection";
 
+/**
+ * This component contains the information for funeral processes.
+ * @returns FuneralProcess component
+ */
 const FuneralProcess = () => {
 	return (
 		<>

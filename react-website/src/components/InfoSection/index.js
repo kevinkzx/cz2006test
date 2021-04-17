@@ -14,7 +14,12 @@ import {
 	TextWrapper,
 	TopLine
 } from "./InfoElements";
-
+/**
+ * This component is responsible for the individual info section 
+ * It renders the information of the info section and button to link to the pages from the info section.
+ * @param {*} param0 
+ * @returns InfoSection component.
+ */
 const InfoSection = ({
 	                     lightBg,
 	                     id,

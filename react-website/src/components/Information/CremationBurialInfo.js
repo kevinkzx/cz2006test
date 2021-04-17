@@ -4,6 +4,11 @@ import Title from "../Parlour/Title";
 import {Tab} from "semantic-ui-react";
 import {Container} from "@material-ui/core";
 
+/**
+ * This component contains the information for cremation procedures, in land scattering, ash scattering and burial
+ * Renders the information with different menu item.
+ * @returns CremationBurialInfo component
+ */
 const CremationBurialInfo = () => {
 	const panes = [
 		{

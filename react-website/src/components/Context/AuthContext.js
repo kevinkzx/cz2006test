@@ -4,6 +4,11 @@ import firebase from "firebase";
 
 
 const AuthContext = createContext();
+/**
+ * Context for authentication
+ * @param {object} children 
+ * @returns {object} children as well as methods in context.
+ */
 export const AuthProvider = ({children}) => {
 		const [user, setUser] = useState(null);
 		const [email, setEmail] = useState('');
@@ -22,6 +27,9 @@ export const AuthProvider = ({children}) => {
 			setPasswordError('');
 		}
 
+		/**
+		 * Function to handle log in of user.
+		 */
 		const handleLogin = () => {
 			clearErrors();
 			fire
@@ -47,6 +55,11 @@ export const AuthProvider = ({children}) => {
 			})
 		};
 
+		/**
+		 * Function to allow user to sign up
+		 * Checks whether the email is already used
+		 * Checks whether the strength of password is sufficient
+		 */
 		const handleSignup = () => {
 			clearErrors();
 			fire
@@ -73,6 +86,9 @@ export const AuthProvider = ({children}) => {
 			})
 		};
 
+		/**
+		 * Function when user sings out
+		 */
 		const handleLogout = () => {
 			fire.auth()
 			    .signOut()

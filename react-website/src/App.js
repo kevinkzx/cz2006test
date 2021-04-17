@@ -20,7 +20,12 @@ import ashScatteringPage from './pages/ashScattering';
 import AuthContext from "./components/Context/AuthContext";
 import fire from "./firebase/fire";
 
-
+/**
+ * This component checks if there is currently a user that is logged in.
+ * Context wraps the route so that the context can be used throughout the webpage.
+ * Route the webpage to different pages.
+ * @returns App component
+ */
 const App = () => {
 	const {user, setUser,} = useContext(AuthContext);
 	useEffect(() => {
