@@ -5,7 +5,7 @@ const ParlourContext = createContext();
 /**
  * Context for parlours
  * @param {*} children
- * @returns {*} 
+ * @returns {*}
  */
 export const ParlourProvider = ({children}) => {
 	const [parlours, setParlours] = useState([]);
@@ -21,9 +21,9 @@ export const ParlourProvider = ({children}) => {
 	const getParlour = (slug) => {
 		return parlours.find(item => item.slug === slug);
 	}
-	
-	useEffect(() => {
-		const unsubscribe = fire.firestore()
+
+	useEffect( () => {
+		const unsubscribe =  fire.firestore()
 		                        .collection('Parlours')
 		                        .onSnapshot((snapshot) => {
 			                        const newParlours = snapshot.docs.map((doc) => ({

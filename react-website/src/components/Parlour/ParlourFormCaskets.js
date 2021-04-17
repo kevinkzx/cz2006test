@@ -22,122 +22,130 @@ import { useAlert } from "react-alert";
    * @param {object} props the casket user chooses in the pop up form
    * @returns the value chosen by the user.
    */
-  function ConfirmationDialogRaw(props) {
-    const { onClose, value: valueProp, open, ...other } = props;
-    const [value, setValue] = React.useState(valueProp);
-    const radioGroupRef = React.useRef(null);
-    const {user} = useContext(AuthContext);
-    const alert = useAlert();
-    const {getParlour} = useContext(ParlourContext);
-    let {slug} = useParams();
-    const item = getParlour(slug);
-    const caskets = item.caskets;
-    //console.log(caskets);
+
+function ConfirmationDialogRaw(props) {
+	const {onClose, value: valueProp, open, ...other} = props;
+	const [value, setValue] = React.useState(valueProp);
+	const radioGroupRef = React.useRef(null);
+	const {user} = useContext(AuthContext);
+	const alert = useAlert();
+	const {getParlour} = useContext(ParlourContext);
+	let {slug} = useParams();
+	const item = getParlour(slug);
+	const caskets = item.caskets.concat("Nil");
+	// console.log(caskets);
 
 
-    React.useEffect(() => {
-      if (!open) {
-        setValue(valueProp);
-      }
-    }, [valueProp, open]);
+	React.useEffect(() => {
+		if (!open) {
+			setValue(valueProp);
+		}
+	}, [valueProp, open]);
 
-    const handleEntering = () => {
-      if (radioGroupRef.current != null) {
-        radioGroupRef.current.focus();
-      }
-    };
+	const handleEntering = () => {
+		if (radioGroupRef.current != null) {
+			radioGroupRef.current.focus();
+		}
+	};
 
-    const handleCancel = () => {
-      onClose();
-    };
+	const handleCancel = () => {
+		onClose();
+	};
 
-    const handleOk = () => {
-      onClose(value);
-    };
+	const handleOk = () => {
+		onClose(value);
+	};
 
-    const handleChange = (event) => {
-      setValue(event.target.value);
-    };
+	const handleChange = (event) => {
+		setValue(event.target.value);
+	};
 
-    return (
-      <Dialog
-        disableBackdropClick
-        disableEscapeKeyDown
-        maxWidth="xs"
-        //this sets the list to the list of stuff user can choose
-        onEntering={handleEntering}
-        aria-labelledby="confirmation-dialog-title"
-        open={open}
-        {...other}
-      >
-        <DialogTitle id="confirmation-dialog-title">Caskets</DialogTitle>
-        <DialogContent dividers>
-          <RadioGroup
-            ref={radioGroupRef}
-            aria-label="ringtone"
-            name="ringtone"
-            value={value}
-            //this sets the outside value to what the user choose in list
-            onChange={handleChange}
-          >
-            {caskets.map((option) => (
-              <FormControlLabel value={option} key={option} control={<Radio />} label={option} />
-            ))}
-          </RadioGroup>
-        </DialogContent>
-        <DialogActions>
-          <Button autoFocus onClick={handleCancel} color="primary">
-            Cancel
-          </Button>
-          <Button onClick={handleOk} color="primary">
-            Ok
-          </Button>
-        </DialogActions>
-      </Dialog>
-    );
-  }
+	return (
+		<Dialog
+			disableBackdropClick
+			disableEscapeKeyDown
+			maxWidth="xs"
+			//this sets the list to the list of stuff user can choose
+			onEntering={handleEntering}
+			aria-labelledby="confirmation-dialog-title"
+			open={open}
+			{...other}
+		>
+			<DialogTitle id="confirmation-dialog-title">Caskets</DialogTitle>
+			<DialogContent dividers>
+				<RadioGroup
+					ref={radioGroupRef}
+					aria-label="ringtone"
+					name="ringtone"
+					value={value}
+					//this sets the outside value to what the user choose in list
+					onChange={handleChange}
+				>
+					{caskets.map((option) => (
+						<FormControlLabel value={option}
+						                  key={option}
+						                  control={<Radio/>}
+						                  label={option}/>
+					))}
+				</RadioGroup>
+			</DialogContent>
+			<DialogActions>
+				<Button autoFocus
+				        onClick={handleCancel}
+				        color="primary">
+					Cancel
+				</Button>
+				<Button onClick={handleOk}
+				        color="primary">
+					Ok
+				</Button>
+			</DialogActions>
+		</Dialog>
+	);
+}
 
-  ConfirmationDialogRaw.propTypes = {
-    onClose: PropTypes.func.isRequired,
-    open: PropTypes.bool.isRequired,
-    value: PropTypes.string.isRequired,
-  };
+ConfirmationDialogRaw.propTypes = {
+	onClose: PropTypes.func.isRequired,
+	open: PropTypes.bool.isRequired,
+	value: PropTypes.string.isRequired,
+};
 
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      width: '100%',
-      maxWidth: 360,
-      backgroundColor: theme.palette.background.paper,
-    },
-    paper: {
-      width: '80%',
-      maxHeight: 435,
-    },
-  }));
+const useStyles = makeStyles((theme) => ({
+	root: {
+		width: '100%',
+		maxWidth: 360,
+		backgroundColor: theme.palette.background.paper,
+	},
+	paper: {
+		width: '80%',
+		maxHeight: 435,
+	},
+}));
 
   /**
    * This changes the value after the user has chosen a casket from the pop up form.
    * @param {object} props the value that user choose in the pop up form
    * @returns the value that the user choose
    */
-  export default function ConfirmationDialog(props) {
-    const classes = useStyles();
-    const [open, setOpen] = React.useState(false);
-    const [value, setValue] = React.useState('Nill');
-    const {user} = useContext(AuthContext);
-    const alert = useAlert();
 
-    const handleClickListItem = () => {
-      setOpen(true);
-    };
+export default function ConfirmationDialog(props) {
+	const classes = useStyles();
+	const [open, setOpen] = React.useState(false);
+	const [value, setValue] = React.useState('Nil');
+	const {user} = useContext(AuthContext);
+	const alert = useAlert();
 
-    const handleClose = (newValue) => {
-      setOpen(false);
+	const handleClickListItem = () => {
+		setOpen(true);
+	};
 
-      if (newValue) {
-        setValue(newValue);
-      }
-    };
+	const handleClose = (newValue) => {
+		setOpen(false);
+
+		if (newValue) {
+			setValue(newValue);
+		}
+	};
 
     /**
      * Sets the value of caskets to the one that user chooses.
@@ -153,42 +161,49 @@ import { useAlert } from "react-alert";
         // }
         setOpen(false);
 
-        if (newValue) {
-          setValue(newValue);
-          props.setCaskets(newValue);
-          // myorder.setCaskets(newValue);
-        }
+		if (newValue) {
+			setValue(newValue);
+			if (newValue === "Nil") {
+				props.setCaskets(null);
+			} else {
+				props.setCaskets(newValue);
+			}
 
-    };
+			// myorder.setCaskets(newValue);
+		}
+
+	};
 
 
-    return (
-      <div className={classes.root}>
-        <List component="div" role="list">
-          <ListItem
-            button
-            divider
-            aria-haspopup="true"
-            aria-controls="ringtone-menu"
-            aria-label="phone ringtone"
-            onClick={handleClickListItem}
-            role="listitem"
-          >
-            <ListItemText primary="Caskets" secondary={value} />
-          </ListItem>
-          <ConfirmationDialogRaw
-            classes={{
-              paper: classes.paper,
-            }}
-            id="ringtone-menu"
-            keepMounted
-            open={open}
-            //check if user is logged in here
-            onClose={handleBook}
-            value={value}
-          />
-        </List>
-      </div>
-    );
+	return (
+		<div className={classes.root}>
+			<List component="div"
+			      role="list">
+				<ListItem
+					button
+					divider
+					aria-haspopup="true"
+					aria-controls="ringtone-menu"
+					aria-label="phone ringtone"
+					onClick={handleClickListItem}
+					role="listitem"
+				>
+					<ListItemText primary="Caskets"
+					              secondary={value}/>
+				</ListItem>
+				<ConfirmationDialogRaw
+					classes={{
+						paper: classes.paper,
+					}}
+					id="ringtone-menu"
+					keepMounted
+					open={open}
+					//check if user is logged in here
+					onClose={handleBook}
+					value={value}
+				/>
+			</List>
+		</div>
+	);
 
-  }
+}

@@ -31,8 +31,8 @@ function ConfirmationDialogRaw(props) {
 	const {getParlour} = useContext(ParlourContext);
 	let {slug} = useParams();
 	const item = getParlour(slug);
-	const GP = item.generalPackages;
-	//console.log(GP);
+	const GP = item.generalPackages.concat("Nil");
+	// console.log(GP);
 
 	
 	React.useEffect(() => {
@@ -136,7 +136,7 @@ const useStyles = makeStyles((theme) => ({
 export default function ConfirmationDialog(props) {
 	const classes = useStyles();
 	const [open, setOpen] = React.useState(false);
-	const [value, setValue] = React.useState('Nill');
+	const [value, setValue] = React.useState('Nil');
 	const {user} = useContext(AuthContext);
 	const alert = useAlert();
 
@@ -167,7 +167,11 @@ export default function ConfirmationDialog(props) {
 
 		if (newValue) {
 			setValue(newValue);
-			props.setGeneralPackages(newValue);
+			if (newValue === "Nil") {
+				props.setGeneralPackages(null);
+			} else {
+				props.setGeneralPackages(newValue);
+			}
 			// myorder.setGeneralP(newValue);
 		}
 	};
