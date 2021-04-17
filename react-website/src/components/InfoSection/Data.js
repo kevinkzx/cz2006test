@@ -1,4 +1,4 @@
-import img1 from "../../images/svg-1.svg"
+import img1 from "../../images/image3.svg"
 
 // false = black, true = white
 

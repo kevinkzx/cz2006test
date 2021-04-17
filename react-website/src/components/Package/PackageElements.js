@@ -112,7 +112,8 @@ export const PackageInfo = styled.p`
 // Single Package css
 
 export const SinglePackageContainer = styled.section`
-  padding: 5rem 0 0 0;
+  //padding: 3rem 0 0 0;
+  //padding-top: -100px;
 `;
 
 export const SinglePackageImage = styled.div`
@@ -239,3 +240,10 @@ export const PackageFilterFormExtra = styled.div`
     margin-left: 0.5rem;
   }
 `;
+
+
+
+
+
+
+

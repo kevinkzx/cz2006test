@@ -3,6 +3,10 @@ import PackageContainer from "../components/Package/PackageContainer";
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 
+/**
+ * This is the page to display all the packages available
+ * @returns PackagePage
+ */
 const PackagePage = () => {
 
 	// to scroll to the top of the webpage when rendered

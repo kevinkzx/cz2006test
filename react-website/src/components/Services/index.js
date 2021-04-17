@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {
 	ServicesCard,
 	ServicesContainer,
@@ -10,7 +9,12 @@ import {
 	ServicesWrapper
 } from './ServicesElements';
 
-
+/**
+ * This component displays the individual boxes for location and information.
+ * Renders the box, image and name of each individual box.
+ * @param {*} param0 
+ * @returns Services component.
+ */
 const Services = ({
 	                  id,
 	                  backgroundColor,
@@ -37,7 +41,6 @@ const Services = ({
                   }) => {
 
 	return (
-
 		<ServicesContainer id={id}
 		                   backgroundColor={backgroundColor}>
 			<ServicesH1 headerColor={headerColor}>{header}</ServicesH1>

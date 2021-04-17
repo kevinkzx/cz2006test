@@ -4,7 +4,10 @@ import HeroSection from "../components/HeroSection";
 //import ParlourHome from "../components/Parlour/ParlourHome";
 import ParlourContainer from "../components/Parlour/ParlourContainer";
 
-
+/**
+ * This is the page to display all the parlours available
+ * @returns ParlourPage
+ */
 const ParlourPage = () => {
 
 	useEffect(() => {
@@ -15,11 +18,10 @@ const ParlourPage = () => {
 	return (
 		<>
 			<Navbar/>
-			<HeroSection HeroHeader="Check out our packages here."
-			             HeroPara="Book with us right now."
-			             getStartedButton="searchFilter"
+			<HeroSection HeroHeader="Check out our parlours here."
+			             HeroPara="Engage with our parlours now to find what suits you best."
+			             getStartedButton="searchParlour"
 			             scroll={true}/>
-			<h1>Welcome to parlour page</h1>
 			<ParlourContainer/>
 		</>
 

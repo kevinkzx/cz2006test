@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/Package/PackageFilter.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/Package/PackageFilter.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, {useContext} from 'react';
+import PackageContext from "../Context/PackageContext";
+import {
+	PackageFilterForm,
+	PackageFilterFormControl,
+	PackageFilterFormExtra,
+	PackageFilterFormGroup,
+	PackageFilterFormInput,
+	PackageFilterFormSizeInput,
+	PackageFilterFormSizeInputWrapper,
+	PackageFilterWrapper
+} from "./PackageElements";
+import Title from "../Parlour/Title";
+
+const getUnique = (items, value) => {
+	return [...new Set(items.map(item => item[value]))];
+}
+
+/**
+ * Sets the filter according to what the user want
+ * User can filter based on religion, location, price, number of days, casket, packages, religion.
+ * @returns PackageFilter component
+ */
+const PackageFilter = () => {
+	const context = useContext(PackageContext);
+	const {
+		setReligion,
+		setLocation,
+		setPrice,
+		setMinDay,
+		setMaxDay,
+		setCasket,
+		setTransportation,
+		setEco,
+		casket,
+		packages,
+		religion,
+		price,
+		minPrice,
+		maxPrice,
+		transportation,
+		location,
+		minDay,
+		maxDay,
+		eco
+	} = context;
+
+	//Setting unique religion values
+	/**
+	 * Sets the unique religion values
+	 */
+	let religions = getUnique(packages, 'religion');
+	religions = ['All', ...religions];
+	religions = religions.map((item, index) => {
+		return &lt;option value={item}
+		               key={index}>{item}&lt;/option>;
+	});
+
+	/**
+	 * Sets the unique location values
+	 */
+		//Setting unique location values
+	let locations = getUnique(packages, 'location');
+	locations = ['All', ...locations];
+	locations = locations.map((item, index) => {
+		return &lt;option value={item}
+		               key={index}>{item}&lt;/option>;
+	});
+
+	/**
+	 * Sets the unique casket values
+	 */
+		//Setting unique casket values
+	let caskets = getUnique(packages, 'casket');
+	caskets = ['All', ...caskets];
+	caskets = caskets.map((item, index) => {
+		return &lt;option value={item}
+		               key={index}>{item}&lt;/option>;
+	});
+	return (
+		&lt;>
+			&lt;Title title="Filter Packages"/>
+			&lt;div id="searchFilter">
+				&lt;PackageFilterWrapper>
+					&lt;PackageFilterForm>
+						&lt;PackageFilterFormGroup>
+							&lt;label htmlFor="religion">Religion&lt;/label>
+							&lt;PackageFilterFormControl name="religion"
+							                          id="religion"
+							                          value={religion}
+							                          onChange={e => setReligion(e.target.value)}>
+								{religions}
+							&lt;/PackageFilterFormControl>
+						&lt;/PackageFilterFormGroup>
+						&lt;PackageFilterFormGroup>
+							&lt;label htmlFor="location2">Location&lt;/label>
+							&lt;PackageFilterFormControl name="location2"
+							                          id="location2"
+							                          value={location}
+							                          onChange={e => setLocation(e.target.value)}>
+								{locations}
+							&lt;/PackageFilterFormControl>
+						&lt;/PackageFilterFormGroup>
+						&lt;PackageFilterFormGroup>
+							&lt;label htmlFor="casket">Casket Type&lt;/label>
+							&lt;PackageFilterFormControl name="casket"
+							                          id="casket"
+							                          value={casket}
+							                          onChange={e => setCasket(e.target.value)}>
+								{caskets}
+							&lt;/PackageFilterFormControl>
+						&lt;/PackageFilterFormGroup>
+						&lt;PackageFilterFormGroup>
+							&lt;label htmlFor="price">package price ${price}&lt;/label>
+							&lt;PackageFilterFormInput type="range"
+							                        name="price"
+							                        min={minPrice}
+							                        max={maxPrice}
+							                        id="price"
+							                        value={price}
+							                        onChange={e => setPrice(e.target.value)}/>
+						&lt;/PackageFilterFormGroup>
+						&lt;PackageFilterFormGroup>
+							&lt;label htmlFor="day">Number of days&lt;/label>
+							&lt;PackageFilterFormSizeInputWrapper>
+								&lt;PackageFilterFormSizeInput
+									name="minDay"
+									value={minDay}
+									onChange={e => setMinDay(e.target.value)}/>
+								&lt;PackageFilterFormSizeInput
+									name="maxDay"
+									value={maxDay}
+									onChange={e => setMaxDay(e.target.value)}/>
+							&lt;/PackageFilterFormSizeInputWrapper>
+						&lt;/PackageFilterFormGroup>
+						&lt;PackageFilterFormGroup>
+							&lt;PackageFilterFormExtra>
+								&lt;input type="checkbox"
+								       name="transportation"
+								       id="transportation"
+								       checked={transportation}
+								       onChange={e => setTransportation(e.target.checked)}/>
+								&lt;label htmlFor="transportation">transportation&lt;/label>
+							&lt;/PackageFilterFormExtra>
+							&lt;PackageFilterFormExtra>
+								&lt;input type="checkbox"
+								       name="eco"
+								       id="eco"
+								       checked={eco}
+								       onChange={e => setEco(e.target.checked)}/>
+								&lt;label htmlFor="eco">Eco-Friendly&lt;/label>
+							&lt;/PackageFilterFormExtra>
+						&lt;/PackageFilterFormGroup>
+					&lt;/PackageFilterForm>
+				&lt;/PackageFilterWrapper>
+			&lt;/div>
+		&lt;/>
+	);
+};
+
+export default PackageFilter;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Sidebar.html">Sidebar</a></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#AshScattering">AshScattering</a></li><li><a href="global.html#AuthProvider">AuthProvider</a></li><li><a href="global.html#BurialAndCremation">BurialAndCremation</a></li><li><a href="global.html#ConfirmationDialogRaw">ConfirmationDialogRaw</a></li><li><a href="global.html#Cremation_burialPage">Cremation_burialPage</a></li><li><a href="global.html#CremationBurialInfo">CremationBurialInfo</a></li><li><a href="global.html#Funeral_processPage">Funeral_processPage</a></li><li><a href="global.html#FuneralProcess">FuneralProcess</a></li><li><a href="global.html#HeroSection">HeroSection</a></li><li><a href="global.html#InfoSection">InfoSection</a></li><li><a href="global.html#Map">Map</a></li><li><a href="global.html#Navbar">Navbar</a></li><li><a href="global.html#options">options</a></li><li><a href="global.html#PackageBooking">PackageBooking</a></li><li><a href="global.html#PackageCard">PackageCard</a></li><li><a href="global.html#PackageContainer">PackageContainer</a></li><li><a href="global.html#PackageFilter">PackageFilter</a></li><li><a href="global.html#PackageList">PackageList</a></li><li><a href="global.html#PackagePage">PackagePage</a></li><li><a href="global.html#PackageProvider">PackageProvider</a></li><li><a href="global.html#ParlourBooking">ParlourBooking</a></li><li><a href="global.html#ParlourCard">ParlourCard</a></li><li><a href="global.html#ParlourContainer">ParlourContainer</a></li><li><a href="global.html#ParlourList">ParlourList</a></li><li><a href="global.html#ParlourPage">ParlourPage</a></li><li><a href="global.html#ParlourProvider">ParlourProvider</a></li><li><a href="global.html#Parlours">Parlours</a></li><li><a href="global.html#ReviewCard">ReviewCard</a></li><li><a href="global.html#ReviewInput">ReviewInput</a></li><li><a href="global.html#ReviewList">ReviewList</a></li><li><a href="global.html#Services">Services</a></li><li><a href="global.html#SignIn">SignIn</a></li><li><a href="global.html#SinglePackage">SinglePackage</a></li><li><a href="global.html#SinglePackagePage">SinglePackagePage</a></li><li><a href="global.html#SingleParlour">SingleParlour</a></li><li><a href="global.html#SingleParlourPage">SingleParlourPage</a></li><li><a href="global.html#Title">Title</a></li><li><a href="global.html#Void_deck_bookingPage">Void_deck_bookingPage</a></li><li><a href="global.html#VoidDeckBooking">VoidDeckBooking</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sat Apr 17 2021 23:16:15 GMT+0800 (Singapore Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

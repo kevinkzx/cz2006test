@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/Parlour/ParlourFormButton.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/Parlour/ParlourFormButton.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, {useContext} from 'react';
+import Button from "@material-ui/core/Button";
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import AuthContext from "../Context/AuthContext";
+import {useAlert} from "react-alert";
+import {NormalButton} from "../ButtonElements";
+
+/**
+ * Component for form to allow user to input address if they want to engage parlour.
+ * Checks whether the user is logged in.
+ * @param {object} props Address of the user input
+ * @returns Form for user to input address.
+ */
+export default function FormDialog(props) {
+	const [open, setOpen] = React.useState(false);
+	const {user} = useContext(AuthContext);
+	const alert = useAlert();
+
+	/**
+	 * Function to check if the user is logged in
+	 */
+	const handleClickOpen = () => {
+		if (!user) {
+			alert.show("Please log in first")
+		} else {
+			setOpen(true);
+		}
+	};
+
+	/**
+	 * Calls the booking function.
+	 */
+	const handleClose = () => {
+		props.testBook();
+		setOpen(false);
+	};
+
+	const handleCancel = () => {
+		setOpen(false);
+	};
+
+	return (
+		&lt;div>
+			&lt;NormalButton onClick={handleClickOpen}>
+				Click here to engage parlour
+			&lt;/NormalButton>
+			&lt;Dialog open={open}
+			        onClose={handleCancel}
+			        aria-labelledby="form-dialog-title">
+				&lt;DialogTitle id="form-dialog-title">Engaging of parlour&lt;/DialogTitle>
+				&lt;DialogContent>
+					&lt;DialogContentText>
+						To engage this parlour, enter your address.
+					&lt;/DialogContentText>
+					&lt;input type="text"
+					       placeholder="Type your address"
+					       onChange={event => props.setAddress(event.currentTarget.value)}/>
+				&lt;/DialogContent>
+				&lt;DialogActions>
+					&lt;Button onClick={handleCancel}
+					        color="primary">
+						Cancel
+					&lt;/Button>
+					&lt;Button onClick={handleClose}
+					        color="primary">
+						Engage
+					&lt;/Button>
+				&lt;/DialogActions>
+			&lt;/Dialog>
+		&lt;/div>
+	);
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Sidebar.html">Sidebar</a></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#AshScattering">AshScattering</a></li><li><a href="global.html#AuthProvider">AuthProvider</a></li><li><a href="global.html#BurialAndCremation">BurialAndCremation</a></li><li><a href="global.html#ConfirmationDialogRaw">ConfirmationDialogRaw</a></li><li><a href="global.html#Cremation_burialPage">Cremation_burialPage</a></li><li><a href="global.html#CremationBurialInfo">CremationBurialInfo</a></li><li><a href="global.html#Funeral_processPage">Funeral_processPage</a></li><li><a href="global.html#FuneralProcess">FuneralProcess</a></li><li><a href="global.html#HeroSection">HeroSection</a></li><li><a href="global.html#InfoSection">InfoSection</a></li><li><a href="global.html#Map">Map</a></li><li><a href="global.html#Navbar">Navbar</a></li><li><a href="global.html#options">options</a></li><li><a href="global.html#PackageBooking">PackageBooking</a></li><li><a href="global.html#PackageCard">PackageCard</a></li><li><a href="global.html#PackageContainer">PackageContainer</a></li><li><a href="global.html#PackageFilter">PackageFilter</a></li><li><a href="global.html#PackageList">PackageList</a></li><li><a href="global.html#PackagePage">PackagePage</a></li><li><a href="global.html#PackageProvider">PackageProvider</a></li><li><a href="global.html#ParlourBooking">ParlourBooking</a></li><li><a href="global.html#ParlourCard">ParlourCard</a></li><li><a href="global.html#ParlourContainer">ParlourContainer</a></li><li><a href="global.html#ParlourList">ParlourList</a></li><li><a href="global.html#ParlourPage">ParlourPage</a></li><li><a href="global.html#ParlourProvider">ParlourProvider</a></li><li><a href="global.html#Parlours">Parlours</a></li><li><a href="global.html#ReviewCard">ReviewCard</a></li><li><a href="global.html#ReviewInput">ReviewInput</a></li><li><a href="global.html#ReviewList">ReviewList</a></li><li><a href="global.html#Services">Services</a></li><li><a href="global.html#SignIn">SignIn</a></li><li><a href="global.html#SinglePackage">SinglePackage</a></li><li><a href="global.html#SinglePackagePage">SinglePackagePage</a></li><li><a href="global.html#SingleParlour">SingleParlour</a></li><li><a href="global.html#SingleParlourPage">SingleParlourPage</a></li><li><a href="global.html#Title">Title</a></li><li><a href="global.html#Void_deck_bookingPage">Void_deck_bookingPage</a></li><li><a href="global.html#VoidDeckBooking">VoidDeckBooking</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sat Apr 17 2021 23:16:15 GMT+0800 (Singapore Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

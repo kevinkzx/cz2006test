@@ -3,6 +3,12 @@ import PackageContext from "../Context/PackageContext";
 import PackageCard from "./PackageCard";
 import {EmptySearch, Package_List, PackageListCenter} from "./PackageElements";
 
+/**
+ * Component for list of packages to be generated
+ * If the list of packages is empty, generate message.
+ * Else, return the list of sorted packages.
+ * @returns PackageList component with list of packages
+ */
 const PackageList = () => {
 	const {sortedPackages} = useContext(PackageContext);
 	if (sortedPackages.length === 0) {
@@ -13,18 +19,14 @@ const PackageList = () => {
 		)
 	}
 	return (
-		// <div>
-		// 	{packages.map(item => <PackageCard key={item.sys.id} item={item}/>)}
-		// </div>
 		<Package_List>
 			<PackageListCenter>
 				{sortedPackages.map(item => {
-					return <PackageCard key={item.sys.id}
+					return <PackageCard key={item.id}
 					                    item={item}/>;
 				})}
 			</PackageListCenter>
 		</Package_List>
-
 	);
 };
 

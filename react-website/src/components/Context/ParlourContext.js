@@ -1,32 +1,59 @@
 import React, {createContext, useEffect, useState} from 'react';
-import items from "../Parlour/Data";
+import fire from "../../firebase/fire";
 
 const ParlourContext = createContext();
+/**
+ * Context for parlours
+ * @param {object} children
+ * @returns {object} children. as well as methods in context
+ */
 export const ParlourProvider = ({children}) => {
-    const [parlours] = useState(items);
-    const [sortedParlours, setSortedParlours] = useState(items);
-    
-    //pass in the parluor we want and get it form array of parlours
-    const getParlour = (slug) => {
-        return parlours.find(item => item.slug === slug);
-    }
+	const [parlours, setParlours] = useState([]);
+	const [sortedParlours, setSortedParlours] = useState([]);
+	const [search, setSearch] = useState("");
 
-    
-    useEffect(() => {
-        setSortedParlours(parlours);
-    });
-    
+	//pass in the parlour we want and get it form array of parlours
+	/**
+	 * Get the parlour by the name of the parlour
+	 * @param {*} slug the individual parlour
+	 * @returns parlour by the name
+	 */
+	const getParlour = (slug) => {
+		return parlours.find(item => item.slug === slug);
+	}
 
-    return (
-        <ParlourContext.Provider value={{
-            parlours,
-            sortedParlours,
-            //setSortedParlours,
-            getParlour
-        }}>
-            {children}
-        </ParlourContext.Provider>
-    );
+	useEffect( () => {
+		const unsubscribe =  fire.firestore()
+		                        .collection('Parlours')
+		                        .onSnapshot((snapshot) => {
+			                        const newParlours = snapshot.docs.map((doc) => ({
+				                        id: doc.id,
+				                        ...doc.data()
+			                        }));
+			                        setParlours(newParlours);
+			                        setSortedParlours(newParlours);
+		                        })
+		return () => unsubscribe();
+	}, []);
+
+	useEffect(() => {
+		setSortedParlours(parlours.filter(item => {
+			return item.name.toLowerCase()
+			           .includes(search.toLowerCase());
+		}))
+	}, [search])
+
+
+	return (
+		<ParlourContext.Provider value={{
+			parlours,
+			sortedParlours,
+			setSearch,
+			getParlour
+		}}>
+			{children}
+		</ParlourContext.Provider>
+	);
 };
 
 export default ParlourContext;

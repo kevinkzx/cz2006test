@@ -3,9 +3,12 @@ import ParlourContext from "../Context/ParlourContext";
 import ParlourCard from "./ParlourCard";
 import {EmptySearch, Parlour_List, ParlourListCenter} from "./ParlourElement";
 
-
+/**
+ * Component for the list of parlours available.
+ * If user search for a parlour, the list of parlours would change.
+ * @returns ParlourList component.
+ */
 const ParlourList = () => {
-	/*
 	const {sortedParlours} = useContext(ParlourContext);
 	if (sortedParlours.length === 0) {
 		return (
@@ -14,8 +17,6 @@ const ParlourList = () => {
 			</EmptySearch>
 		)
 	}
-	*/
-	const {sortedParlours} = useContext(ParlourContext);
 	return (
 		<Parlour_List>
 			<ParlourListCenter>

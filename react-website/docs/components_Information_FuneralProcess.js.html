@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/Information/FuneralProcess.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/Information/FuneralProcess.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import Container from '@material-ui/core/Container';
+import 'semantic-ui-css/components/button.min.css'
+import 'semantic-ui-css/components/icon.min.css'
+import Title from "../Parlour/Title";
+
+
+import React from 'react';
+import HeroSection from "../HeroSection";
+
+/**
+ * This component contains the information for funeral processes.
+ * @returns FuneralProcess component
+ */
+const FuneralProcess = () => {
+	return (
+		&lt;>
+			&lt;HeroSection HeroHeader="Funeral Process."
+			             HeroPara="Click the button to see the process of a funeral."
+			             getStartedButton="funeralProcess"
+			             scroll={true}/>
+			&lt;div id="funeralProcess">
+				&lt;Title title="Funeral process"/>
+			&lt;/div>
+			&lt;Container>
+				&lt;h3>Step 1: Decide on a funeral home&lt;/h3>&lt;br/>
+				&lt;h3>Step 2: Obtain a Certificate of Cause of Death (CCOD)&lt;/h3>&lt;br/>
+				&lt;strong>At the hospital&lt;/strong>&lt;br/>
+				A doctor at the hospital will certify the
+				cause of death if it is known and it's natural. You'll need the ID of the deceased for this.
+				The CCOD will then be issued on the spot. &lt;br/>&lt;br/>
+				&lt;strong>At home&lt;/strong>&lt;br/>
+				Get your family doctor or neighbourhood GP to make a house call to certify the death.
+				Some clinics have 24-hour house-call services you can tap on.
+				If the doctor cannot certify the cause of death, the body needs to be sent to the mortuary. &lt;br/>&lt;br/>
+
+				&lt;h3>Step 3: Register the death&lt;/h3>
+
+				&lt;div>The CCOD is then used to register the death.
+				     You can do this at the Neighbourhood Police Centre / Posts or the Citizen Services Centre, ICA
+				     Building.
+					&lt;br/>Remember to bring these documents:&lt;br/>
+
+					&amp;emsp;• CCOD Deceased's ID such as IC, passport, or birth certificate &lt;br/>
+					&amp;emsp;• Informant's ID
+				&lt;/div>
+				&lt;br/>&lt;br/>
+
+				&lt;h3>Step 4: Arrange for the wake and funeral&lt;/h3>
+
+				&lt;br/> &amp;emsp;• Number of days &lt;br/> &amp;emsp;• Location &lt;br/> &amp;emsp;• Type of casket &lt;br/> &amp;emsp;• Funeral
+				Package &lt;br/>&lt;br/>
+				&lt;h3>Step 5: Choosing burial or cremation&lt;/h3>
+			&lt;/Container>
+		&lt;/>
+	);
+};
+
+export default FuneralProcess;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Sidebar.html">Sidebar</a></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#AshScattering">AshScattering</a></li><li><a href="global.html#AuthProvider">AuthProvider</a></li><li><a href="global.html#BurialAndCremation">BurialAndCremation</a></li><li><a href="global.html#ConfirmationDialogRaw">ConfirmationDialogRaw</a></li><li><a href="global.html#Cremation_burialPage">Cremation_burialPage</a></li><li><a href="global.html#CremationBurialInfo">CremationBurialInfo</a></li><li><a href="global.html#Funeral_processPage">Funeral_processPage</a></li><li><a href="global.html#FuneralProcess">FuneralProcess</a></li><li><a href="global.html#HeroSection">HeroSection</a></li><li><a href="global.html#InfoSection">InfoSection</a></li><li><a href="global.html#Map">Map</a></li><li><a href="global.html#Navbar">Navbar</a></li><li><a href="global.html#options">options</a></li><li><a href="global.html#PackageBooking">PackageBooking</a></li><li><a href="global.html#PackageCard">PackageCard</a></li><li><a href="global.html#PackageContainer">PackageContainer</a></li><li><a href="global.html#PackageFilter">PackageFilter</a></li><li><a href="global.html#PackageList">PackageList</a></li><li><a href="global.html#PackagePage">PackagePage</a></li><li><a href="global.html#PackageProvider">PackageProvider</a></li><li><a href="global.html#ParlourBooking">ParlourBooking</a></li><li><a href="global.html#ParlourCard">ParlourCard</a></li><li><a href="global.html#ParlourContainer">ParlourContainer</a></li><li><a href="global.html#ParlourList">ParlourList</a></li><li><a href="global.html#ParlourPage">ParlourPage</a></li><li><a href="global.html#ParlourProvider">ParlourProvider</a></li><li><a href="global.html#Parlours">Parlours</a></li><li><a href="global.html#ReviewCard">ReviewCard</a></li><li><a href="global.html#ReviewInput">ReviewInput</a></li><li><a href="global.html#ReviewList">ReviewList</a></li><li><a href="global.html#Services">Services</a></li><li><a href="global.html#SignIn">SignIn</a></li><li><a href="global.html#SinglePackage">SinglePackage</a></li><li><a href="global.html#SinglePackagePage">SinglePackagePage</a></li><li><a href="global.html#SingleParlour">SingleParlour</a></li><li><a href="global.html#SingleParlourPage">SingleParlourPage</a></li><li><a href="global.html#Title">Title</a></li><li><a href="global.html#Void_deck_bookingPage">Void_deck_bookingPage</a></li><li><a href="global.html#VoidDeckBooking">VoidDeckBooking</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sat Apr 17 2021 23:16:15 GMT+0800 (Singapore Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

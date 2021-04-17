@@ -21,7 +21,7 @@ const Home = () => {
 			<Navbar toggle={toggle}/>
 			<HeroSection HeroHeader="Get your funeral services here today."
 			             HeroPara="Book our packages right now."
-			             getStartedButton="signup"/>
+			             getStartedButton="signIn"/>
 			<InfoSection {...homeObjOne}/>
 			<InfoSection {...homeObjTwo}/>
 			<Services {...MapObj}/>

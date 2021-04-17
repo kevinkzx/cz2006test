@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import {Link} from 'react-router-dom';
 import {Button} from "../ButtonElements";
+import Button1 from "@material-ui/core/Button";
+
 // --primaryColor: #af9a7d;
 // --mainWhite: #fff;
 // --offWhite: #f7f7f7;
@@ -76,19 +77,19 @@ export const PriceTop = styled.div`
 
 export const ImgContainer = styled.div`
   position: relative;
-  
+
   & img {
     width: 100%;
     display: block;
     transition: all 0.3s linear;
   }
-  
+
   &:hover {
     background: rgba(0, 0, 0, 0.8);
   }
 
   &:hover img {
-   opacity: 0.3;
+    opacity: 0.3;
   }
 
   &:hover ${PriceTop} {
@@ -98,33 +99,34 @@ export const ImgContainer = styled.div`
   &:hover ${ParlourLink} {
     transform: translate(-50%, -50%) scale(1);
   }
-  
+
 `;
 
 export const ParlourInfo = styled.p`
-  background: grey;
+  background: #01BF71;
   text-transform: capitalize;
   padding: 0.5rem 0;
   text-align: center;
   font-weight: 700;
   letter-spacing: 3px;
+  
 `;
 
 export const btnPrimary = styled.div`
-display: inline-block;
-text-decoration: none;
-letter-spacing: var(--mainSpacing);
-color: var(--mainBlack);
-background: var(--primaryColor);
-padding: 0.4rem 0.9rem;
-border: 3px solid var(--primaryColor);
-transition: var(--mainTransition);
-text-transform: uppercase;
-cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: var(--mainSpacing);
+  color: var(--mainBlack);
+  background: var(--primaryColor);
+  padding: 0.4rem 0.9rem;
+  border: 3px solid var(--primaryColor);
+  transition: var(--mainTransition);
+  text-transform: uppercase;
+  cursor: pointer;
 `;
 
 export const SingleParlourContainer = styled.section`
-  padding: 5rem 0 0 0;
+  margin-bottom: 100px;
 `;
 
 export const SingleParlourImage = styled.div`
@@ -143,8 +145,9 @@ export const SingleParlourImage = styled.div`
 
 export const SingleParlourInfo = styled.div`
   width: 80vw;
-  display: flex;
-  //grid-template-columns: 8ch auto;
+  display: grid;
+  grid-template-columns: 40ch auto;
+  grid-column-gap: 3rem;
   justify-content: space-evenly;
   margin: 2rem auto;
 `;
@@ -156,6 +159,7 @@ export const SingleParlourDesc = styled.article`
     text-transform: capitalize;
     letter-spacing: 3px;
     font-size: x-large;
+    margin-bottom: 10px;
   }
 
   p {
@@ -174,6 +178,8 @@ export const ParlourInfor = styled.article`
 
   h3 {
     font-size: x-large;
+    margin-bottom: 10px;
+    
   }
 
   h6 {
@@ -181,5 +187,86 @@ export const ParlourInfor = styled.article`
     font-size: medium;
     line-height: 1.5;
   }
+`;
+
+export const ListItems = styled.article`
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  grid-column-gap: 2rem;
+  grid-row-gap: 1.5rem;
+  margin-top: 2rem;
+  
+
+`;
+
+export const FormGrid = styled.div`
+  width: 80vw;
+  display: flex;
+  grid-template-columns: 8ch auto;
+  justify-content: space-evenly;
+  margin: 2rem auto;
+`;
+
+export const SearchTitle = styled.div`
+  text-align: center;
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+
+
+  h4 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+  }
+
+  div {
+    width: 5rem;
+    height: 5px;
+    margin: 0 auto;
+    background: #01BF71;
+  }
+`;
+
+export const SearchBar = styled.div`
+  margin-left: 30%;
+  margin-bottom: 7rem;
+
+  input {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 50%;
+    background: #f1f1f1;
+  }
+
+  button {
+    float: left;
+    width: 8%;
+    padding: 10px;
+    background: #01BF71;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+
+    &:hover {
+      background: black;
+    }
+  }
+`;
+
+export const MapWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const ParlourBookingWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 `;
 

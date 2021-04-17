@@ -1,4 +1,5 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
+import {useHistory} from "react-router-dom";
 import {FaBars} from 'react-icons/fa';
 import {IconContext} from "react-icons/lib";
 import {animateScroll as scroll} from 'react-scroll';
@@ -13,9 +14,18 @@ import {
 	NavLogo,
 	NavMenu
 } from './NavbarElements';
+import AuthContext from "../Context/AuthContext";
 
+/**
+ * This component is responsible for the navigation bar.
+ * User can click on the navigation bar to scroll to the indiviudal infosection
+ * @param {object} toggle The section that users click on
+ * @returns the navbar component to be displayed at the top of the web page.
+ */
 const Navbar = ({toggle}) => {
 	const [scrollNav, setScrollNav] = useState(false);
+	const {user, handleLogout} = useContext(AuthContext);
+	const history = useHistory();
 
 	const changeNav = () => {
 		if (window.scrollY >= 80) {
@@ -29,8 +39,41 @@ const Navbar = ({toggle}) => {
 		window.addEventListener('scroll', changeNav);
 	}, []);
 
+	/**
+	 * Scrolls to the top when user click on Home in home page
+	 */
 	const toggleHome = () => {
 		scroll.scrollToTop();
+	};
+	/**
+	 * Scrolls to the section of packages in home page
+	 */
+	const goToPackages = () => {
+		history.push('/');
+		scroll.scrollTo(800);
+	};
+
+	/**
+	 * Scrolls to the section of parlours in home page
+	 */
+	const goToParlours = () => {
+		history.push('/');
+		scroll.scrollTo(1700);
+	};
+
+	/**
+	 * Scrolls to the section of Location in home page
+	 */
+	const goToMap = () => {
+		history.push('/');
+		scroll.scrollTo(2500);
+	};
+	/**
+	 * Scrolls to the section of information in home page
+	 */
+	const goToInfo = () => {
+		history.push('/');
+		scroll.scrollTo(3400);
 	};
 
 	return (
@@ -48,40 +91,32 @@ const Navbar = ({toggle}) => {
 						<NavMenu>
 							<NavItem>
 								<NavLinks to="packages"
-								          smooth={true}
-								          duration={500}
-								          spy={true}
-								          exact={'true'}
-								          offset={-80}>Packages</NavLinks>
+								          onClick={goToPackages}>Packages</NavLinks>
 							</NavItem>
 							<NavItem>
 								<NavLinks to="parlours"
-								          smooth={true}
-								          duration={500}
-								          spy={true}
-								          exact={'true'}
-								          offset={-80}>Parlours</NavLinks>
+								          onClick={goToParlours}>Parlours</NavLinks>
 							</NavItem>
 							<NavItem>
 								<NavLinks to="location"
-								          smooth={true}
-								          duration={500}
-								          spy={true}
-								          exact={'true'}
-								          offset={-80}>Location</NavLinks>
+								          onClick={goToMap}>Location</NavLinks>
 							</NavItem>
 							<NavItem>
 								<NavLinks to="information"
-								          smooth={true}
-								          duration={500}
-								          spy={true}
-								          exact={'true'}
-								          offset={-80}>Information</NavLinks>
+								          onClick={goToInfo}>Information</NavLinks>
 							</NavItem>
 						</NavMenu>
-						<NavBtn>
-							<NavBtnLink to='/signin'>Sign In</NavBtnLink>
-						</NavBtn>
+						{!user && (
+							<NavBtn>
+								<NavBtnLink to='/signIn'>Sign In</NavBtnLink>
+							</NavBtn>)}
+						{user && (
+							<NavBtn>
+								<NavBtnLink to='/'
+								            onClick={handleLogout}>Log Out</NavBtnLink>
+							</NavBtn>
+						)}
+
 					</NavbarContainer>
 				</Nav>
 			</IconContext.Provider>

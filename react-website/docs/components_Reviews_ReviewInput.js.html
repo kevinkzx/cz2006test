@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/Reviews/ReviewInput.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/Reviews/ReviewInput.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, {useContext, useState} from 'react';
+import {Review_Input, ReviewInputContainer, SubmitReviewButton} from "./ReviewsElements"
+import {useParams} from "react-router-dom";
+import PackageContext from "../Context/PackageContext";
+import AuthContext from "../Context/AuthContext";
+import {useAlert} from "react-alert";
+
+/**
+ * Component for the input of reviews
+ * @returns ReviewInput component
+ */
+const ReviewInput = () => {
+
+	let {slug} = useParams();
+	/**
+	 * Updates the review of that package
+	 */
+	const {getPackage, updateReview} = useContext(PackageContext);
+	const {user} = useContext(AuthContext);
+	const item = getPackage(slug);
+	const [input, setInput] = useState("");
+	const alert = useAlert();
+
+	/**
+	 * Function log to review for the user that is currently logged in to the package
+	 * Checks if the user has written a review. review cannot be empty
+	 * Checks if the user is logged in.
+	 * @param {object} event when the user click on submit in the review box.
+	 */
+	const handleClickEvent = (event) => {
+		event.preventDefault();
+		if (!input) {
+			alert.show("Please write a review first before submitting.")
+		} else if (!user) {
+			alert.show("Please log in first.")
+		} else {
+			updateReview(user.email, input, item.id);
+			setInput("");
+			console.log(input);
+		}
+	}
+
+	return (
+		&lt;>
+			&lt;ReviewInputContainer>
+				&lt;Review_Input onChange={(e) => setInput(e.target.value)}
+				              placeholder="Leave a review here..."/>
+				&lt;SubmitReviewButton onClick={handleClickEvent}
+				                    type='submit'>Submit&lt;/SubmitReviewButton>
+			&lt;/ReviewInputContainer>
+		&lt;/>
+	);
+};
+
+export default ReviewInput;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Sidebar.html">Sidebar</a></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#AshScattering">AshScattering</a></li><li><a href="global.html#AuthProvider">AuthProvider</a></li><li><a href="global.html#BurialAndCremation">BurialAndCremation</a></li><li><a href="global.html#ConfirmationDialogRaw">ConfirmationDialogRaw</a></li><li><a href="global.html#Cremation_burialPage">Cremation_burialPage</a></li><li><a href="global.html#CremationBurialInfo">CremationBurialInfo</a></li><li><a href="global.html#Funeral_processPage">Funeral_processPage</a></li><li><a href="global.html#FuneralProcess">FuneralProcess</a></li><li><a href="global.html#HeroSection">HeroSection</a></li><li><a href="global.html#InfoSection">InfoSection</a></li><li><a href="global.html#Map">Map</a></li><li><a href="global.html#Navbar">Navbar</a></li><li><a href="global.html#options">options</a></li><li><a href="global.html#PackageBooking">PackageBooking</a></li><li><a href="global.html#PackageCard">PackageCard</a></li><li><a href="global.html#PackageContainer">PackageContainer</a></li><li><a href="global.html#PackageFilter">PackageFilter</a></li><li><a href="global.html#PackageList">PackageList</a></li><li><a href="global.html#PackagePage">PackagePage</a></li><li><a href="global.html#PackageProvider">PackageProvider</a></li><li><a href="global.html#ParlourBooking">ParlourBooking</a></li><li><a href="global.html#ParlourCard">ParlourCard</a></li><li><a href="global.html#ParlourContainer">ParlourContainer</a></li><li><a href="global.html#ParlourList">ParlourList</a></li><li><a href="global.html#ParlourPage">ParlourPage</a></li><li><a href="global.html#ParlourProvider">ParlourProvider</a></li><li><a href="global.html#Parlours">Parlours</a></li><li><a href="global.html#ReviewCard">ReviewCard</a></li><li><a href="global.html#ReviewInput">ReviewInput</a></li><li><a href="global.html#ReviewList">ReviewList</a></li><li><a href="global.html#Services">Services</a></li><li><a href="global.html#SignIn">SignIn</a></li><li><a href="global.html#SinglePackage">SinglePackage</a></li><li><a href="global.html#SinglePackagePage">SinglePackagePage</a></li><li><a href="global.html#SingleParlour">SingleParlour</a></li><li><a href="global.html#SingleParlourPage">SingleParlourPage</a></li><li><a href="global.html#Title">Title</a></li><li><a href="global.html#Void_deck_bookingPage">Void_deck_bookingPage</a></li><li><a href="global.html#VoidDeckBooking">VoidDeckBooking</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sat Apr 17 2021 23:16:15 GMT+0800 (Singapore Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

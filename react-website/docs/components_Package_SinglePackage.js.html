@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/Package/SinglePackage.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/Package/SinglePackage.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, {useContext} from 'react';
+import img1 from '../../images/svg-1.svg';
+import {
+	PackageInfor,
+	SinglePackageContainer,
+	SinglePackageDesc,
+	SinglePackageImage,
+	SinglePackageInfo,
+
+} from "./PackageElements";
+import {useParams} from "react-router-dom";
+import PackageContext from "../Context/PackageContext";
+import ReviewList from '../Reviews/ReviewList';
+import {ReviewTitle} from '../Reviews/ReviewsElements';
+
+
+/**
+ * Component for each package in their individual packages page.
+ * Gets the packages by their slug and show the information of the packages.
+ * @returns SinglePackage component.
+ */
+
+const SinglePackage = () => {
+	const {getPackage} = useContext(PackageContext);
+	let {slug} = useParams();
+	const item = getPackage(slug);
+
+
+	return (
+		&lt;div id="packageInfo">
+			&lt;SinglePackageContainer>
+				&lt;SinglePackageImage>
+					&lt;img src={img1}
+					     alt="img1"/>
+				&lt;/SinglePackageImage>
+				&lt;SinglePackageInfo>
+					&lt;SinglePackageDesc>
+						&lt;h3>Religion&lt;/h3>
+						&lt;p>{item.religion}&lt;/p>
+					&lt;/SinglePackageDesc>
+					&lt;PackageInfor>
+						&lt;h3>Info&lt;/h3>
+						&lt;h6>price : ${item.price}&lt;/h6>
+						&lt;h6>Location: {item.location}&lt;/h6>
+						&lt;h6>Number of days: {item.days}&lt;/h6>
+						&lt;h6>Transportation: {item.transportation ? "Included" : "Not included"}&lt;/h6>
+						&lt;h6>Casket Type: {item.casket}&lt;/h6>
+						&lt;h6>Eco-Friendly? {item.eco ? "Yes" : "No"}&lt;/h6>
+					&lt;/PackageInfor>
+				&lt;/SinglePackageInfo>
+				&lt;ReviewTitle>Reviews&lt;/ReviewTitle>
+				&lt;ReviewList/>
+			&lt;/SinglePackageContainer>
+		&lt;/div>
+	);
+};
+
+export default SinglePackage;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Sidebar.html">Sidebar</a></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#AshScattering">AshScattering</a></li><li><a href="global.html#AuthProvider">AuthProvider</a></li><li><a href="global.html#BurialAndCremation">BurialAndCremation</a></li><li><a href="global.html#ConfirmationDialogRaw">ConfirmationDialogRaw</a></li><li><a href="global.html#Cremation_burialPage">Cremation_burialPage</a></li><li><a href="global.html#CremationBurialInfo">CremationBurialInfo</a></li><li><a href="global.html#Funeral_processPage">Funeral_processPage</a></li><li><a href="global.html#FuneralProcess">FuneralProcess</a></li><li><a href="global.html#HeroSection">HeroSection</a></li><li><a href="global.html#InfoSection">InfoSection</a></li><li><a href="global.html#Map">Map</a></li><li><a href="global.html#Navbar">Navbar</a></li><li><a href="global.html#options">options</a></li><li><a href="global.html#PackageBooking">PackageBooking</a></li><li><a href="global.html#PackageCard">PackageCard</a></li><li><a href="global.html#PackageContainer">PackageContainer</a></li><li><a href="global.html#PackageFilter">PackageFilter</a></li><li><a href="global.html#PackageList">PackageList</a></li><li><a href="global.html#PackagePage">PackagePage</a></li><li><a href="global.html#PackageProvider">PackageProvider</a></li><li><a href="global.html#ParlourBooking">ParlourBooking</a></li><li><a href="global.html#ParlourCard">ParlourCard</a></li><li><a href="global.html#ParlourContainer">ParlourContainer</a></li><li><a href="global.html#ParlourList">ParlourList</a></li><li><a href="global.html#ParlourPage">ParlourPage</a></li><li><a href="global.html#ParlourProvider">ParlourProvider</a></li><li><a href="global.html#Parlours">Parlours</a></li><li><a href="global.html#ReviewCard">ReviewCard</a></li><li><a href="global.html#ReviewInput">ReviewInput</a></li><li><a href="global.html#ReviewList">ReviewList</a></li><li><a href="global.html#Services">Services</a></li><li><a href="global.html#SignIn">SignIn</a></li><li><a href="global.html#SinglePackage">SinglePackage</a></li><li><a href="global.html#SinglePackagePage">SinglePackagePage</a></li><li><a href="global.html#SingleParlour">SingleParlour</a></li><li><a href="global.html#SingleParlourPage">SingleParlourPage</a></li><li><a href="global.html#Title">Title</a></li><li><a href="global.html#Void_deck_bookingPage">Void_deck_bookingPage</a></li><li><a href="global.html#VoidDeckBooking">VoidDeckBooking</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sat Apr 17 2021 23:16:15 GMT+0800 (Singapore Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

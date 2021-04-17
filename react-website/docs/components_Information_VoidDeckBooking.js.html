@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/Information/VoidDeckBooking.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/Information/VoidDeckBooking.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import HeroSection from "../HeroSection";
+import Title from "../Parlour/Title";
+import Container from "@material-ui/core/Container";
+
+/**
+ * This component contains the information for void deck booking.
+ * @returns VoidDeckBooking component.
+ */
+const VoidDeckBooking = () => {
+	return (
+		&lt;>
+			&lt;HeroSection HeroHeader="Booking of void deck."
+			             HeroPara="Click the button to see the process of a booking of void deck."
+			             getStartedButton="voidDeck"
+			             scroll={true}/>
+			&lt;div id="voidDeck">
+				&lt;Title title="Void Deck Booking"/>
+			&lt;/div>
+			&lt;Container>
+				Get a permit from your Town Council and contact them to secure booking dates for the
+				funeral. &lt;br>&lt;/br>&lt;br>&lt;/br>
+				&amp;emsp;To submit an application, you must be: &lt;br>&lt;/br>
+				&amp;emsp;&amp;emsp;• Over 21 years old &lt;br>&lt;/br>
+				&amp;emsp;&amp;emsp;• A relative of the deceased &lt;br>&lt;/br>
+				&amp;emsp;&amp;emsp;• A HDB resident of the Town Council that you are applying to &lt;br>&lt;/br>&lt;br>&lt;/br>
+				&amp;emsp; The Town Council will advise you on the: &lt;br>&lt;/br>
+				&amp;emsp;&amp;emsp;• Available HDB common spaces nearest to your block of residence &lt;br>&lt;/br>
+				&amp;emsp;&amp;emsp;• Charges for utilities (i.e. water &amp; electricity) &lt;br>&lt;/br>&lt;br>&lt;/br>
+				Proceed to your town council's office the next working day to get the permit and make payment.
+				Bring along your NRIC, the death certificate and cash / NETS / credit card to make
+				payment. &lt;br>&lt;/br>&lt;br>&lt;/br>
+
+				For list of Town Councils, click &lt;a href="https://afd.org.sg/list-of-town-council-offices/"
+				                                    target="_blank">here&lt;/a>.
+			&lt;/Container>
+		&lt;/>
+	);
+};
+
+export default VoidDeckBooking;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Sidebar.html">Sidebar</a></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#AshScattering">AshScattering</a></li><li><a href="global.html#AuthProvider">AuthProvider</a></li><li><a href="global.html#BurialAndCremation">BurialAndCremation</a></li><li><a href="global.html#ConfirmationDialogRaw">ConfirmationDialogRaw</a></li><li><a href="global.html#Cremation_burialPage">Cremation_burialPage</a></li><li><a href="global.html#CremationBurialInfo">CremationBurialInfo</a></li><li><a href="global.html#Funeral_processPage">Funeral_processPage</a></li><li><a href="global.html#FuneralProcess">FuneralProcess</a></li><li><a href="global.html#HeroSection">HeroSection</a></li><li><a href="global.html#InfoSection">InfoSection</a></li><li><a href="global.html#Map">Map</a></li><li><a href="global.html#Navbar">Navbar</a></li><li><a href="global.html#options">options</a></li><li><a href="global.html#PackageBooking">PackageBooking</a></li><li><a href="global.html#PackageCard">PackageCard</a></li><li><a href="global.html#PackageContainer">PackageContainer</a></li><li><a href="global.html#PackageFilter">PackageFilter</a></li><li><a href="global.html#PackageList">PackageList</a></li><li><a href="global.html#PackagePage">PackagePage</a></li><li><a href="global.html#PackageProvider">PackageProvider</a></li><li><a href="global.html#ParlourBooking">ParlourBooking</a></li><li><a href="global.html#ParlourCard">ParlourCard</a></li><li><a href="global.html#ParlourContainer">ParlourContainer</a></li><li><a href="global.html#ParlourList">ParlourList</a></li><li><a href="global.html#ParlourPage">ParlourPage</a></li><li><a href="global.html#ParlourProvider">ParlourProvider</a></li><li><a href="global.html#Parlours">Parlours</a></li><li><a href="global.html#ReviewCard">ReviewCard</a></li><li><a href="global.html#ReviewInput">ReviewInput</a></li><li><a href="global.html#ReviewList">ReviewList</a></li><li><a href="global.html#Services">Services</a></li><li><a href="global.html#SignIn">SignIn</a></li><li><a href="global.html#SinglePackage">SinglePackage</a></li><li><a href="global.html#SinglePackagePage">SinglePackagePage</a></li><li><a href="global.html#SingleParlour">SingleParlour</a></li><li><a href="global.html#SingleParlourPage">SingleParlourPage</a></li><li><a href="global.html#Title">Title</a></li><li><a href="global.html#Void_deck_bookingPage">Void_deck_bookingPage</a></li><li><a href="global.html#VoidDeckBooking">VoidDeckBooking</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sat Apr 17 2021 23:16:15 GMT+0800 (Singapore Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
