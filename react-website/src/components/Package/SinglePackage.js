@@ -1,4 +1,5 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext} from 'react';
+import img1 from '../../images/svg-1.svg';
 import {
 	PackageInfor,
 	SinglePackageContainer,
@@ -11,9 +12,6 @@ import {useParams} from "react-router-dom";
 import PackageContext from "../Context/PackageContext";
 import ReviewList from '../Reviews/ReviewList';
 import {ReviewTitle} from '../Reviews/ReviewsElements';
-import {wait, waitFor} from "@testing-library/react";
-
-
 
 
 /**
@@ -31,10 +29,9 @@ const SinglePackage = () => {
 	return (
 		<div id="packageInfo">
 			<SinglePackageContainer>
-
 				<SinglePackageImage>
-					{/*<img src={item.img}*/}
-					{/*     alt="hge"/>*/}
+					<img src={img1}
+					     alt="img1"/>
 				</SinglePackageImage>
 				<SinglePackageInfo>
 					<SinglePackageDesc>
@@ -49,19 +46,11 @@ const SinglePackage = () => {
 						<h6>Transportation: {item.transportation ? "Included" : "Not included"}</h6>
 						<h6>Casket Type: {item.casket}</h6>
 						<h6>Eco-Friendly? {item.eco ? "Yes" : "No"}</h6>
-						{/*<h6>Provider: {item.parlour}</h6>*/}
 					</PackageInfor>
-
 				</SinglePackageInfo>
-
 				<ReviewTitle>Reviews</ReviewTitle>
-
-
 				<ReviewList/>
-
-
 			</SinglePackageContainer>
-
 		</div>
 	);
 };

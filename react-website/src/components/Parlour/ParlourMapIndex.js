@@ -2,7 +2,6 @@
 import React, { Component, useState, useEffect, useContext } from "react";
 import {
 	withGoogleMap,
-	withScriptjs,
 	GoogleMap,
 	DirectionsRenderer
 } from "react-google-maps";

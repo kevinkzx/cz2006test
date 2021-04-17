@@ -15,7 +15,7 @@ import {Button, ButtonScroll} from '../ButtonElements';
 
 /**
  * This component is for the hero section of the webpage. The videos and scrolling of the button.
- * @param {object} {HeroHeader, HeroPara, getStartedButton, scroll} 
+ * @param {object} {HeroHeader, HeroPara, getStartedButton, scroll}
  * @returns HeroSection component of the webpage
  */
 const HeroSection = ({HeroHeader, HeroPara, getStartedButton, scroll}) => {

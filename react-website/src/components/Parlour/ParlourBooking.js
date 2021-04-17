@@ -72,7 +72,6 @@ const ParlourBooking = () => {
 
 
 	return (
-
 		<FormGrid>
 			<ParlourBookingWrapper>
 				<ParlourForm setGeneralPackages={setGeneralPackages}/>

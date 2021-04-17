@@ -19,9 +19,6 @@ const PackageList = () => {
 		)
 	}
 	return (
-		// <div>
-		// 	{packages.map(item => <PackageCard key={item.sys.id} item={item}/>)}
-		// </div>
 		<Package_List>
 			<PackageListCenter>
 				{sortedPackages.map(item => {
@@ -30,7 +27,6 @@ const PackageList = () => {
 				})}
 			</PackageListCenter>
 		</Package_List>
-
 	);
 };
 

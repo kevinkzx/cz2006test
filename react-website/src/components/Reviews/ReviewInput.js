@@ -20,7 +20,6 @@ const ReviewInput = () => {
 	const item = getPackage(slug);
 	const [input, setInput] = useState("");
 	const alert = useAlert();
-	// const input = useRef(null);
 
 	/**
 	 * Function log to review for the user that is currently logged in to the package
@@ -41,18 +40,14 @@ const ReviewInput = () => {
 		}
 	}
 
-
 	return (
 		<>
 			<ReviewInputContainer>
-
 				<Review_Input onChange={(e) => setInput(e.target.value)}
 				              placeholder="Leave a review here..."/>
 				<SubmitReviewButton onClick={handleClickEvent}
 				                    type='submit'>Submit</SubmitReviewButton>
-
 			</ReviewInputContainer>
-
 		</>
 	);
 };

@@ -1,5 +1,4 @@
 import React, {useContext} from 'react';
-import ReviewContext from "../Context/ReviewContext";
 import ReviewCard from './ReviewCard';
 import {useParams} from "react-router-dom";
 import PackageContext from "../Context/PackageContext";
@@ -9,7 +8,6 @@ import PackageContext from "../Context/PackageContext";
  * @returns ReviewList component
  */
 const ReviewList = () => {
-	// const {reviews} = useContext(ReviewContext);
 	const {getPackage} = useContext(PackageContext);
 	let {slug} = useParams();
 	const item = getPackage(slug);
@@ -24,5 +22,4 @@ const ReviewList = () => {
 	);
 }
 ;
-
 export default ReviewList;

@@ -26,21 +26,17 @@ function ConfirmationDialogRaw(props) {
 	const {onClose, value: valueProp, open, ...other} = props;
 	const [value, setValue] = React.useState(valueProp);
 	const radioGroupRef = React.useRef(null);
-	const {user} = useContext(AuthContext);
-	const alert = useAlert();
 	const {getParlour} = useContext(ParlourContext);
 	let {slug} = useParams();
 	const item = getParlour(slug);
 	const GP = item.generalPackages.concat("Nil");
-	// console.log(GP);
 
-	
 	React.useEffect(() => {
 		if (!open) {
 			setValue(valueProp);
 		}
 	}, [valueProp, open]);
-	
+
 	const handleEntering = () => {
 		if (radioGroupRef.current != null) {
 			radioGroupRef.current.focus();
@@ -137,19 +133,8 @@ export default function ConfirmationDialog(props) {
 	const classes = useStyles();
 	const [open, setOpen] = React.useState(false);
 	const [value, setValue] = React.useState('Nil');
-	const {user} = useContext(AuthContext);
-	const alert = useAlert();
-
 	const handleClickListItem = () => {
 		setOpen(true);
-	};
-
-	const handleClose = (newValue) => {
-		setOpen(false);
-
-		if (newValue) {
-			setValue(newValue);
-		}
 	};
 
 	/**
@@ -157,12 +142,6 @@ export default function ConfirmationDialog(props) {
 	 * @param {*} newValue the general package that user chooses.
 	 */
 	const handleBook = (newValue) => {
-		// if (user === null) {
-		// 	//console.log('please log in first');
-		// 	alert.show('Please log in first!');
-		// } else {
-		// 	//console.log(newValue);
-		// }
 		setOpen(false);
 
 		if (newValue) {
@@ -172,11 +151,10 @@ export default function ConfirmationDialog(props) {
 			} else {
 				props.setGeneralPackages(newValue);
 			}
-			// myorder.setGeneralP(newValue);
 		}
 	};
 
-	
+
 	return (
 		<div className={classes.root}>
 			<List component="div"
@@ -200,7 +178,6 @@ export default function ConfirmationDialog(props) {
 					id="ringtone-menu"
 					keepMounted
 					open={open}
-					//check if user is logged in here
 					onClose={handleBook}
 					value={value}
 				/>

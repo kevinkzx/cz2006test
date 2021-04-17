@@ -59,7 +59,7 @@ const PackageFilter = () => {
 	/**
 	 * Sets the unique location values
 	 */
-	//Setting unique location values
+		//Setting unique location values
 	let locations = getUnique(packages, 'location');
 	locations = ['All', ...locations];
 	locations = locations.map((item, index) => {
@@ -70,7 +70,7 @@ const PackageFilter = () => {
 	/**
 	 * Sets the unique casket values
 	 */
-	//Setting unique casket values
+		//Setting unique casket values
 	let caskets = getUnique(packages, 'casket');
 	caskets = ['All', ...caskets];
 	caskets = caskets.map((item, index) => {
@@ -79,7 +79,7 @@ const PackageFilter = () => {
 	});
 	return (
 		<>
-			<Title title="Filter Parlours"/>
+			<Title title="Filter Packages"/>
 			<div id="searchFilter">
 				<PackageFilterWrapper>
 					<PackageFilterForm>

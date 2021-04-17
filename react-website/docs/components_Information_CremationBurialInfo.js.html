@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/Information/CremationBurialInfo.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/Information/CremationBurialInfo.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import HeroSection from "../HeroSection";
+import Title from "../Parlour/Title";
+import {Tab} from "semantic-ui-react";
+import {Container} from "@material-ui/core";
+
+/**
+ * This component contains the information for cremation procedures, in land scattering, ash scattering and burial
+ * Renders the information with different menu item.
+ * @returns CremationBurialInfo component
+ */
+const CremationBurialInfo = () => {
+	const panes = [
+		{
+			menuItem: 'Cremation procedures',
+			render: () => &lt;Tab.Pane attached={false}>
+				&lt;Container>
+					&lt;strong>THE PROCESS:&lt;/strong> &lt;br/>
+					1. After cremation, the cremated remains will be made
+					more fine to facilitate scattering, as powdered ashes.&lt;br>&lt;/br>
+					2. The powdered ashes will be contained in an ash
+					scattering canister and transported to the ash
+					scattering facility.&lt;br>&lt;/br>
+					3. Ashes would be transported to the columbarium.&lt;br>&lt;/br>
+					4. Family members would choose where they wish to
+					place the urn.
+
+					&lt;br>&lt;/br>
+					&lt;br>&lt;/br>
+
+					&lt;strong>CREMATION LOCATIONS:&lt;/strong>&lt;br>&lt;/br>
+					&lt;strong>1. Mandai Crematorium and Columbarium Complex&lt;/strong>&lt;br>&lt;/br>
+					300 Mandai Road, Singapore 779393&lt;br>&lt;/br>
+					Number: 62747390&lt;br>&lt;/br>
+					&lt;br>&lt;/br>
+
+					Booking Hours:&lt;br>&lt;/br>
+					Mondays to Sundays 8:30am-4:30pm &lt;br>&lt;/br>
+					Office closed for lunch from 1:00-2:00pm&lt;br>&lt;/br>
+					&lt;br>&lt;/br>
+
+					Documents required for verification before booking:&lt;br>&lt;/br>
+					• Death Certificate&lt;br>&lt;/br>
+					• Permit to Cremate&lt;br>&lt;/br>
+					• Identification of Next-of-Kin and Applicant (NRIC, Passport, etc),
+					or letter of Authorisation if applicant is not Next-of-Kin&lt;br>&lt;/br>&lt;br>&lt;/br>
+
+					Please read the terms and conditions of the Mandai Crematorium before making a booking.&lt;br>&lt;/br>
+
+					&lt;br>&lt;/br>
+					&lt;strong>2. Kong Meng San Phor Kark See Monastery&lt;/strong>&lt;br>&lt;/br>
+					&lt;br>&lt;/br>
+					88 Bright Hill Drive&lt;br>&lt;/br>
+					&lt;br>&lt;/br>
+					Number 60484738&lt;br>&lt;/br>
+					&lt;br>&lt;/br>
+
+					Booking Hours:
+					Mondays to Sundays 9:00am-3:00pm&lt;br>&lt;/br>
+					&lt;br>&lt;/br>
+					Fees:
+					S300 (Cremation only)&lt;br>&lt;/br>
+					$400 (Cremation urn storage)
+				&lt;/Container>
+			&lt;/Tab.Pane>
+		},
+		{
+			menuItem: 'In-land scattering',
+			render: () => &lt;Tab.Pane attached={false}>
+				&lt;Container>
+					&lt;strong>THE PROCESS:&lt;/strong> &lt;br>&lt;/br>
+					1. After cremation, the cremated remains will be made
+					more fine to facilitate scattering, as powdered ashes.&lt;br>&lt;/br>
+
+					2. The powdered ashes will be contained in an ash scattering
+					canister and transported to the ash scattering facility.&lt;br>&lt;/br>
+
+					3. Upon arrival. Next-of-Kin 1 Funeral Director will walk
+					towards the ash scattering zone and conduct the scattering
+					of ashes within designated zone.&lt;br>&lt;/br>
+
+					4. The ash scattering surface, which will be covered with
+					pebbles and creepers, will be watered periodically
+					and over time, ashes will flow and percolate into the soil
+					underneath through gravel bed.&lt;br>&lt;/br>
+
+					&lt;br>&lt;/br>
+
+
+					&lt;strong>LOCATIONS FOR SCATTERING:&lt;/strong>&lt;br>&lt;/br>
+					1. Choa Chu Kang Cemetery Complex &lt;br>&lt;/br>
+					Chinese Cemetery Path 17&lt;br>&lt;/br>
+					&lt;br>&lt;/br>
+					2. Mandai Crematorium and Columbarium Complex &lt;br>&lt;/br>
+					300 Mandai Road Singapore 779393
+				&lt;/Container>
+			&lt;/Tab.Pane>,
+		},
+		{
+			menuItem: 'Ash-scattering at sea',
+			render: () => &lt;Tab.Pane attached={false}>
+				&lt;Container>
+					Ashes of the deceased may be scattered at sea. The Maritime Port Authority (MPA) has designated a
+					site
+					located
+					about 2.8km South of Pulau Semakau where sea burial can be conducted.
+					This can be done daily from 7:00am-7:00pm.&lt;br>&lt;/br>
+					&lt;br>&lt;/br>
+					For more information, please contact the MPA's Port Marine Safety Control Centre at 63258493.
+				&lt;/Container>
+			&lt;/Tab.Pane>,
+		},
+
+		{
+			menuItem: 'Burial',
+			render: () => &lt;Tab.Pane attached={false}>
+				&lt;Container>
+					&lt;strong>BURIAL LOCATIONS: &lt;/strong> &lt;br>&lt;/br>
+
+
+					Currently, the Choa Chu Kang Cemetery Complex is the only cemetery in Singapore still open for
+					burials.
+					&lt;br>&lt;/br>
+					&lt;br>&lt;/br>
+					Choa Chu Kang Cemetery Booking Office &lt;br>&lt;/br>910 Choa Chu Kang Road Singapore 699819 &lt;br>&lt;/br>
+					Number: 64488392 &lt;br>&lt;/br>
+					&lt;br>&lt;/br>
+
+					Booking hours: Mondays to Sundays 8:30am-4:30pm &lt;br>&lt;/br>
+					Closed for lunch from 1:00-2:00pm &lt;br>&lt;/br>&lt;br>&lt;/br>
+					Documents required for verification before booking: &lt;br>&lt;/br>
+					&amp;emsp;• Death Certificate &lt;br>&lt;/br>
+					&amp;emsp;• Permit to Bury &lt;br>&lt;/br>
+					&amp;emsp;• Identification Papers of Next-of-Kin and Applicant (NRIC, Passport, etc), or Letter of
+					Authorisation if applicant is not Next-of-Kin &lt;br>&lt;/br>&lt;br>&lt;/br>
+
+					Please read the terms and conditions before making a booking. &lt;br>&lt;/br>&lt;br>&lt;/br>
+
+					&lt;strong>BURIAL FEES:&lt;/strong> &lt;br>&lt;/br>&lt;br>&lt;/br>
+					Choa Chu Kang Muslim Cemetery &lt;br>&lt;/br>
+					$140 (Child under 10) &lt;br>&lt;/br>
+					$315 (Adult) &lt;br>&lt;/br>&lt;br>&lt;/br>
+
+					Choa Chu Kang Ahmadiyya Jama'at Cemetery &lt;br>&lt;/br>
+					$140 (Child under 10) &lt;br>&lt;/br>
+					$315 (Adult) &lt;br>&lt;/br>&lt;br>&lt;/br>
+
+					Choa Chu Kang Jewish Cemetery &lt;br>&lt;/br>
+					$140 (Child under 10) &lt;br>&lt;/br>
+					$315 (Adult) &lt;br>&lt;/br>&lt;br>&lt;/br>
+
+					Choa Chu Kang Parsi Cemetery &lt;br>&lt;/br>
+					$140 (Child under 10) &lt;br>&lt;/br>
+					$315 (Adult) &lt;br>&lt;/br>&lt;br>&lt;/br>
+
+					Choa Chu Kang Bahai Cemetery &lt;br>&lt;/br>
+					$140 (Child under 10) &lt;br>&lt;/br>
+					$315 (Adult) &lt;br>&lt;/br>&lt;br>&lt;/br>
+
+					All other cemeteries other than those listed &lt;br>&lt;/br>
+					$420 (Child under 10) &lt;br>&lt;/br>
+					$940 (Adult) &lt;br>&lt;/br>
+
+				&lt;/Container>
+			&lt;/Tab.Pane>,
+		},
+
+	]
+
+	return (
+		&lt;>
+			&lt;HeroSection HeroHeader="Cremation and Burial Procedures."
+			             HeroPara="Click the button to see the process of cremation or burial."
+			             getStartedButton="cremation"
+			             scroll={true}/>
+			&lt;div id="cremation">
+				&lt;Title title="Cremation and Burial Information"/>
+			&lt;/div>
+			&lt;Tab menu={{color: 'green', secondary: true, pointing: true, attached: false}}
+			     panes={panes}/>
+		&lt;/>
+	);
+};
+
+export default CremationBurialInfo;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Sidebar.html">Sidebar</a></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#AshScattering">AshScattering</a></li><li><a href="global.html#AuthProvider">AuthProvider</a></li><li><a href="global.html#BurialAndCremation">BurialAndCremation</a></li><li><a href="global.html#ConfirmationDialogRaw">ConfirmationDialogRaw</a></li><li><a href="global.html#Cremation_burialPage">Cremation_burialPage</a></li><li><a href="global.html#CremationBurialInfo">CremationBurialInfo</a></li><li><a href="global.html#Funeral_processPage">Funeral_processPage</a></li><li><a href="global.html#FuneralProcess">FuneralProcess</a></li><li><a href="global.html#HeroSection">HeroSection</a></li><li><a href="global.html#InfoSection">InfoSection</a></li><li><a href="global.html#Map">Map</a></li><li><a href="global.html#Navbar">Navbar</a></li><li><a href="global.html#options">options</a></li><li><a href="global.html#PackageBooking">PackageBooking</a></li><li><a href="global.html#PackageCard">PackageCard</a></li><li><a href="global.html#PackageContainer">PackageContainer</a></li><li><a href="global.html#PackageFilter">PackageFilter</a></li><li><a href="global.html#PackageList">PackageList</a></li><li><a href="global.html#PackagePage">PackagePage</a></li><li><a href="global.html#PackageProvider">PackageProvider</a></li><li><a href="global.html#ParlourBooking">ParlourBooking</a></li><li><a href="global.html#ParlourCard">ParlourCard</a></li><li><a href="global.html#ParlourContainer">ParlourContainer</a></li><li><a href="global.html#ParlourList">ParlourList</a></li><li><a href="global.html#ParlourPage">ParlourPage</a></li><li><a href="global.html#ParlourProvider">ParlourProvider</a></li><li><a href="global.html#Parlours">Parlours</a></li><li><a href="global.html#ReviewCard">ReviewCard</a></li><li><a href="global.html#ReviewInput">ReviewInput</a></li><li><a href="global.html#ReviewList">ReviewList</a></li><li><a href="global.html#Services">Services</a></li><li><a href="global.html#SignIn">SignIn</a></li><li><a href="global.html#SinglePackage">SinglePackage</a></li><li><a href="global.html#SinglePackagePage">SinglePackagePage</a></li><li><a href="global.html#SingleParlour">SingleParlour</a></li><li><a href="global.html#SingleParlourPage">SingleParlourPage</a></li><li><a href="global.html#Title">Title</a></li><li><a href="global.html#Void_deck_bookingPage">Void_deck_bookingPage</a></li><li><a href="global.html#VoidDeckBooking">VoidDeckBooking</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sat Apr 17 2021 23:16:15 GMT+0800 (Singapore Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

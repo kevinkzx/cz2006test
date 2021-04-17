@@ -2,11 +2,6 @@ import React from 'react';
 import {ImgContainer, Package_Card, PackageInfo, PackageLink, PriceTop} from "./PackageElements";
 import img1 from '../../images/svg-1.svg';
 
-
-const handleChange = () => {
-	console.log('hello');
-};
-
 /**
  * Component for each package in list of packages
  * Shows the religion, price the link to each individual package page.
@@ -30,8 +25,6 @@ const PackageCard = ({item}) => {
 					features
 				</PackageLink>
 				<PackageInfo>{item.name}</PackageInfo>
-
-
 			</ImgContainer>
 		</Package_Card>
 	);

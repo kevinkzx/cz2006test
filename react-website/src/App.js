@@ -7,7 +7,6 @@ import PackagePage from "./pages/PackagePage";
 import {PackageProvider} from "./components/Context/PackageContext";
 import SingleParlourPage from "./pages/SingleParlourPage";
 import {ParlourProvider} from "./components/Context/ParlourContext";
-import {ReviewProvider} from "./components/Context/ReviewContext";
 
 import ParlourPage from "./pages/ParlourPage";
 import SinglePackagePage from "./pages/SinglePackagePage";
@@ -40,7 +39,6 @@ const App = () => {
 	}, [user]);
 	return (
 		<>
-			<ReviewProvider>
 				<PackageProvider>
 					<ParlourProvider>
 						<Router>
@@ -85,7 +83,6 @@ const App = () => {
 						</Router>
 					</ParlourProvider>
 				</PackageProvider>
-			</ReviewProvider>
 		</>
 	);
 }

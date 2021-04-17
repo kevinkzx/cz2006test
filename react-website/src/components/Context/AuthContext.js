@@ -6,7 +6,7 @@ import firebase from "firebase";
 const AuthContext = createContext();
 /**
  * Context for authentication
- * @param {object} children 
+ * @param {object} children
  * @returns {object} children as well as methods in context.
  */
 export const AuthProvider = ({children}) => {
@@ -134,22 +134,6 @@ export const AuthProvider = ({children}) => {
 				    console.log("Success booking")
 			    })
 		}
-
-// const authListener = () => {
-// 	fire.auth()
-// 	    .onAuthStateChanged(user => {
-// 		    if (user) {
-// 			    clearInputs();
-// 			    setUser(user);
-// 		    } else {
-// 			    setUser("");
-// 		    }
-// 	    })
-// };
-
-// useEffect(() => {
-// 	authListener();
-// }, []);
 
 		return (
 			<>

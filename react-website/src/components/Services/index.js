@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {
 	ServicesCard,
 	ServicesContainer,
@@ -42,7 +41,6 @@ const Services = ({
                   }) => {
 
 	return (
-
 		<ServicesContainer id={id}
 		                   backgroundColor={backgroundColor}>
 			<ServicesH1 headerColor={headerColor}>{header}</ServicesH1>

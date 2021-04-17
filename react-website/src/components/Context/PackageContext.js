@@ -6,22 +6,22 @@ import firebase from "firebase";
 const PackageContext = createContext();
 /**
  * Context for packages.
- * @param {object} children 
+ * @param {object} children
  * @returns {object} children. as well as methods in context
  */
 export const PackageProvider = ({children}) => {
-	const [packages, setPackages] = useState([]);
-	const [sortedPackages, setSortedPackages] = useState([]);
-	const [religion, setReligion] = useState('All');
-	const [location, setLocation] = useState('All');
-	const [minPrice] = useState(0);
-	const [price, setPrice] = useState(0);
-	const [maxPrice, setMaxPrice] = useState(0);
-	const [minDay, setMinDay] = useState(0);
-	const [maxDay, setMaxDay] = useState(0);
-	const [casket, setCasket] = useState('All');
-	const [transportation, setTransportation] = useState(false);
-	const [eco, setEco] = useState(false);
+		const [packages, setPackages] = useState([]);
+		const [sortedPackages, setSortedPackages] = useState([]);
+		const [religion, setReligion] = useState('All');
+		const [location, setLocation] = useState('All');
+		const [minPrice] = useState(0);
+		const [price, setPrice] = useState(0);
+		const [maxPrice, setMaxPrice] = useState(0);
+		const [minDay, setMinDay] = useState(0);
+		const [maxDay, setMaxDay] = useState(0);
+		const [casket, setCasket] = useState('All');
+		const [transportation, setTransportation] = useState(false);
+		const [eco, setEco] = useState(false);
 
 		useEffect(() => {
 				const unsubscribe =
@@ -41,7 +41,7 @@ export const PackageProvider = ({children}) => {
 			}, []
 		)
 		;
-		
+
 		/**
 		 * Function to get individual packages by their slug
 		 * @param {object} slug slug of the package

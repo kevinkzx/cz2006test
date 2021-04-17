@@ -91,39 +91,19 @@ const Navbar = ({toggle}) => {
 						<NavMenu>
 							<NavItem>
 								<NavLinks to="packages"
-									// smooth={true}
-									// duration={500}
-									// spy={true}
-									// exact={'true'}
-									// offset={-80}
-									      onClick={goToPackages}>Packages</NavLinks>
+								          onClick={goToPackages}>Packages</NavLinks>
 							</NavItem>
 							<NavItem>
 								<NavLinks to="parlours"
-									// smooth={true}
-									// duration={500}
-									// spy={true}
-									// exact={'true'}
-									// offset={-80}
-									      onClick={goToParlours}>Parlours</NavLinks>
+								          onClick={goToParlours}>Parlours</NavLinks>
 							</NavItem>
 							<NavItem>
 								<NavLinks to="location"
-									// smooth={true}
-									// duration={500}
-									// spy={true}
-									// exact={'true'}
-									// offset={-80}
-									      onClick={goToMap}>Location</NavLinks>
+								          onClick={goToMap}>Location</NavLinks>
 							</NavItem>
 							<NavItem>
 								<NavLinks to="information"
-									// smooth={true}
-									// duration={500}
-									// spy={true}
-									// exact={'true'}
-									// offset={-80}
-									      onClick={goToInfo}>Information</NavLinks>
+								          onClick={goToInfo}>Information</NavLinks>
 							</NavItem>
 						</NavMenu>
 						{!user && (

@@ -1,4 +1,4 @@
-import React, {useRef, useContext} from 'react'
+import React from 'react'
 import PackageForm from "./PackageForm";
 
 /**
@@ -8,11 +8,11 @@ import PackageForm from "./PackageForm";
 const PackageBooking = () => {
 
 
-    return (
-        <div>
-            <PackageForm/>
-        </div>
-    );
+	return (
+		<div>
+			<PackageForm/>
+		</div>
+	);
 };
 
 export default PackageBooking;

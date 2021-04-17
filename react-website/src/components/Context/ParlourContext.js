@@ -12,7 +12,7 @@ export const ParlourProvider = ({children}) => {
 	const [sortedParlours, setSortedParlours] = useState([]);
 	const [search, setSearch] = useState("");
 
-	//pass in the parluor we want and get it form array of parlours
+	//pass in the parlour we want and get it form array of parlours
 	/**
 	 * Get the parlour by the name of the parlour
 	 * @param {*} slug the individual parlour
